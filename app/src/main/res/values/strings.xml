@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NSlookup</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <color name="bg">#c7e8fa</color>
+    <string name="title_section1">ISP</string>
+    <string name="title_section2">Domain</string>
+    <string name="title_section3">Port Scan</string>
+    <string name="title_activity_domain_info">DomainInfoActivity</string>
+
+</resources>

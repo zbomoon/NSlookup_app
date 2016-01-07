@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nslookup"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.nslookup.IntroActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.nslookup.MainActivity" />
+        <activity
+            android:name="com.nslookup.SearchActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name="com.nslookup.TabActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name="com.nslookup.Tab2Activity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name="com.nslookup.Tab3Activity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name="com.nslookup.Tab4Activity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name="com.nslookup.Tab5Activity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity android:name="com.nslookup.DomainInfoActivity" />
+    </application>
+
+</manifest>
