@@ -1,7 +1,6 @@
 package com.nslookup;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,8 +19,7 @@ public class SearchActivity extends Activity {
 	String str;
 	boolean ipordm = false;
 	boolean protect_twice = false;
-	ProgressDialog pb;
-
+	MyProgressBarTask pt;
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
@@ -77,6 +75,9 @@ public class SearchActivity extends Activity {
 		int diff;
 		if (protect_twice)
 			return;
+
+		(pt = new MyProgressBarTask(this)).execute();
+
 		protect_twice = true;
 		str = txt_query.getText().toString();
 		diff = isIp(str);
@@ -111,14 +112,6 @@ public class SearchActivity extends Activity {
 			Log.d("tag", "Fatal!");
 			wrong();
 		}
-		pb = new ProgressDialog(SearchActivity.this);
-		pb.setProgress(5);
-		pb.setTitle("NSlooking...");
-		pb.setMessage("검색중입니다.\n잠시만 기다려주세요");
-		pb.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		pb.setCanceledOnTouchOutside(false);
-		pb.show();
-
 		Handler handler = new Handler();
 		handler.post(new intentRun(str));
 	}
@@ -138,7 +131,7 @@ public class SearchActivity extends Activity {
 			else
 				intent.putExtra("isip", "2");
 			startActivityForResult(intent, 1);
-			pb.dismiss();
+			pt.dismiss();
 		}
 	}
 
