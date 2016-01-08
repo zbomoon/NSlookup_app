@@ -14,29 +14,26 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class TabActivity extends Fragment {
-    String[] items;
     private ArrayAdapter<String> m_Adapter;
     View mView;
     ListView mListView;
     Boolean domainTab = false;
+    ArrayList<String> items;
     String url = "";
 
     public TabActivity() {
+        Log.d("TabInit","xx");
+        items = new ArrayList<String>();
+        setRetainInstance(true);
     }
 
-    public TabActivity(String[] strs) {
-        items = strs;
-    }
-
-    public TabActivity(String[] strs, Boolean Domainchk) {
-        items = strs;
-        domainTab = Domainchk;
-    }
-
-    public TabActivity(String[] strs, String url) {
-        items = strs;
-        this.url = url;
+    public TabActivity(Boolean dm) {
+        Log.d("TabInit","xx");
+        items = new ArrayList<String>();
+        domainTab = dm;
     }
 
     @Override
@@ -47,21 +44,30 @@ public class TabActivity extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if (url != "") mView = inflater.inflate(R.layout.tab1_layout, null);
+        if (domainTab) mView = inflater.inflate(R.layout.tab1_layout, null);
         else mView = inflater.inflate(R.layout.tab2_layout, null);
         mListView = (ListView) mView.findViewById(R.id.t1_lv);
-        Log.d("items", items[0]);
         m_Adapter = new ArrayAdapter<String>(mView.getContext(), R.layout.simple_textview, items);
-
-        Log.i("xx", mListView != null ? "listview is not null!" : "listview is null!");
         mListView.setAdapter(m_Adapter);
-        if (domainTab && !items[0].equals("해당 IP를 찾을 수 없습니다."))
-            mListView.setOnItemClickListener(itemClickListenerOfLanguageList);
-        if (url != "")
-            ((TextView) mView.findViewById(R.id.textView2)).setTextColor(getResources().getColor(R.color.white));
-        if (url != "")
-            ((TextView) mView.findViewById(R.id.textView2)).setText("Search IP : " + url);
         return mView;
+    }
+
+    public void Update(){
+        m_Adapter.notifyDataSetChanged();
+    }
+
+    public void addItem(String str){
+        Log.d("strstr",str);
+        items.add(str);
+    }
+
+    public void setTextview(String str){
+        ((TextView) mView.findViewById(R.id.textView2)).setTextColor(getResources().getColor(R.color.white));
+        ((TextView) mView.findViewById(R.id.textView2)).setText(str);
+    }
+
+    public void addListener(){
+        mListView.setOnItemClickListener(itemClickListenerOfLanguageList);
     }
 
     private OnItemClickListener itemClickListenerOfLanguageList = new OnItemClickListener() {

@@ -27,7 +27,7 @@ public class DomainInfoActivity extends AppCompatActivity {
         }
     }
     private String parsingDomains() throws Exception {
-        String q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain="+url).execute().get();
+        String q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain="+url).doInBackground();
         int st = q.indexOf("dot_line.gif",4000)+836;
         int fi = q.indexOf("dot_line.gif",st+100)-75;
         return q.substring(st,fi).replaceAll("<br>", "").replaceAll("<","").replaceAll(">","");

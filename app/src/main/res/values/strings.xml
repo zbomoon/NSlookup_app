@@ -10,5 +10,6 @@
     <string name="title_section2">Domain</string>
     <string name="title_section3">Port Scan</string>
     <string name="title_activity_domain_info">DomainInfoActivity</string>
+    <string name="title_activity_loading">LoadingActivity</string>
 
 </resources>

@@ -275,6 +275,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_domain_info">DomainInfoActivity</string>
+    <string name="title_activity_loading">LoadingActivity</string>
     <string name="title_section1">ISP</string>
     <string name="title_section2">Domain</string>
     <string name="title_section3">Port Scan</string>

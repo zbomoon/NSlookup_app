@@ -1,9 +1,11 @@
 package com.nslookup;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,9 +17,6 @@ import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import java.util.Locale;
 
@@ -34,42 +33,32 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             "ldap", "https", "SMB", "outlook", "IIS", "lotus", "SQL", "P2P", "MYSQL", "remote", "SIP", "VR_D",
             "XWindows", "webcache"};
     Intent intent;
-    MyProgressBarTask pt;
+    ProgressDialog pd;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        (pt = new MyProgressBarTask(this)).execute();
+        pd = new ProgressDialog(this);
+
         Log.d("xx", "zz");
         intent = getIntent();
         url = intent.getStringExtra("url");
         isip = intent.getStringExtra("isip");
-        if (isip.equals("2")) {
-            try {
-                url = new IPConvertTask(url).execute().get();
-                Log.d("IPConvert", url);
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-        parsing();
-        Log.d("res", result[0][0]);
-        Log.d("tag", "create tabs");
         for (int i = 0; i < 3; i++) {
-            if (i == 2) tabs[i] = new TabActivity(result[i]);
-            else if (i == 1) tabs[i] = new TabActivity(result[i], true);
-            else if (i == 0) tabs[i] = new TabActivity(result[i], url);
+            if (i == 0) tabs[i] = new TabActivity(true);
+            else tabs[i] = new TabActivity();
+            Log.d("tabs", "init" + i);
         }
-        final ActionBar actionBar = getSupportActionBar();
+        actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#292933")));
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         actionBar.show();
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        mViewPager.setOffscreenPageLimit(5);
         mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
@@ -82,7 +71,64 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         }
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
-        pt.dismiss();
+        try {
+            (new BackgroundTask()).execute(url);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    class BackgroundTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Log.d("async", "pre");
+            pd.setProgress(5);
+            pd.setTitle("NSlooking...");
+            pd.setMessage("검색중입니다.\n잠시만 기다려주세요");
+            pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            pd.setCanceledOnTouchOutside(false);
+            pd.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            if (isip.equals("2")) {
+                try {
+                    url = new IPConvertTask(url).Convert();
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+            parsing();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String res) {
+            super.onPostExecute(res);
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            tabs[0].addItem(result[0][0]);
+            Log.d("urlurl", "Search IP : "+ url);
+            tabs[0].setTextview("Search IP : " + url);
+            tabs[1].addListener();
+            for (int i = 0; i < result[1].length; i++)
+                tabs[1].addItem(result[1][i]);
+            for (int i = 0; i < result[2].length; i++) {
+                Log.d("tab2", result[2][i]);
+                tabs[2].addItem(result[2][i]);
+            }
+            tabs[0].Update();
+            tabs[1].Update();
+            tabs[2].Update();
+            pd.dismiss();
+        }
     }
 
     @Override
@@ -98,11 +144,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsing() {
         try {
-            Log.d("123", "a");
             parsingIsp();
-            Log.d("123", "b");
             parsingDomain();
-            Log.d("123", "c");
             parsingPortscan();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -112,14 +155,17 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingIsp() throws Exception {
         result[0] = new String[1];
-        String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url).execute().get();
+        Log.d("x", "11");
+        String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url).doInBackground();
         // Log.d("tag", q);
         int x, y;
+        Log.d("x", "12");
         if (q.contains("No match!!")) {
             q = "해당 IP를 찾을 수 없습니다.";
             result[0][0] = q;
             return;
         }
+        Log.d("x", "13");
         if ((x = q.indexOf("[ 네트워크 할당 정보 ]")) != -1) {
             int t = x;
             if ((x = q.indexOf("할당일자")) != -1) {
@@ -154,8 +200,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         int x;
         String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
         result[1] = new String[tmp.length];
-        for (int i = 0; i < tmp.length; i++)
+        for (int i = 0; i < tmp.length; i++) {
             result[1][i] = tmp[i];
+        }
         /*
         Log.d("parsing","DomainStarted");
         String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").execute().get();
@@ -176,7 +223,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingPortscan() throws Exception {
         result[2] = new String[25];
-        String q = new MyDownloadTask("http://mxtoolbox.com/Public/Lookup.aspx/DoLookup2", "{\"inputText\":\"scan:" + url + "\",\"resultIndex\":8}", true).execute().get();
+        String q = new MyDownloadTask("http://mxtoolbox.com/Public/Lookup.aspx/DoLookup2", "{\"inputText\":\"scan:" + url + "\",\"resultIndex\":8}", true).doInBackground();
         q = q.replaceAll("\\\\u0027", "").replaceAll("\\\\u003c", "").replaceAll("\\\\u003e", "").substring(1200);
         Log.d("q", "포트스캔 시작");
         Log.d("xx", q);
@@ -200,9 +247,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     }
 
     @Override
-    public void onTabSelected(Tab t, FragmentTransaction arg1) {
-        Log.d("tag", "onTabSelected" + t.getPosition());
-        mViewPager.setCurrentItem(t.getPosition());
+    public void onTabSelected(Tab tab, FragmentTransaction ft) {
+        mViewPager.setCurrentItem(tab.getPosition());
     }
 
     @Override
@@ -239,27 +285,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                     return getString(R.string.title_section3).toUpperCase(l);
             }
             return null;
-        }
-    }
-
-    public static class PlaceholderFragment extends Fragment {
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
         }
     }
 }

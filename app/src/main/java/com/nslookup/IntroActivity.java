@@ -19,6 +19,6 @@ public class IntroActivity extends Activity {
                 startActivity(intent);
                 finish();
             }
-        }, 2000);
+        }, 1000);
     }
 }

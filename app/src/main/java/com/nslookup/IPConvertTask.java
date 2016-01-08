@@ -1,7 +1,5 @@
 package com.nslookup;
 
-import android.os.AsyncTask;
-
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -10,15 +8,14 @@ import java.net.UnknownHostException;
  */
 
 
-class IPConvertTask extends AsyncTask<Void, Void, String> {
+class IPConvertTask {
     String domain;
 
     public IPConvertTask(String d) {
         domain = d;
     }
 
-    @Override
-    protected String doInBackground(Void... params) {
+    public String Convert() {
         InetAddress inetAddr;
         String ss = "";
         try {

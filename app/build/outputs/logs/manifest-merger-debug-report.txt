@@ -113,6 +113,6 @@ ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.x
 	android:name
 		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:42:13-41
 activity#com.nslookup.DomainInfoActivity
-ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:44:9-65
+ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:44:9-56
 	android:name
 		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:44:19-53

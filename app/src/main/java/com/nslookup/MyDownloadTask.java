@@ -1,6 +1,5 @@
 package com.nslookup;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -14,7 +13,7 @@ import java.net.URL;
  * Created by HP-01 on 2016-01-07.
  */
 
-class MyDownloadTask extends AsyncTask<Void, Void, String> {
+class MyDownloadTask {
     String urlToRead;
     String postParm;
     Boolean port_para = false;
@@ -30,7 +29,7 @@ class MyDownloadTask extends AsyncTask<Void, Void, String> {
         this.port_para = b;
     }
 
-    public String doInBackground(Void... params) {
+    public String doInBackground() {
         URL url;
         HttpURLConnection conn;
         BufferedReader rd;
