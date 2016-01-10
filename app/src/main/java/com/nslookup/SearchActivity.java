@@ -143,8 +143,10 @@ public class SearchActivity extends Activity {
         txt_query.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!first)
+                if (!first) {
                     txt_query.setText("");
+                    first = true;
+                }
             }
         });
         txt_query.setOnKeyListener(new OnKeyListener() {

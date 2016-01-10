@@ -191,6 +191,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         Log.d("DomainSplit", str);
         if ((x = str.indexOf("Array")) != -1)
             str = str.substring(x + 9);
+        str = str.replaceAll("\"1\"","\"\"");
+        Log.d("DomainSplit", str);
         str = str.replaceAll(",\\s\"\"\\],\\s\\[\"", "");
         str = str.substring(0, str.length() - 8);
         return str.split("\"");
@@ -198,14 +200,13 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
-        String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
-        result[1] = new String[tmp.length];
-        for (int i = 0; i < tmp.length; i++) {
-            result[1][i] = tmp[i];
-        }
-        /*
-        Log.d("parsing","DomainStarted");
-        String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").execute().get();
+        //String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
+        //result[1] = new String[tmp.length];
+        //for (int i = 0; i < tmp.length; i++) {
+        //    result[1][i] = tmp[i];
+        //}
+        //Log.d("parsing","DomainStarted");
+        String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").doInBackground();
         Log.d("parsing",q);
         if (q.contains("No web sites")) {
             q = "해당 IP를 찾을 수 없습니다.";
@@ -218,7 +219,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             result[1] = new String[tmp.length];
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
-        }*/
+        }
     }
 
     private void parsingPortscan() throws Exception {

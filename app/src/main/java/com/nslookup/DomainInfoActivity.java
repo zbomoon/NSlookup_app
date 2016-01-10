@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 public class DomainInfoActivity extends AppCompatActivity {
@@ -30,6 +31,7 @@ public class DomainInfoActivity extends AppCompatActivity {
         String q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain="+url).doInBackground();
         int st = q.indexOf("dot_line.gif",4000)+836;
         int fi = q.indexOf("dot_line.gif",st+100)-75;
+        Log.d("domain", q);
         return q.substring(st,fi).replaceAll("<br>", "").replaceAll("<","").replaceAll(">","");
     }
 }
