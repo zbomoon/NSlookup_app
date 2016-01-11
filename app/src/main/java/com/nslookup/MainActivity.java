@@ -212,13 +212,12 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
+        /*
         String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
         result[1] = new String[tmp.length];
         for (int i = 0; i < tmp.length; i++) {
             result[1][i] = tmp[i];
-        }
-
-        /*
+        }*/
         String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").doInBackground();
         if (q.contains("No web sites")) {
             q = "해당 IP를 찾을 수 없습니다.";
@@ -231,7 +230,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             result[1] = new String[tmp.length];
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
-        }*/
+        }
     }
 
     private void parsingPortscan() throws Exception {
