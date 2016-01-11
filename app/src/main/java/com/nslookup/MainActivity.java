@@ -41,15 +41,13 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pd = new ProgressDialog(this);
-
-        Log.d("xx", "zz");
         intent = getIntent();
         url = intent.getStringExtra("url");
+        Log.d("find url", url);
         isip = intent.getStringExtra("isip");
         for (int i = 0; i < 3; i++) {
             if (i == 0) tabs[i] = new TabActivity(true);
             else tabs[i] = new TabActivity();
-            Log.d("tabs", "init" + i);
         }
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -79,11 +77,12 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     }
 
     class BackgroundTask extends AsyncTask<String, Void, String> {
+        long nStart = 0;
 
         @Override
         protected void onPreExecute() {
+            nStart = System.currentTimeMillis();
             super.onPreExecute();
-            Log.d("async", "pre");
             pd.setProgress(5);
             pd.setTitle("NSlooking...");
             pd.setMessage("검색중입니다.\n잠시만 기다려주세요");
@@ -109,25 +108,17 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         @Override
         protected void onPostExecute(String res) {
             super.onPostExecute(res);
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             tabs[0].addItem(result[0][0]);
-            Log.d("urlurl", "Search IP : "+ url);
             tabs[0].setTextview("Search IP : " + url);
             tabs[1].addListener();
             for (int i = 0; i < result[1].length; i++)
                 tabs[1].addItem(result[1][i]);
-            for (int i = 0; i < result[2].length; i++) {
-                Log.d("tab2", result[2][i]);
-                tabs[2].addItem(result[2][i]);
-            }
+            tabs[2].addItem(result[2][0]);
             tabs[0].Update();
             tabs[1].Update();
             tabs[2].Update();
             pd.dismiss();
+            Log.d("Time", Long.toString(System.currentTimeMillis() - nStart));
         }
     }
 
@@ -155,17 +146,13 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingIsp() throws Exception {
         result[0] = new String[1];
-        Log.d("x", "11");
         String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url).doInBackground();
-        // Log.d("tag", q);
         int x, y;
-        Log.d("x", "12");
         if (q.contains("No match!!")) {
             q = "해당 IP를 찾을 수 없습니다.";
             result[0][0] = q;
             return;
         }
-        Log.d("x", "13");
         if ((x = q.indexOf("[ 네트워크 할당 정보 ]")) != -1) {
             int t = x;
             if ((x = q.indexOf("할당일자")) != -1) {
@@ -182,17 +169,42 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 q.replaceAll("\t", "");
             }
         }
-        result[0][0] = q;
-        Log.d("itemsresult", result[0][0]);
+        if (q.indexOf("서비스가 원할하지") != -1) {
+            //result[0][0] = "검색에 실패했습니다.\n다시 시도해주세요!";
+            result[0][0] = "";
+            Log.d("ISP", "whatismyipaddress reparsing");
+            q = new MyDownloadTask("http://whatismyipaddress.com/ip/" + url, "").doInBackground();
+            q = q.substring(q.indexOf("General IP Information</h2>"), q.indexOf("Geolocation Map</h2>"));
+            while (true) {
+                int n;
+                if ((n = q.indexOf("</th><td>")) != -1) {
+                    String s1 = q.substring(q.substring(0, n).lastIndexOf("<th>") + "<th>".length(), n - 1);
+                    String s2 = q.substring(n + "</th><td>".length(), q.indexOf("</td>", n + "</th><td>".length()));
+                    while (true) {
+                        int a, b;
+                        if ((a = s2.indexOf('<')) != -1) {
+                            if ((b = s2.indexOf('>')) != -1) {
+                                if (a > 0) s2 = s2.substring(0, a) + s2.substring(b + 1);
+                                else s2 = s2.substring(b + 1);
+                            } else Log.d("fatal", "err");
+                        } else break;
+                    }
+                    if(s1.equals("Latitude"))
+                        s2 = s2.substring(1, s2.indexOf('&') - 1);
+                    else if(s1.equals("Longitude"))
+                        s2 = s2.substring(1, s2.indexOf('&') - 1);
+                    result[0][0] += s1 + " : " + s2 + "\n";
+                    q = q.substring(n + "</th><td>".length());
+                } else break;
+            }
+        } else result[0][0] = q;
     }
 
     private static String[] DomainSplit(String str) {
         int x;
-        Log.d("DomainSplit", str);
         if ((x = str.indexOf("Array")) != -1)
             str = str.substring(x + 9);
-        str = str.replaceAll("\"1\"","\"\"");
-        Log.d("DomainSplit", str);
+        str = str.replaceAll("\"1\"", "\"\"");
         str = str.replaceAll(",\\s\"\"\\],\\s\\[\"", "");
         str = str.substring(0, str.length() - 8);
         return str.split("\"");
@@ -200,14 +212,14 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
-        //String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
-        //result[1] = new String[tmp.length];
-        //for (int i = 0; i < tmp.length; i++) {
-        //    result[1][i] = tmp[i];
-        //}
-        //Log.d("parsing","DomainStarted");
+        String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
+        result[1] = new String[tmp.length];
+        for (int i = 0; i < tmp.length; i++) {
+            result[1][i] = tmp[i];
+        }
+
+        /*
         String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").doInBackground();
-        Log.d("parsing",q);
         if (q.contains("No web sites")) {
             q = "해당 IP를 찾을 수 없습니다.";
             result[1] = new String[1];
@@ -219,15 +231,14 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             result[1] = new String[tmp.length];
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
-        }
+        }*/
     }
 
     private void parsingPortscan() throws Exception {
-        result[2] = new String[25];
+        result[2] = new String[1];
+        result[2][0] = "";
         String q = new MyDownloadTask("http://mxtoolbox.com/Public/Lookup.aspx/DoLookup2", "{\"inputText\":\"scan:" + url + "\",\"resultIndex\":8}", true).doInBackground();
         q = q.replaceAll("\\\\u0027", "").replaceAll("\\\\u003c", "").replaceAll("\\\\u003e", "").substring(1200);
-        Log.d("q", "포트스캔 시작");
-        Log.d("xx", q);
         for (int i = 0; i < portNum.length; i++) {
             int st, fi;
             String s;
@@ -236,10 +247,10 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 s = q.substring(st, q.indexOf(portNum[i + 1], st));
             } else s = q.substring(q.indexOf(portNum[i]));
             if (s.lastIndexOf("Open") != -1)
-                result[2][i] = portNum[i] + " - " + portName[i] + " - " + "Open";
+                result[2][0] += portNum[i] + " - " + portName[i] + " - " + "Open" + "\n";
             else if (s.lastIndexOf("Filtered") != -1)
-                result[2][i] = portNum[i] + " - " + portName[i] + " - " + "Filtered";
-            else result[2][i] = portNum[i] + " - " + portName[i] + " - " + "Refused";
+                result[2][0] += portNum[i] + " - " + portName[i] + " - " + "Filtered" + "\n";
+            else result[2][0] += portNum[i] + " - " + portName[i] + " - " + "Refused" + "\n";
         }
     }
 
@@ -265,7 +276,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
         @Override
         public Fragment getItem(int position) {
-            Log.d("tag", "getItem" + position);
             return tabs[position];
         }
 

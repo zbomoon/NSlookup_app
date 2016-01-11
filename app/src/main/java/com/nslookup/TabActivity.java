@@ -25,13 +25,11 @@ public class TabActivity extends Fragment {
     String url = "";
 
     public TabActivity() {
-        Log.d("TabInit","xx");
         items = new ArrayList<String>();
         setRetainInstance(true);
     }
 
     public TabActivity(Boolean dm) {
-        Log.d("TabInit","xx");
         items = new ArrayList<String>();
         domainTab = dm;
     }
@@ -57,7 +55,6 @@ public class TabActivity extends Fragment {
     }
 
     public void addItem(String str){
-        Log.d("strstr",str);
         items.add(str);
     }
 
@@ -74,7 +71,6 @@ public class TabActivity extends Fragment {
         public void onItemClick(AdapterView<?> adapterView, View clickedView, int pos, long id) {
             String ss = ((TextView) clickedView).getText().toString();
             String toastMessage = ss + " is selected.";
-            Log.d("list", toastMessage);
             Handler handler = new Handler();
             handler.post(new intentDomainInfo(ss));
         }

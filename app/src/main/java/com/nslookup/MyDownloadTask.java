@@ -48,12 +48,9 @@ class MyDownloadTask {
                 conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
             conn.setRequestProperty("http.protocol.version", "HTTP/1.1");
             wd = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
-            Log.d("tag", postParm);
             wd.write(postParm);
             wd.flush();
             wd.close();
-
-            Log.d("tag", Integer.toString(conn.getResponseCode()));
             if (conn.getErrorStream() != null) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
                 String ss;

@@ -22,7 +22,6 @@ public class SearchActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == 1) {
@@ -32,7 +31,6 @@ public class SearchActivity extends Activity {
     }
 
     private void nextActivity() {
-        Log.d("nextActivity","started");
         if (protect_twice)
             return;
         try {
@@ -54,41 +52,35 @@ public class SearchActivity extends Activity {
 
         @Override
         protected String doInBackground(String... params) {
-            //Do all your slow tasks here but dont set anything on UI
-            //ALL ui activities on the main thread
             int diff;
             ss = params[0];
             diff = isIp(ss);
             if (ss.length() < 4) {
                 return null;
             }
-            Log.d("string res", "x1");
-            if (diff == 1) { // IP
-                Log.d("string res", "x2");
-                Log.d("string res", ss);
+            if (diff == 1) {
                 String[] res = ss.split("\\.");
-                Log.d("string res", Integer.toString(res.length));
                 for (int i = 0; i < res.length; i++) {
-                    Log.d("string res", res[i]);
                     if (!isNumeric(res[i]) || !isNum(Integer.parseInt(res[i]))) {
-                        Log.d("string res", "wrong");
                         return null;
                     }
                 }
                 ipordm = true;
             } else if (diff == 2) { // domain :: http:// , https:// deleting
-                if (ss.substring(0, 6).equals("http://"))
+                Log.d("aa", ss.substring(0, 6));
+                if (ss.substring(0, 7).equals("http://"))
                     ss = ss.substring(7);
-                else if (ss.substring(0, 7).equals("https://"))
+                else if (ss.substring(0, 8).equals("https://"))
                     ss = ss.substring(8);
+                if (ss.charAt(ss.length() - 1) == '/')
+                    ss = ss.substring(0, ss.length() - 1);
                 ipordm = false;
             } else if (diff == 3) {
                 return null;
             } else {
-                Log.d("tag", "Fatal!");
                 return null;
             }
-            if(ss == null){
+            if (ss == null) {
                 wrong();
                 return null;
             }
@@ -136,6 +128,7 @@ public class SearchActivity extends Activity {
             return true;
         }
     }
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
