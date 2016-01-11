@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -67,7 +66,6 @@ public class SearchActivity extends Activity {
                 }
                 ipordm = true;
             } else if (diff == 2) { // domain :: http:// , https:// deleting
-                Log.d("aa", ss.substring(0, 6));
                 if (ss.substring(0, 7).equals("http://"))
                     ss = ss.substring(7);
                 else if (ss.substring(0, 8).equals("https://"))

@@ -49,7 +49,7 @@ public class DomainInfoActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Integer... params) {
-            q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url).doInBackground();
+            q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url).GetString();
             int st = q.indexOf("dot_line.gif", 4000) + 836;
             int fi = q.indexOf("dot_line.gif", st + 100) - 75;
             q = q.substring(st, fi).replaceAll("<br>", "").replaceAll("<", "").replaceAll(">", "");

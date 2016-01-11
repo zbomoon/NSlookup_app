@@ -29,7 +29,7 @@ class MyDownloadTask {
         this.port_para = b;
     }
 
-    public String doInBackground() {
+    public String GetString() {
         URL url;
         HttpURLConnection conn;
         BufferedReader rd;

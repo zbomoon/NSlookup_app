@@ -35,6 +35,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     Intent intent;
     ProgressDialog pd;
     ActionBar actionBar;
+    long nStart = 0;
+    JobDoneTest jdt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,45 +71,37 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         }
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
+        nStart = System.currentTimeMillis();
+        pd.setProgress(5);
+        pd.setTitle("NSlooking...");
+        pd.setMessage("검색중입니다.\n잠시만 기다려주세요");
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.setCanceledOnTouchOutside(false);
+        pd.show();
+        jdt = new JobDoneTest();
         try {
-            (new BackgroundTask()).execute(url);
+            (new BackgroundTask1()).execute(url);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    class BackgroundTask extends AsyncTask<String, Void, String> {
-        long nStart = 0;
+    class JobDoneTest {
+        Boolean[] finishjob;
 
-        @Override
-        protected void onPreExecute() {
-            nStart = System.currentTimeMillis();
-            super.onPreExecute();
-            pd.setProgress(5);
-            pd.setTitle("NSlooking...");
-            pd.setMessage("검색중입니다.\n잠시만 기다려주세요");
-            pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            pd.setCanceledOnTouchOutside(false);
-            pd.show();
+        public JobDoneTest() {
+            finishjob = new Boolean[]{true, false, false, false};
         }
 
-        @Override
-        protected String doInBackground(String... params) {
-            if (isip.equals("2")) {
-                try {
-                    url = new IPConvertTask(url).Convert();
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-            parsing();
-            return null;
+        public synchronized void finished(int n) {
+            Log.d("finish", Integer.toString(n));
+            finishjob[n] = true;
+            if (finishjob[0] == false || finishjob[1] == false || finishjob[2] == false || finishjob[3] == false)
+                return;
+            else doNextjob();
         }
 
-        @Override
-        protected void onPostExecute(String res) {
-            super.onPostExecute(res);
+        private void doNextjob() {
             tabs[0].addItem(result[0][0]);
             tabs[0].setTextview("Search IP : " + url);
             tabs[1].addListener();
@@ -122,6 +116,87 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         }
     }
 
+    class BackgroundTask1 extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            if (isip.equals("2")) {
+                try {
+                    url = new IPConvertTask(url).Convert();
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String res) {
+            super.onPostExecute(res);
+            (new BackgroundTask2()).execute(url);
+            (new BackgroundTask3()).execute(url);
+            (new BackgroundTask4()).execute(url);
+        }
+    }
+
+    class BackgroundTask2 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+                parsingIsp();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String res) {
+            super.onPostExecute(res);
+            jdt.finished(1);
+        }
+    }
+
+    class BackgroundTask3 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+                parsingDomain();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String res) {
+            super.onPostExecute(res);
+            jdt.finished(2);
+        }
+    }
+
+    class BackgroundTask4 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+                parsingPortscan();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String res) {
+            super.onPostExecute(res);
+            jdt.finished(3);
+        }
+    }
+
     @Override
     public boolean onKeyDown(int key, KeyEvent ev) {
         switch (key) {
@@ -133,20 +208,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         return false;
     }
 
-    private void parsing() {
-        try {
-            parsingIsp();
-            parsingDomain();
-            parsingPortscan();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-
     private void parsingIsp() throws Exception {
         result[0] = new String[1];
-        String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url).doInBackground();
+        String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url).GetString();
         int x, y;
         if (q.contains("No match!!")) {
             q = "해당 IP를 찾을 수 없습니다.";
@@ -173,7 +237,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             //result[0][0] = "검색에 실패했습니다.\n다시 시도해주세요!";
             result[0][0] = "";
             Log.d("ISP", "whatismyipaddress reparsing");
-            q = new MyDownloadTask("http://whatismyipaddress.com/ip/" + url, "").doInBackground();
+            q = new MyDownloadTask("http://whatismyipaddress.com/ip/" + url, "").GetString();
             q = q.substring(q.indexOf("General IP Information</h2>"), q.indexOf("Geolocation Map</h2>"));
             while (true) {
                 int n;
@@ -189,9 +253,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                             } else Log.d("fatal", "err");
                         } else break;
                     }
-                    if(s1.equals("Latitude"))
+                    if (s1.equals("Latitude"))
                         s2 = s2.substring(1, s2.indexOf('&') - 1);
-                    else if(s1.equals("Longitude"))
+                    else if (s1.equals("Longitude"))
                         s2 = s2.substring(1, s2.indexOf('&') - 1);
                     result[0][0] += s1 + " : " + s2 + "\n";
                     q = q.substring(n + "</th><td>".length());
@@ -212,31 +276,37 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
-        /*
+/*
         String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
         result[1] = new String[tmp.length];
         for (int i = 0; i < tmp.length; i++) {
             result[1][i] = tmp[i];
         }*/
-        String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").doInBackground();
-        if (q.contains("No web sites")) {
-            q = "해당 IP를 찾을 수 없습니다.";
+        String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").GetString();
+
+        if (q.contains("Daily reverse IP check")) {
             result[1] = new String[1];
-            result[1][0] = q;
+            result[1][0] = "IP reverse 기능 1일 이용 횟수가 초과되었습니다!";
             return;
         }
-        if ((x = q.indexOf("Array")) != -1) {
+        else if (q.contains("No web sites")) {
+            result[1] = new String[1];
+            result[1][0] = "해당 IP를 찾을 수 없습니다!";
+            return;
+        }
+        else if ((x = q.indexOf("Array")) != -1) {
             String[] tmp = DomainSplit(q);
             result[1] = new String[tmp.length];
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
         }
+
     }
 
     private void parsingPortscan() throws Exception {
         result[2] = new String[1];
         result[2][0] = "";
-        String q = new MyDownloadTask("http://mxtoolbox.com/Public/Lookup.aspx/DoLookup2", "{\"inputText\":\"scan:" + url + "\",\"resultIndex\":8}", true).doInBackground();
+        String q = new MyDownloadTask("http://mxtoolbox.com/Public/Lookup.aspx/DoLookup2", "{\"inputText\":\"scan:" + url + "\",\"resultIndex\":8}", true).GetString();
         q = q.replaceAll("\\\\u0027", "").replaceAll("\\\\u003c", "").replaceAll("\\\\u003e", "").substring(1200);
         for (int i = 0; i < portNum.length; i++) {
             int st, fi;
