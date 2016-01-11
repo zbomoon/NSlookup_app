@@ -14,13 +14,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 
 import java.util.Locale;
 
-public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
+public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
     String url, isip;
@@ -47,10 +47,11 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         Log.d("find url", url);
         isip = intent.getStringExtra("isip");
         for (int i = 0; i < 3; i++) {
-            if (i == 0) {
-                tabs[i] = new TabActivity();
+            tabs[i] = new TabActivity();
+            if (i == 0)
+                tabs[i].setTabasISPtab();
+            else if (i == 1)
                 tabs[i].setTabasDomaintab();
-            } else tabs[i] = new TabActivity();
         }
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -89,11 +90,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     class JobDoneTest {
         Boolean[] finishjob;
-
         public JobDoneTest() {
             finishjob = new Boolean[]{true, false, false, false};
         }
-
         public synchronized void finished(int n) {
             Log.d("finish", Integer.toString(n));
             finishjob[n] = true;
@@ -105,7 +104,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         private void doNextjob() {
             tabs[0].addItem(result[0][0]);
             tabs[0].setTextview("Search IP : " + url);
-            tabs[1].addListener();
             for (int i = 0; i < result[1].length; i++)
                 tabs[1].addItem(result[1][i]);
             tabs[2].addItem(result[2][0]);
@@ -226,7 +224,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             if ((x = q.indexOf("OrgTechRef:")) != -1) {
                 y = q.indexOf("\n", x + 5);
                 q = q.substring(t, y);
-                q.replaceAll("\t", "");
+                q = q.replaceAll("\t", "");
             }
         }
         if (q.indexOf("서비스가 원할하지") != -1) {
@@ -271,13 +269,14 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
-        /*
+
         //횟수 제한에 따른 디버깅용
         String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
         result[1] = new String[tmp.length];
         for (int i = 0; i < tmp.length; i++) {
             result[1][i] = tmp[i];
-        }*/
+        }
+        /*
         String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").GetString();
 
         if (q.contains("Daily reverse IP check")) {
@@ -293,7 +292,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             result[1] = new String[tmp.length];
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
-        }
+        }*/
     }
 
     private void parsingPortscan() throws Exception {

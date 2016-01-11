@@ -2224,12 +2224,13 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0b0057;
         public static final int action_mode_bar_stub=0x7f0b0056;
         public static final int action_mode_close_button=0x7f0b003c;
-        public static final int action_settings=0x7f0b0088;
+        public static final int action_settings=0x7f0b0089;
         public static final int activity_chooser_view_content=0x7f0b003d;
         public static final int alertTitle=0x7f0b0049;
         public static final int always=0x7f0b0032;
         public static final int beginning=0x7f0b0030;
         public static final int bottom=0x7f0b001c;
+        public static final int button=0x7f0b0088;
         public static final int buttonPanel=0x7f0b0044;
         public static final int cancel_action=0x7f0b0079;
         public static final int center=0x7f0b001d;
@@ -2408,11 +2409,13 @@ containing a value of this type.
         public static final int select_dialog_item_material=0x7f030033;
         public static final int select_dialog_multichoice_material=0x7f030034;
         public static final int select_dialog_singlechoice_material=0x7f030035;
-        public static final int simple_textview=0x7f030036;
-        public static final int simple_textview_center=0x7f030037;
-        public static final int support_simple_spinner_dropdown_item=0x7f030038;
-        public static final int tab1_layout=0x7f030039;
-        public static final int tab2_layout=0x7f03003a;
+        public static final int simple_single_choice_list=0x7f030036;
+        public static final int simple_textview=0x7f030037;
+        public static final int simple_textview_center=0x7f030038;
+        public static final int support_simple_spinner_dropdown_item=0x7f030039;
+        public static final int tab1_layout=0x7f03003a;
+        public static final int tab2_layout=0x7f03003b;
+        public static final int tab3_layout=0x7f03003c;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

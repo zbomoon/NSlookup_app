@@ -6,8 +6,11 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DomainInfoActivity extends AppCompatActivity {
     Intent intent;
@@ -49,7 +52,16 @@ public class DomainInfoActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Integer... params) {
+            if (url.substring(0, 3).equals("www"))
+                url = url.substring(4);
+            Log.d("urlurl", url);
             q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url).GetString();
+            if (q == null) {
+                Toast toast = Toast.makeText(getApplicationContext(), "검색 도중 오류가 발생했습니다.\n다시 시도해주세요", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                toast.show();
+                finish();
+            }
             int st = q.indexOf("dot_line.gif", 4000) + 836;
             int fi = q.indexOf("dot_line.gif", st + 100) - 75;
             q = q.substring(st, fi).replaceAll("<br>", "").replaceAll("<", "").replaceAll(">", "");

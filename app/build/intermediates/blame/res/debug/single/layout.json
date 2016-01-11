@@ -92,6 +92,10 @@
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\simple_single_choice_list.xml",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\simple_single_choice_list.xml"
+    },
+    {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_dialog_title_material.xml"
     },
@@ -126,6 +130,10 @@
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab3_layout.xml",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\tab3_layout.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
