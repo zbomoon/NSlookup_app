@@ -30,10 +30,10 @@ public class DomainInfoActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        new BackgroundTask().execute();
+        new DomainInfo_thread().execute();
     }
 
-    class BackgroundTask extends AsyncTask<Integer, Void, Void> {
+    class DomainInfo_thread extends AsyncTask<Integer, Void, Void> {
         String q;
 
         @Override
@@ -59,7 +59,7 @@ public class DomainInfoActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void res) {
             super.onPostExecute(res);
-            if(q.indexOf("접속에 실패") != -1)
+            if (q.indexOf("접속에 실패") != -1)
                 q = "찾을 수 없는 도메인입니다!";
             mTextView.setText(q);
             pd.dismiss();

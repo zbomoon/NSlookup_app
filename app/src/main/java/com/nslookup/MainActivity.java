@@ -20,7 +20,6 @@ import android.view.KeyEvent;
 
 import java.util.Locale;
 
-@SuppressWarnings("deprecation")
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
@@ -48,8 +47,10 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         Log.d("find url", url);
         isip = intent.getStringExtra("isip");
         for (int i = 0; i < 3; i++) {
-            if (i == 0) tabs[i] = new TabActivity(true);
-            else tabs[i] = new TabActivity();
+            if (i == 0) {
+                tabs[i] = new TabActivity();
+                tabs[i].setTabasDomaintab();
+            } else tabs[i] = new TabActivity();
         }
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -80,7 +81,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         pd.show();
         jdt = new JobDoneTest();
         try {
-            (new BackgroundTask1()).execute(url);
+            (new IPConvert_thread()).execute(url);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -116,15 +117,13 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         }
     }
 
-    class BackgroundTask1 extends AsyncTask<String, Void, String> {
-
+    class IPConvert_thread extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             if (isip.equals("2")) {
                 try {
                     url = new IPConvertTask(url).Convert();
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
@@ -134,19 +133,18 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         @Override
         protected void onPostExecute(String res) {
             super.onPostExecute(res);
-            (new BackgroundTask2()).execute(url);
-            (new BackgroundTask3()).execute(url);
-            (new BackgroundTask4()).execute(url);
+            (new ISPparsing_thread()).execute(url);
+            (new Domainparsing_thread()).execute(url);
+            (new PortScanparsing_thread()).execute(url);
         }
     }
 
-    class BackgroundTask2 extends AsyncTask<String, Void, String> {
+    class ISPparsing_thread extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             try {
                 parsingIsp();
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             return null;
@@ -159,13 +157,12 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         }
     }
 
-    class BackgroundTask3 extends AsyncTask<String, Void, String> {
+    class Domainparsing_thread extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             try {
                 parsingDomain();
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             return null;
@@ -178,13 +175,12 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         }
     }
 
-    class BackgroundTask4 extends AsyncTask<String, Void, String> {
+    class PortScanparsing_thread extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             try {
                 parsingPortscan();
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             return null;
@@ -234,7 +230,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             }
         }
         if (q.indexOf("서비스가 원할하지") != -1) {
-            //result[0][0] = "검색에 실패했습니다.\n다시 시도해주세요!";
             result[0][0] = "";
             Log.d("ISP", "whatismyipaddress reparsing");
             q = new MyDownloadTask("http://whatismyipaddress.com/ip/" + url, "").GetString();
@@ -276,7 +271,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
-/*
+        /*
+        //횟수 제한에 따른 디버깅용
         String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
         result[1] = new String[tmp.length];
         for (int i = 0; i < tmp.length; i++) {
@@ -288,19 +284,16 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             result[1] = new String[1];
             result[1][0] = "IP reverse 기능 1일 이용 횟수가 초과되었습니다!";
             return;
-        }
-        else if (q.contains("No web sites")) {
+        } else if (q.contains("No web sites")) {
             result[1] = new String[1];
             result[1][0] = "해당 IP를 찾을 수 없습니다!";
             return;
-        }
-        else if ((x = q.indexOf("Array")) != -1) {
+        } else if ((x = q.indexOf("Array")) != -1) {
             String[] tmp = DomainSplit(q);
             result[1] = new String[tmp.length];
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
         }
-
     }
 
     private void parsingPortscan() throws Exception {

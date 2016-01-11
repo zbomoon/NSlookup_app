@@ -3,10 +3,6 @@ package com.nslookup;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-/**
- * Created by HP-01 on 2016-01-07.
- */
-
 
 class IPConvertTask {
     String domain;
@@ -27,7 +23,6 @@ class IPConvertTask {
                 ss += addr[i] & 0xFF;
             }
         } catch (UnknownHostException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return ss;

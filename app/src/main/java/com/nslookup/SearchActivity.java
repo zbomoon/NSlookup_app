@@ -65,7 +65,7 @@ public class SearchActivity extends Activity {
                     }
                 }
                 ipordm = true;
-            } else if (diff == 2) { // domain :: http:// , https:// deleting
+            } else if (diff == 2) {
                 if (ss.substring(0, 7).equals("http://"))
                     ss = ss.substring(7);
                 else if (ss.substring(0, 8).equals("https://"))

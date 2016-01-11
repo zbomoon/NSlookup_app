@@ -9,10 +9,6 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by HP-01 on 2016-01-07.
- */
-
 class MyDownloadTask {
     String urlToRead;
     String postParm;

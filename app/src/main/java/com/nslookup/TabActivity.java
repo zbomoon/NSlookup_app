@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,9 +28,9 @@ public class TabActivity extends Fragment {
         setRetainInstance(true);
     }
 
-    public TabActivity(Boolean dm) {
+    public void setTabasDomaintab() {
         items = new ArrayList<String>();
-        domainTab = dm;
+        domainTab = true;
     }
 
     @Override
@@ -50,20 +49,20 @@ public class TabActivity extends Fragment {
         return mView;
     }
 
-    public void Update(){
+    public void Update() {
         m_Adapter.notifyDataSetChanged();
     }
 
-    public void addItem(String str){
+    public void addItem(String str) {
         items.add(str);
     }
 
-    public void setTextview(String str){
+    public void setTextview(String str) {
         ((TextView) mView.findViewById(R.id.textView2)).setTextColor(getResources().getColor(R.color.white));
         ((TextView) mView.findViewById(R.id.textView2)).setText(str);
     }
 
-    public void addListener(){
+    public void addListener() {
         mListView.setOnItemClickListener(itemClickListenerOfLanguageList);
     }
 
