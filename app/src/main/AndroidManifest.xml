@@ -33,7 +33,7 @@
             android:name=".SearchActivity"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".TabActivity"
+            android:name=".TabFragment_ISP"
             android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".Tab2Activity"

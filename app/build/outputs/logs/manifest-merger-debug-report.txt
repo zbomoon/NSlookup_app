@@ -94,12 +94,12 @@ ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.x
 		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:34:13-51
 	android:name
 		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:33:13-43
-activity#com.nslookup.TabActivity
+activity#com.nslookup.TabFragment_ISP
 ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:35:9-37:54
 	android:theme
 		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:37:13-51
 	android:name
-		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:36:13-40
+		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:36:13-44
 activity#com.nslookup.Tab2Activity
 ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:38:9-40:54
 	android:theme

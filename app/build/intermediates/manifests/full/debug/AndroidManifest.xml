@@ -33,7 +33,7 @@
             android:name="com.nslookup.SearchActivity"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name="com.nslookup.TabActivity"
+            android:name="com.nslookup.TabFragment_ISP"
             android:theme="@style/Theme.AppCompat" />
         <activity
             android:name="com.nslookup.Tab2Activity"

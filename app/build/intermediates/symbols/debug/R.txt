@@ -584,7 +584,7 @@ int id alertTitle 0x7f0b0049
 int id always 0x7f0b0032
 int id beginning 0x7f0b0030
 int id bottom 0x7f0b001c
-int id button 0x7f0b0088
+int id button 0x7f0b0087
 int id buttonPanel 0x7f0b0044
 int id cancel_action 0x7f0b0079
 int id center 0x7f0b001d
@@ -682,13 +682,13 @@ int id src_over 0x7f0b002a
 int id start 0x7f0b0024
 int id status_bar_latest_event_content 0x7f0b007a
 int id submit_area 0x7f0b0065
-int id t1_lv 0x7f0b0087
+int id t1_lv 0x7f0b0086
 int id tabMode 0x7f0b000d
 int id text 0x7f0b0082
 int id text2 0x7f0b0080
 int id textSpacerNoButtons 0x7f0b004d
 int id textView 0x7f0b0069
-int id textView2 0x7f0b0086
+int id textView2 0x7f0b0088
 int id time 0x7f0b007e
 int id title 0x7f0b0043
 int id title_template 0x7f0b0048
@@ -763,9 +763,9 @@ int layout simple_single_choice_list 0x7f030036
 int layout simple_textview 0x7f030037
 int layout simple_textview_center 0x7f030038
 int layout support_simple_spinner_dropdown_item 0x7f030039
-int layout tab1_layout 0x7f03003a
-int layout tab2_layout 0x7f03003b
-int layout tab3_layout 0x7f03003c
+int layout tab_layout_domain 0x7f03003a
+int layout tab_layout_isp 0x7f03003b
+int layout tab_layout_portscan 0x7f03003c
 int menu main 0x7f0c0000
 int string abc_action_bar_home_description 0x7f050000
 int string abc_action_bar_home_description_format 0x7f050001

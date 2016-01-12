@@ -1,15 +1,11 @@
 package com.nslookup;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -18,13 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import java.util.Locale;
-
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
-    SectionsPagerAdapter mSectionsPagerAdapter;
+    MySectionAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
     String url, isip;
-    TabActivity[] tabs = new TabActivity[3];
     String[][] result = new String[3][];
     String[] portNum = {"21", "22", "23", "25", "53", "80", "110", "111", "135", "139", "143", "389", "443", "445",
             "587", "1025", "1352", "1433", "1723", "3306", "3389", "5060", "5900", "6001", "8080"};
@@ -46,17 +39,13 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         url = intent.getStringExtra("url");
         Log.d("find url", url);
         isip = intent.getStringExtra("isip");
-        for (int i = 0; i < 3; i++) {
-            tabs[i] = new TabActivity();
-            if (i == 0)
-                tabs[i].setTabasISPtab();
-            else if (i == 1)
-                tabs[i].setTabasDomaintab();
-        }
+        MySectionAdapter.tab_isp = new TabFragment_ISP();
+        MySectionAdapter.tab_domain = new TabFragment_Domain();
+        MySectionAdapter.tab_portscan = new TabFragment_Portscan();
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#292933")));
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new MySectionAdapter(getSupportFragmentManager());
         actionBar.show();
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -90,9 +79,11 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     class JobDoneTest {
         Boolean[] finishjob;
+
         public JobDoneTest() {
             finishjob = new Boolean[]{true, false, false, false};
         }
+
         public synchronized void finished(int n) {
             Log.d("finish", Integer.toString(n));
             finishjob[n] = true;
@@ -102,14 +93,14 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
 
         private void doNextjob() {
-            tabs[0].addItem(result[0][0]);
-            tabs[0].setTextview("Search IP : " + url);
+            MySectionAdapter.tab_isp.addItem(result[0][0]);
+            MySectionAdapter.tab_isp.setTextview("Search IP : " + url);
             for (int i = 0; i < result[1].length; i++)
-                tabs[1].addItem(result[1][i]);
-            tabs[2].addItem(result[2][0]);
-            tabs[0].Update();
-            tabs[1].Update();
-            tabs[2].Update();
+                MySectionAdapter.tab_domain.addItem(result[1][i]);
+            MySectionAdapter.tab_portscan.addItem(result[2][0]);
+            MySectionAdapter.tab_isp.Update();
+            MySectionAdapter.tab_domain.Update();
+            MySectionAdapter.tab_portscan.Update();
             pd.dismiss();
             Log.d("Time", Long.toString(System.currentTimeMillis() - nStart));
         }
@@ -326,37 +317,5 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     @Override
     public void onTabUnselected(Tab arg0, FragmentTransaction arg1) {
-    }
-
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-        Context mContext;
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return tabs[position];
-        }
-
-        @Override
-        public int getCount() {
-            return 3;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
-                case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
-            }
-            return null;
-        }
     }
 }

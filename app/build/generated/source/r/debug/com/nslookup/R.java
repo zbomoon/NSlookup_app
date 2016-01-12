@@ -2230,7 +2230,7 @@ containing a value of this type.
         public static final int always=0x7f0b0032;
         public static final int beginning=0x7f0b0030;
         public static final int bottom=0x7f0b001c;
-        public static final int button=0x7f0b0088;
+        public static final int button=0x7f0b0087;
         public static final int buttonPanel=0x7f0b0044;
         public static final int cancel_action=0x7f0b0079;
         public static final int center=0x7f0b001d;
@@ -2328,13 +2328,13 @@ containing a value of this type.
         public static final int start=0x7f0b0024;
         public static final int status_bar_latest_event_content=0x7f0b007a;
         public static final int submit_area=0x7f0b0065;
-        public static final int t1_lv=0x7f0b0087;
+        public static final int t1_lv=0x7f0b0086;
         public static final int tabMode=0x7f0b000d;
         public static final int text=0x7f0b0082;
         public static final int text2=0x7f0b0080;
         public static final int textSpacerNoButtons=0x7f0b004d;
         public static final int textView=0x7f0b0069;
-        public static final int textView2=0x7f0b0086;
+        public static final int textView2=0x7f0b0088;
         public static final int time=0x7f0b007e;
         public static final int title=0x7f0b0043;
         public static final int title_template=0x7f0b0048;
@@ -2413,9 +2413,9 @@ containing a value of this type.
         public static final int simple_textview=0x7f030037;
         public static final int simple_textview_center=0x7f030038;
         public static final int support_simple_spinner_dropdown_item=0x7f030039;
-        public static final int tab1_layout=0x7f03003a;
-        public static final int tab2_layout=0x7f03003b;
-        public static final int tab3_layout=0x7f03003c;
+        public static final int tab_layout_domain=0x7f03003a;
+        public static final int tab_layout_isp=0x7f03003b;
+        public static final int tab_layout_portscan=0x7f03003c;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
