@@ -66,7 +66,7 @@ public class DomainInfoActivity extends AppCompatActivity{
                 Toast toast = Toast.makeText(getApplicationContext(), "검색 도중 오류가 발생했습니다.\n다시 시도해주세요", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
                 toast.show();
-                //finish();
+                finish();
             }
             int st = q.indexOf("dot_line.gif", 4000) + 836;
             int fi = q.indexOf("dot_line.gif", st + 100) - 75;

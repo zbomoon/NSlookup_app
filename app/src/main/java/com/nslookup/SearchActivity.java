@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -17,44 +18,38 @@ public class SearchActivity extends Activity {
     EditText txt_query;
     String str;
     boolean ipordm = false;
-    boolean protect_twice = false;
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if (requestCode == 1) {
-                protect_twice = false;
-            }
-        }
+    private void wrong() {
+        Toast toast = Toast.makeText(getApplicationContext(), "잘못된 형식의 도메인/IP 주소 입니다.", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+        toast.show();
     }
 
     private void nextActivity() {
-        if (protect_twice)
-            return;
         try {
             str = (new BackgroundTask()).execute(txt_query.getText().toString()).get();
+            if(str == null)
+                wrong();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        protect_twice = true;
     }
 
     class BackgroundTask extends AsyncTask<String, Void, String> {
         String ss;
-
-        private void wrong() {
-            Toast toast = Toast.makeText(getApplicationContext(), "잘못된 형식의 도메인 또는 IP 주소 입니다.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
-            toast.show();
-        }
 
         @Override
         protected String doInBackground(String... params) {
             int diff;
             ss = params[0];
             diff = isIp(ss);
+            if(diff == -1){
+                return null;
+            }
             if (ss.length() < 4) {
+                return null;
+            }
+            if (ss.contains(" ")) {
                 return null;
             }
             if (diff == 1) {
@@ -79,7 +74,6 @@ public class SearchActivity extends Activity {
                 return null;
             }
             if (ss == null) {
-                wrong();
                 return null;
             }
             Intent intent = new Intent(SearchActivity.this, MainActivity.class);
@@ -88,7 +82,7 @@ public class SearchActivity extends Activity {
                 intent.putExtra("isip", "1");
             else
                 intent.putExtra("isip", "2");
-            startActivityForResult(intent, 1);
+            startActivity(intent);
             return ss;
         }
 
@@ -102,6 +96,9 @@ public class SearchActivity extends Activity {
                 if (ch == '.') {
                     cnt++;
                 }
+            }
+            if(cnt == 0){
+                return -1;
             }
             if (!isNotIp) {
                 if (cnt != 3)
@@ -143,7 +140,8 @@ public class SearchActivity extends Activity {
         txt_query.setOnKeyListener(new OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    Log.d("btnClick","2");
                     nextActivity();
                 }
                 return false;
@@ -152,6 +150,7 @@ public class SearchActivity extends Activity {
         findViewById(R.id.imageButton1).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("btnClick","1");
                 nextActivity();
             }
         });

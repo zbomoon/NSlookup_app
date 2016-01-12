@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private void errorProcess() {
         Log.d("Error","proc");
-        Toast toast = Toast.makeText(getApplicationContext(), "검색 도중 오류가 발생했습니다.\n다시 시도해주세요", Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(getApplicationContext(), "검색 도중 오류가 발생했습니다.\n다시 시도해주세요", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
         finish();
@@ -296,13 +296,14 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
+
         //횟수 제한에 따른 디버깅용
         String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
         result[1] = new String[tmp.length];
         for (int i = 0; i < tmp.length; i++) {
             result[1][i] = tmp[i];
         }
-        /*
+/*
         String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").GetString();
 
         if (q.contains("Daily reverse IP check")) {
@@ -319,7 +320,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
         }*/
-    } 
+    }
     private void parsingPortscan() throws Exception {
         result[2] = new String[1];
         result[2][0] = "";

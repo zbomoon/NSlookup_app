@@ -6,7 +6,7 @@
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="320dp"
+        android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"

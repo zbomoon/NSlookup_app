@@ -1,9 +1,9 @@
 package com.nslookup;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
+        import android.app.Activity;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.os.Handler;
 
 public class IntroActivity extends Activity {
     @Override
@@ -18,6 +18,6 @@ public class IntroActivity extends Activity {
                 startActivity(intent);
                 finish();
             }
-        }, 1000);
+        }, 3000);
     }
 }

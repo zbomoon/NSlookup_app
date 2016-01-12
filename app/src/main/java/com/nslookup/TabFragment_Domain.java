@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -77,10 +79,22 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
                 break;
             case MotionEvent.ACTION_UP:
                 int id = mListView.getCheckedItemPosition();
+                if (id == -1) {
+                    Toast toast = Toast.makeText(this.getContext(), "검색할 도메인을 선택해 주세요!", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                    return true;
+                }
                 view = (Button) v;
                 view.getBackground().clearColorFilter();
                 view.invalidate();
                 String ss = mListView.getItemAtPosition(id).toString();
+                if (ss.contains("해당")) {
+                    Toast toast = Toast.makeText(this.getContext(), "검색할 수 없습니다.", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                    return true;
+                }
                 String toastMessage = ss + " is selected.";
                 Handler handler = new Handler();
                 handler.post(new intentDomainInfo(ss));
