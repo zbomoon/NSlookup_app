@@ -32,7 +32,7 @@ public class TabFragment_Portscan extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.tab_layout_portscan, null);
         mListView = (ListView) mView.findViewById(R.id.t1_lv);
-        m_Adapter = new ArrayAdapter<String>(mView.getContext(), R.layout.simple_textview, items);
+        m_Adapter = new ArrayAdapter<String>(mView.getContext(), R.layout.simple_textview_portscan, items);
         mListView.setAdapter(m_Adapter);
         return mView;
     }

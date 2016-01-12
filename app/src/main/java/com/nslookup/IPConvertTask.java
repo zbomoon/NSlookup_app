@@ -1,7 +1,6 @@
 package com.nslookup;
 
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 
 class IPConvertTask {
@@ -11,19 +10,15 @@ class IPConvertTask {
         domain = d;
     }
 
-    public String Convert() {
+    public String Convert() throws Exception{
         InetAddress inetAddr;
         String ss = "";
-        try {
-            inetAddr = InetAddress.getByName(domain);
-            byte[] addr = inetAddr.getAddress();
-            for (int i = 0; i < addr.length; i++) {
-                if (i > 0)
-                    ss += ".";
-                ss += addr[i] & 0xFF;
-            }
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
+        inetAddr = InetAddress.getByName(domain);
+        byte[] addr = inetAddr.getAddress();
+        for (int i = 0; i < addr.length; i++) {
+            if (i > 0)
+                ss += ".";
+            ss += addr[i] & 0xFF;
         }
         return ss;
     }

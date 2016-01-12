@@ -22,7 +22,7 @@ public class MySectionAdapter extends FragmentPagerAdapter {
         this.fm = fm;
     }
 
-    public void set_DomainInfo_tab(Boolean t, String s) { 
+    public void set_DomainInfo_tab(Boolean t, String s) {
         isDomainInfo_second_frgment = t;
         this.url = s;
         Log.d("domain","true");

@@ -762,10 +762,11 @@ int layout select_dialog_singlechoice_material 0x7f030035
 int layout simple_single_choice_list 0x7f030036
 int layout simple_textview 0x7f030037
 int layout simple_textview_center 0x7f030038
-int layout support_simple_spinner_dropdown_item 0x7f030039
-int layout tab_layout_domain 0x7f03003a
-int layout tab_layout_isp 0x7f03003b
-int layout tab_layout_portscan 0x7f03003c
+int layout simple_textview_portscan 0x7f030039
+int layout support_simple_spinner_dropdown_item 0x7f03003a
+int layout tab_layout_domain 0x7f03003b
+int layout tab_layout_isp 0x7f03003c
+int layout tab_layout_portscan 0x7f03003d
 int menu main 0x7f0c0000
 int string abc_action_bar_home_description 0x7f050000
 int string abc_action_bar_home_description_format 0x7f050001

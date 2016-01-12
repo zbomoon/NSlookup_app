@@ -2412,10 +2412,11 @@ containing a value of this type.
         public static final int simple_single_choice_list=0x7f030036;
         public static final int simple_textview=0x7f030037;
         public static final int simple_textview_center=0x7f030038;
-        public static final int support_simple_spinner_dropdown_item=0x7f030039;
-        public static final int tab_layout_domain=0x7f03003a;
-        public static final int tab_layout_isp=0x7f03003b;
-        public static final int tab_layout_portscan=0x7f03003c;
+        public static final int simple_textview_portscan=0x7f030039;
+        public static final int support_simple_spinner_dropdown_item=0x7f03003a;
+        public static final int tab_layout_domain=0x7f03003b;
+        public static final int tab_layout_isp=0x7f03003c;
+        public static final int tab_layout_portscan=0x7f03003d;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

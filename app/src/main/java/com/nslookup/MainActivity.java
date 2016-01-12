@@ -319,7 +319,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
         }*/
-    }
+    } 
     private void parsingPortscan() throws Exception {
         result[2] = new String[1];
         result[2][0] = "";
