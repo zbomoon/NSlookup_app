@@ -296,14 +296,14 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
-
+/*
         //횟수 제한에 따른 디버깅용
         String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
         result[1] = new String[tmp.length];
         for (int i = 0; i < tmp.length; i++) {
             result[1][i] = tmp[i];
         }
-/*
+*/
         String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").GetString();
 
         if (q.contains("Daily reverse IP check")) {
@@ -319,7 +319,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             result[1] = new String[tmp.length];
             for (int i = 0; i < tmp.length; i++)
                 result[1][i] = tmp[i];
-        }*/
+        }
     }
     private void parsingPortscan() throws Exception {
         result[2] = new String[1];

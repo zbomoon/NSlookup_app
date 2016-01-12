@@ -40,12 +40,12 @@
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\content_domain_info.xml"
     },
     {
-        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
@@ -112,12 +112,20 @@
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_snackbar.xml"
     },
     {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_layout_domain.xml",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\tab_layout_domain.xml"
+    },
+    {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_domain_info.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\activity_domain_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_layout_isp.xml",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\tab_layout_isp.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
@@ -242,6 +250,10 @@
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_layout_portscan.xml",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\tab_layout_portscan.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
