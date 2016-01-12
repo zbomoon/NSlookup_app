@@ -12,7 +12,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
     MySectionAdapter mSectionsPagerAdapter;
@@ -79,9 +81,14 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     class JobDoneTest {
         Boolean[] finishjob;
+        Boolean errorOccured = false;
 
         public JobDoneTest() {
             finishjob = new Boolean[]{true, false, false, false};
+        }
+
+        public void setError(){
+            errorOccured = true;
         }
 
         public synchronized void finished(int n) {
@@ -89,7 +96,13 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             finishjob[n] = true;
             if (finishjob[0] == false || finishjob[1] == false || finishjob[2] == false || finishjob[3] == false)
                 return;
-            else doNextjob();
+            else{
+                if(errorOccured) {
+                    errorProcess();
+                    return;
+                }
+                doNextjob();
+            }
         }
 
         private void doNextjob() {
@@ -106,7 +119,16 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
     }
 
+    private void errorProcess() {
+        Log.d("Error","proc");
+        Toast toast = Toast.makeText(getApplicationContext(), "검색 도중 오류가 발생했습니다.\n다시 시도해주세요", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+        toast.show();
+        finish();
+    }
+
     class IPConvert_thread extends AsyncTask<String, Void, String> {
+        Boolean errorOccured = false;
         @Override
         protected String doInBackground(String... params) {
             if (isip.equals("2")) {
@@ -114,6 +136,8 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                     url = new IPConvertTask(url).Convert();
                 } catch (Exception e) {
                     e.printStackTrace();
+                    errorOccured = true;
+                    jdt.setError();
                 }
             }
             return null;
@@ -122,6 +146,10 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         @Override
         protected void onPostExecute(String res) {
             super.onPostExecute(res);
+            if(errorOccured) {
+                errorProcess();
+                return;
+            }
             (new ISPparsing_thread()).execute(url);
             (new Domainparsing_thread()).execute(url);
             (new PortScanparsing_thread()).execute(url);
@@ -135,6 +163,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 parsingIsp();
             } catch (Exception e) {
                 e.printStackTrace();
+                jdt.setError();
             }
             return null;
         }
@@ -153,6 +182,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 parsingDomain();
             } catch (Exception e) {
                 e.printStackTrace();
+                jdt.setError();
             }
             return null;
         }
@@ -171,6 +201,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 parsingPortscan();
             } catch (Exception e) {
                 e.printStackTrace();
+                jdt.setError();
             }
             return null;
         }
@@ -196,7 +227,12 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     private void parsingIsp() throws Exception {
         result[0] = new String[1];
         String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url).GetString();
+        if(q == null){
+            jdt.setError();
+            return;
+        }
         int x, y;
+        Log.d("here","come");
         if (q.contains("No match!!")) {
             q = "해당 IP를 찾을 수 없습니다.";
             result[0][0] = q;
@@ -260,7 +296,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private void parsingDomain() throws Exception {
         int x;
-
         //횟수 제한에 따른 디버깅용
         String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
         result[1] = new String[tmp.length];
@@ -285,7 +320,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 result[1][i] = tmp[i];
         }*/
     }
-
     private void parsingPortscan() throws Exception {
         result[2] = new String[1];
         result[2][0] = "";
