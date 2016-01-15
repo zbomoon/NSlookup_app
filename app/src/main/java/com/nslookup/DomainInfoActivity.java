@@ -3,8 +3,10 @@ package com.nslookup;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -13,9 +15,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class DomainInfoActivity extends AppCompatActivity{
+public class DomainInfoActivity extends AppCompatActivity {
     Intent intent;
     String url;
+    ActionBar actionBar;
     TextView mTextView;
     ProgressDialog pd;
     View mView;
@@ -24,12 +27,14 @@ public class DomainInfoActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domain_info);
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032137")));
 
         pd = new ProgressDialog(this);
         intent = getIntent();
         url = intent.getStringExtra("url");
         mTextView = (TextView) findViewById(R.id.textView);
-        mTextView.setTextColor(Color.parseColor("#FFFFFF"));
+        mTextView.setTextColor(Color.parseColor("#ff000000"));
         setTitle(url);
         try {
         } catch (Exception e) {
@@ -38,12 +43,13 @@ public class DomainInfoActivity extends AppCompatActivity{
         new DomainInfo_thread().execute();
     }
 
-    public void setUrl(String s){
+    public void setUrl(String s) {
         url = s;
     }
 
     class DomainInfo_thread extends AsyncTask<Integer, Void, Void> {
         String q;
+        boolean err = false;
 
         @Override
         protected void onPreExecute() {
@@ -61,12 +67,16 @@ public class DomainInfoActivity extends AppCompatActivity{
             if (url.substring(0, 3).equals("www"))
                 url = url.substring(4);
             Log.d("urlurl", url);
-            q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url).GetString();
+            try {
+                q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url).GetString();
+            } catch (Exception e){
+                e.printStackTrace();
+                err = true;
+                return null;
+            }
             if (q == null) {
-                Toast toast = Toast.makeText(getApplicationContext(), "검색 도중 오류가 발생했습니다.\n다시 시도해주세요", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
-                toast.show();
-                finish();
+                err = true;
+                return null;
             }
             int st = q.indexOf("dot_line.gif", 4000) + 836;
             int fi = q.indexOf("dot_line.gif", st + 100) - 75;
@@ -77,6 +87,12 @@ public class DomainInfoActivity extends AppCompatActivity{
         @Override
         protected void onPostExecute(Void res) {
             super.onPostExecute(res);
+            if(err){
+                Toast toast = Toast.makeText(getApplicationContext(), "검색 도중 오류가 발생했습니다.\n다시 시도해주세요", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                toast.show();
+                finish();
+            }
             if (q.indexOf("접속에 실패") != -1)
                 q = "찾을 수 없는 도메인입니다!";
             mTextView.setText(q);

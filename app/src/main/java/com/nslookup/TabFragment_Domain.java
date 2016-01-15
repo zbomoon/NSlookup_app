@@ -64,7 +64,7 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
     }
 
     public void setTextview(String str) {
-        ((TextView) mView.findViewById(R.id.textView2)).setTextColor(getResources().getColor(R.color.white));
+        ((TextView) mView.findViewById(R.id.textView2)).setTextColor(getResources().getColor(R.color.black));
         ((TextView) mView.findViewById(R.id.textView2)).setText(str);
     }
 

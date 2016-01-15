@@ -25,45 +25,45 @@ class MyDownloadTask {
         this.port_para = b;
     }
 
-    public String GetString() {
+    public String GetString() throws Exception {
         URL url;
         HttpURLConnection conn;
         BufferedReader rd;
         BufferedWriter wd;
         String line;
         String result = "";
-        try {
-            url = new URL(urlToRead);
-            conn = (HttpURLConnection) url.openConnection();
-            conn.setDoInput(true);
-            conn.setDoOutput(true);
-            conn.setRequestMethod("POST");
-            if (port_para)
-                conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-            else
-                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-            conn.setRequestProperty("http.protocol.version", "HTTP/1.1");
-            wd = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
-            wd.write(postParm);
-            wd.flush();
-            wd.close();
-            if (conn.getErrorStream() != null) {
-                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
-                String ss;
-                while ((ss = br.readLine()) != null) {
-                    Log.d("errors", ss);
-                }
+        url = new URL(urlToRead);
+        conn = (HttpURLConnection) url.openConnection();
+        conn.setConnectTimeout(5000);
+        conn.setReadTimeout(6000);
+        conn.setDoInput(true);
+        conn.setDoOutput(true);
+        conn.setRequestMethod("POST");
+        if (port_para)
+            conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+        else
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        conn.setRequestProperty("http.protocol.version", "HTTP/1.1");
+        wd = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
+        wd.write(postParm);
+        wd.flush();
+        wd.close();
+        if (conn.getErrorStream() != null) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+            String ss;
+            while ((ss = br.readLine()) != null) {
+                Log.d("errors", ss);
             }
-
-            rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            while ((line = rd.readLine()) != null) {
-                result += line + "\n";
-            }
-            rd.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
         }
+
+        rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        while ((line = rd.readLine()) != null) {
+            result += line + "\n";
+        }
+        if(result == null){
+            throw new Exception();
+        }
+        rd.close();
         return result;
     }
 }

@@ -51,7 +51,7 @@ public class TabFragment_ISP extends Fragment {
     }
 
     public void setTextview(String str) {
-        ((TextView) mView.findViewById(R.id.textView2)).setTextColor(getResources().getColor(R.color.white));
+        ((TextView) mView.findViewById(R.id.textView2)).setTextColor(getResources().getColor(R.color.black));
         ((TextView) mView.findViewById(R.id.textView2)).setText(str);
     }
 }

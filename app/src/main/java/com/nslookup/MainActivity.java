@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         MySectionAdapter.tab_portscan = new TabFragment_Portscan();
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#292933")));
+        actionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#032137")));
         mSectionsPagerAdapter = new MySectionAdapter(getSupportFragmentManager());
         actionBar.show();
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         return str.split("\"");
     }
 
-    private void parsingDomain() throws Exception {
+    private void parsingDomain(){
         int x;
 /*
         //횟수 제한에 따른 디버깅용
@@ -304,11 +304,61 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             result[1][i] = tmp[i];
         }
 */
-        String q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").GetString();
-
+        Boolean youget = true;
+        String q = "";
+        try {
+            //q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").GetString();
+            q = " {\"status\":\"Success\", \"resultsMethod\":\"database\", \"lastScrape\":\"2015-12-02 06:36:11\", \"domainCount\":\"726\", \"remoteAddress\":\"199.59.243.120\", \"remoteIpAddress\":\"199.59.243.120\", \"domainArray\":[[\"0-a.com\", \"\"], [\"000webhost.org\", \"\"], [\"007guard.com\", \"\"], [\"0098.0xhost.net\", \"\"], [\"01.land4persian.com\", \"\"], [\"029.29ol.com\", \"\"], [\"02kmky1xgzbmsdfx.com\", \"\"], [\"0interestcreditcard.net\", \"\"], [\"1000dhamaka.com\", \"\"], [\"1000orgasmos.com\", \"\"], [\"12371.com\", \"\"], [\"123buzz.net\", \"\"], [\"12chan.org\", \"\"], [\"130220lc.10001mb.com\", \"\"], [\"140.206.83.19.cn\", \"\"], [\"18ie.com\", \"\"], [\"19871.com\", \"\"], [\"1weby.com\", \"\"], [\"222988.com\", \"\"], [\"24mb.com\", \"\"], [\"24n.org\", \"\"], [\"26th.com\", \"\"], [\"2y2z.com\", \"\"], [\"3055.org\", \"\"], [\"360.gigfa.com\", \"\"], [\"3cks.com\", \"\"], [\"3skypephone.com\", \"\"], [\"41840.aceboard.fr\", \"\"], [\"4ko.net\", \"\"], [\"4lx.com\", \"\"], [\"4sequence.com\", \"\"], [\"50pm.net\", \"\"], [\"51361.y5y5.info\", \"\"], [\"51avi.com\", \"\"], [\"55bbb.com\", \"\"], [\"58407.bodis.com\", \"\"], [\"69tv.com\", \"\"], [\"6groupon.com\", \"\"], [\"7000tv.com\", \"\"], [\"700megs.com\", \"\"], [\"723.qudoushuang.com\", \"\"], [\"7mintosuccess.com\", \"\"], [\"7mirror.rh9.in\", \"\"], [\"7ro.info\", \"\"], [\"7ye.cc\", \"\"], [\"8850taobao.com\", \"\"], [\"9188.yun12.com\", \"\"], [\"95kvartal.com\", \"\"], [\"987wl.com\", \"\"], [\"a.im404.com\", \"\"], [\"aaadx.com\", \"\"], [\"aarroyalresidency.com\", \"\"], [\"abdullah.info\", \"\"], [\"acaphapram.cuccfree.com\", \"\"], [\"actioncycle.in\", \"\"], [\"addpost.com\", \"\"], [\"ademaydiner.22web.org\", \"\"], [\"ademdurak.com\", \"\"], [\"admyntra.in\", \"\"], [\"adwords-direct.com\", \"\"], [\"ah56.totalh.net\", \"\"], [\"aiyi8.com\", \"\"], [\"alamazagak.eb2a.com\", \"\"], [\"albert5.i34u.com\", \"\"], [\"alcoyana.com\", \"\"], [\"alexa.xueaddddxnet-www.zhjade.com\", \"\"], [\"alexiawebapp.com\", \"\"], [\"alicun.com\", \"\"], [\"alkhalas.net\", \"\"], [\"alldogbreeds.000space.com\", \"\"], [\"allmode.com\", \"\"], [\"alluscamgirls.com\", \"\"], [\"alproplus.ru\", \"\"], [\"alraytworeq.0fees.net\", \"\"], [\"alsayde.com\", \"\"], [\"altoia.com\", \"\"], [\"amazongiftcardgenerators.com\", \"\"], [\"amefcu.org\", \"\"], [\"amoory.co\", \"\"], [\"amoory.net\", \"\"], [\"anchorminot.com\", \"\"], [\"andychary143.com\", \"\"], [\"ani1me.eb2a.com\", \"\"], [\"animedownloadonline.com\", \"\"], [\"antiguoscueros.com\", \"\"], [\"apmed.pl\", \"\"], [\"apriljuggs.com\", \"\"], [\"aranta.in\", \"\"], [\"arfi.zheyangdang.com\", \"\"], [\"article99.com\", \"\"], [\"aspect.capital\", \"\"], [\"auctionhints.com\", \"\"], [\"aunt.xxx\", \"1\"], [\"autocraftindustries.in\", \"\"], [\"avatarcasino.com\", \"\"], [\"avonhost.com\", \"\"], [\"b5b.net\", \"\"], [\"b9i.net\", \"\"], [\"baixali.com.br\", \"\"], [\"balagadoom.0fees.net\", \"\"], [\"bankff.com\", \"\"], [\"batikmurahnya.com\", \"\"], [\"bbm.net\", \"\"], [\"bbnetwork.com\", \"\"], [\"bbs.se8x.cc\", \"\"], [\"bbs.ty91.com\", \"\"], [\"bbs.weshareit.net\", \"\"], [\"bcw.in\", \"\"], [\"bdmp3song.com\", \"\"], [\"be.my.bb.com\", \"\"], [\"beatsbydre.co.in\", \"\"], [\"become.com\", \"\"], [\"belive.uk.tn\", \"\"], [\"benaught.com\", \"\"], [\"beta.facebookc.com\", \"\"], [\"bezaafe.com\", \"\"], [\"bikegrass.biz\", \"\"], [\"bilpris.nu\", \"\"], [\"bing.com\", \"\"], [\"bisep.edu.pk\", \"\"], [\"bjpudupi.com\", \"\"], [\"blagoveschenski.byethost33.com\", \"\"], [\"blizoo.com\", \"\"], [\"blogdasgalinhas.com\", \"\"], [\"blogstars.com.br\", \"\"], [\"board.gooseed.com\", \"\"], [\"booksamillon.com\", \"\"], [\"boothedogs.com\", \"\"], [\"botinkipyablf.zh.md\", \"\"], [\"brabackless.my-php.net\", \"\"], [\"burger-imperia.com\", \"\"], [\"bvick.qhealthbeauty.com\", \"\"], [\"bytewizecomputers.com\", \"\"], [\"c9k.net\", \"\"], [\"ca8.net\", \"\"], [\"cangbaogejy.com\", \"\"], [\"carinsurancecomnewyork.com\", \"\"], [\"cascanolahack.org\", \"\"], [\"cashinonmail.com\", \"\"], [\"ce.cc\", \"\"], [\"cgi.godsview.com\", \"\"], [\"cgiscriptmarket.com\", \"\"], [\"chaussuresnmax.fr\", \"\"], [\"checkproxy.com\", \"\"], [\"chengqikd.com\", \"\"], [\"chicagodowntownhotels.net\", \"\"], [\"chirurgie-bariatrique.aceboard.fr\", \"\"], [\"chronosfire.com.ar\", \"\"], [\"cipha.org\", \"\"], [\"classifieds.indiawebsite.in\", \"\"], [\"clix.com\", \"\"], [\"cnapest46.eb2a.com\", \"\"], [\"cochacks.xyz\", \"\"], [\"comcadt.net\", \"\"], [\"comicp.xgmm.com\", \"\"], [\"comingsoondomain.com\", \"\"], [\"conditionzebra.com\", \"\"], [\"cooktown.com\", \"\"], [\"coolmmathgames.com\", \"\"], [\"cr7.net\", \"\"], [\"crosereviews.podserver.info\", \"\"],";
+        }catch (Exception e){
+            e.printStackTrace();
+            try {
+                youget = false;
+                q = new MyDownloadTask("http://www.ipfingerprints.com/scripts/getReverseIP.php", "remoteHost=" + url).GetString();
+            }catch(Exception e0){
+                e0.printStackTrace();
+            }
+        }
+        Log.d("aa",q);
+        if(!youget) {
+            Log.d("abc","힛");
+            q = q.substring(30, q.length()-2);
+            Log.d("abc",q);
+            while (true) {
+                int a, b;
+                if ((a = q.indexOf('<')) != -1) {
+                    if ((b = q.indexOf('>')) != -1) {
+                        if (a > 0) q = q.substring(0, a) + q.substring(b + 1);
+                        else q = q.substring(b + 1);
+                    } else Log.d("fatal", "err");
+                } else break;
+            }
+            Log.d("abc",q);
+            String[] tmp = q.split("www");
+            result[1] = new String[tmp.length];
+            for (int i = 0; i < tmp.length; i++)
+                result[1][i] = tmp[i].substring(1);
+            return;
+        }
         if (q.contains("Daily reverse IP check")) {
-            result[1] = new String[1];
-            result[1][0] = "IP reverse 기능 1일 이용 횟수가 초과되었습니다!";
+            //result[1] = new String[1];
+            //result[1][0] = "IP reverse 기능 1일 이용 횟수가 초과되었습니다!";
+            Log.d("abc","힛");
+            q = q.substring(30, q.length()-2);
+            Log.d("abc",q);
+            while (true) {
+                int a, b;
+                if ((a = q.indexOf('<')) != -1) {
+                    if ((b = q.indexOf('>')) != -1) {
+                        if (a > 0) q = q.substring(0, a) + q.substring(b + 1);
+                        else q = q.substring(b + 1);
+                    } else Log.d("fatal", "err");
+                } else break;
+            }
+            Log.d("abc",q);
+            String[] tmp = q.split("www");
+            result[1] = new String[tmp.length];
+            for (int i = 0; i < tmp.length; i++)
+                result[1][i] = tmp[i].substring(1);
             return;
         } else if (q.contains("No web sites")) {
             result[1] = new String[1];
@@ -316,9 +366,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             return;
         } else if ((x = q.indexOf("Array")) != -1) {
             String[] tmp = DomainSplit(q);
-            result[1] = new String[tmp.length];
-            for (int i = 0; i < tmp.length; i++)
-                result[1][i] = tmp[i];
+            result[1] = new String[tmp.length-1];
+            for (int i = 0; i < tmp.length-1; i++)
+                result[1][i] = tmp[i+1];
         }
     }
     private void parsingPortscan() throws Exception {

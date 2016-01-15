@@ -141,7 +141,7 @@ public class SearchActivity extends Activity {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_ENTER) {
-                    Log.d("btnClick","2");
+                    Log.d("btnClick", "2");
                     nextActivity();
                 }
                 return false;
@@ -150,7 +150,7 @@ public class SearchActivity extends Activity {
         findViewById(R.id.imageButton1).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("btnClick","1");
+                Log.d("btnClick", "1");
                 nextActivity();
             }
         });
