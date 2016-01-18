@@ -8,10 +8,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +19,6 @@ public class DomainInfoActivity extends AppCompatActivity {
     ActionBar actionBar;
     TextView mTextView;
     ProgressDialog pd;
-    View mView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +33,7 @@ public class DomainInfoActivity extends AppCompatActivity {
         mTextView = (TextView) findViewById(R.id.textView);
         mTextView.setTextColor(Color.parseColor("#ff000000"));
         setTitle(url);
-        try {
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         new DomainInfo_thread().execute();
-    }
-
-    public void setUrl(String s) {
-        url = s;
     }
 
     class DomainInfo_thread extends AsyncTask<Integer, Void, Void> {
@@ -66,7 +55,6 @@ public class DomainInfoActivity extends AppCompatActivity {
         protected Void doInBackground(Integer... params) {
             if (url.substring(0, 3).equals("www"))
                 url = url.substring(4);
-            Log.d("urlurl", url);
             try {
                 q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url, 6).GetString();
             } catch (Exception e){
@@ -93,7 +81,7 @@ public class DomainInfoActivity extends AppCompatActivity {
                 toast.show();
                 finish();
             }
-            if (q.indexOf("접속에 실패") != -1)
+            if (q.contains("접속에 실패"))
                 q = "찾을 수 없는 도메인입니다!";
             mTextView.setText(q);
             pd.dismiss();

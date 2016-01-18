@@ -16,11 +16,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class TabFragment_Server extends Fragment {
-    private FloatingActionButton mFloatingButton;
     View mView;
     TableLayout tb;
     ArrayList<String>[] items;
-    String url = "";
 
     public TabFragment_Server() {
         items = (ArrayList<String>[]) new ArrayList[4];
@@ -39,9 +37,9 @@ public class TabFragment_Server extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        FloatingActionButton mFloatingButton;
         mView = inflater.inflate(R.layout.tab_layout_server, null);
         tb = (TableLayout) mView.findViewById(R.id.tableLayout);
-
         mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
         mFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override

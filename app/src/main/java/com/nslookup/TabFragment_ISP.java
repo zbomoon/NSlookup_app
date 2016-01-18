@@ -16,10 +16,8 @@ import java.util.ArrayList;
 public class TabFragment_ISP extends Fragment {
     private ArrayAdapter<String> m_Adapter;
     View mView;
-    private FloatingActionButton mFloatingButton;
     ListView mListView;
     ArrayList<String> items;
-    String url = "";
 
     public TabFragment_ISP() {
         items = new ArrayList<String>();
@@ -34,6 +32,7 @@ public class TabFragment_ISP extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        FloatingActionButton mFloatingButton;
         mView = inflater.inflate(R.layout.tab_layout_isp, null);
         mListView = (ListView) mView.findViewById(R.id.t1_lv);
         mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);

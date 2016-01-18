@@ -63,9 +63,6 @@ class MyDownloadTask {
         while ((line = rd.readLine()) != null) {
             result += line + "\n";
         }
-        if (result == null) {
-            throw new Exception();
-        }
         rd.close();
         return result;
     }

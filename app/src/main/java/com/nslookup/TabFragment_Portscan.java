@@ -16,11 +16,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class TabFragment_Portscan extends Fragment {
-    private FloatingActionButton mFloatingButton;
     View mView;
     ArrayList<String>[] items;
     TableLayout tb;
-    String url = "";
 
     public TabFragment_Portscan() {
         items = (ArrayList<String>[]) new ArrayList[3];
@@ -38,9 +36,9 @@ public class TabFragment_Portscan extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        FloatingActionButton mFloatingButton;
         mView = inflater.inflate(R.layout.tab_layout_portscan, null);
         tb = (TableLayout) mView.findViewById(R.id.tableLayout2);
-
         mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
         mFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override

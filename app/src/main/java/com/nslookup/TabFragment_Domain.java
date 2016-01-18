@@ -7,7 +7,6 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -23,13 +22,10 @@ import java.util.ArrayList;
 
 public class TabFragment_Domain extends Fragment implements View.OnTouchListener {
     private ArrayAdapter<String> m_Adapter;
-    private FloatingActionButton mFloatingButton;
     View mView;
     ListView mListView;
     Button mButton;
     ArrayList<String> items;
-    String url = "";
-    Button btnSearchDomaininfo;
 
     public TabFragment_Domain() {
         items = new ArrayList<String>();
@@ -44,6 +40,7 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        FloatingActionButton mFloatingButton;
         mView = inflater.inflate(R.layout.tab_layout_domain, null);
         mListView = (ListView) mView.findViewById(R.id.t1_lv);
         mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
@@ -102,13 +99,12 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
                 view.getBackground().clearColorFilter();
                 view.invalidate();
                 String ss = mListView.getItemAtPosition(id).toString();
-                if (ss == "" || ss.contains("해당")) {
+                if (ss.equals("") || ss.contains("해당")) {
                     Toast toast = Toast.makeText(this.getContext(), "검색할 수 없습니다.", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
                     return true;
                 }
-                String toastMessage = ss + " is selected.";
                 Handler handler = new Handler();
                 handler.post(new intentDomainInfo(ss));
         }
@@ -127,7 +123,6 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
             long nStart = System.currentTimeMillis();
             Intent intent = new Intent(TabFragment_Domain.this.getContext(), DomainInfoActivity.class);
             intent.putExtra("url", str);
-            Log.d("Time1", Long.toString(System.currentTimeMillis() - nStart));
             startActivity(intent);
         }
     }
