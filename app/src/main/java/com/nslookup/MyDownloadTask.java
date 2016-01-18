@@ -13,16 +13,19 @@ class MyDownloadTask {
     String urlToRead;
     String postParm;
     Boolean port_para = false;
+    int time;
 
-    public MyDownloadTask(String urlToRead, String postParm) {
+    public MyDownloadTask(String urlToRead, String postParm, int time) {
         this.urlToRead = urlToRead;
         this.postParm = postParm;
+        this.time = time;
     }
 
-    public MyDownloadTask(String urlToRead, String postParm, Boolean b) {
+    public MyDownloadTask(String urlToRead, String postParm, int time, Boolean b) {
         this.urlToRead = urlToRead;
         this.postParm = postParm;
         this.port_para = b;
+        this.time = time;
     }
 
     public String GetString() throws Exception {
@@ -34,8 +37,8 @@ class MyDownloadTask {
         String result = "";
         url = new URL(urlToRead);
         conn = (HttpURLConnection) url.openConnection();
-        conn.setConnectTimeout(5000);
-        conn.setReadTimeout(6000);
+        conn.setConnectTimeout(time * 1000);
+        conn.setReadTimeout(time * 1000);
         conn.setDoInput(true);
         conn.setDoOutput(true);
         conn.setRequestMethod("POST");
@@ -60,7 +63,7 @@ class MyDownloadTask {
         while ((line = rd.readLine()) != null) {
             result += line + "\n";
         }
-        if(result == null){
+        if (result == null) {
             throw new Exception();
         }
         rd.close();

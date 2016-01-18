@@ -37,7 +37,7 @@
         android:id="@+id/mFloatingActionButton"
         android:layout_width="200dp"
         android:layout_height="142dp"
-        android:src="@android:drawable/ic_menu_add"
+        android:src="@android:drawable/ic_menu_help"
         fab:fab_colorNormal="#009688"
         fab:fab_colorPressed="#26a69a"
         android:layout_gravity="bottom|right"

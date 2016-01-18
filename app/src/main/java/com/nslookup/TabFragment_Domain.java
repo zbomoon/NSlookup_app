@@ -1,5 +1,7 @@
 package com.nslookup;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 
 public class TabFragment_Domain extends Fragment implements View.OnTouchListener {
     private ArrayAdapter<String> m_Adapter;
+    private FloatingActionButton mFloatingButton;
     View mView;
     ListView mListView;
     Button mButton;
@@ -43,16 +46,26 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.tab_layout_domain, null);
         mListView = (ListView) mView.findViewById(R.id.t1_lv);
+        mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
         mListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         m_Adapter = new ArrayAdapter<String>(mView.getContext(), R.layout.simple_single_choice_list, items);
         mListView.setAdapter(m_Adapter);
         mButton = (Button) mView.findViewById(R.id.button);
         mButton.setOnTouchListener(this);
+        mFloatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder ab = new AlertDialog.Builder(TabFragment_Domain.this.getActivity()).setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                ab.setMessage("IP에 연결된 도메인 조회 결과입니다.\n사이트에 따라 정상적 조회가 되지 않을수도 있습니다.\n원하는 IP를 선택 후 도메인 정보를 추가로 검색할 수 있습니다.");
+                ab.show();
+            }
+        });
         return mView;
-    }
-
-    public ListView getListView() {
-        return mListView;
     }
 
     public void Update() {
@@ -89,7 +102,7 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
                 view.getBackground().clearColorFilter();
                 view.invalidate();
                 String ss = mListView.getItemAtPosition(id).toString();
-                if (ss.contains("해당")) {
+                if (ss == "" || ss.contains("해당")) {
                     Toast toast = Toast.makeText(this.getContext(), "검색할 수 없습니다.", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();

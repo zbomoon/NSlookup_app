@@ -2,18 +2,21 @@ package com.nslookup;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SearchActivity extends Activity {
+public class SearchActivity extends Activity implements View.OnTouchListener {
     boolean first = false;
     EditText txt_query;
     String str;
@@ -147,12 +150,24 @@ public class SearchActivity extends Activity {
                 return false;
             }
         });
-        findViewById(R.id.imageButton1).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("btnClick", "1");
+        findViewById(R.id.button2).setOnTouchListener(this);
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        Button view;
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                view = (Button) v;
+                view.getBackground().setColorFilter(0x88000000, PorterDuff.Mode.SRC_ATOP);
+                v.invalidate();
+                break;
+            case MotionEvent.ACTION_UP:
+                view = (Button) v;
+                view.getBackground().setColorFilter(0x00000000, PorterDuff.Mode.SRC_ATOP);
+                v.invalidate();
                 nextActivity();
-            }
-        });
+        }
+        return true;
     }
 }

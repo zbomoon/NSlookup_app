@@ -1,5 +1,7 @@
 package com.nslookup;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 public class TabFragment_ISP extends Fragment {
     private ArrayAdapter<String> m_Adapter;
     View mView;
+    private FloatingActionButton mFloatingButton;
     ListView mListView;
     ArrayList<String> items;
     String url = "";
@@ -33,13 +36,23 @@ public class TabFragment_ISP extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.tab_layout_isp, null);
         mListView = (ListView) mView.findViewById(R.id.t1_lv);
+        mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
         m_Adapter = new ArrayAdapter<String>(mView.getContext(), R.layout.simple_textview, items);
         mListView.setAdapter(m_Adapter);
+        mFloatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder ab = new AlertDialog.Builder(TabFragment_ISP.this.getActivity()).setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                ab.setMessage("해당 IP에 대한 ISP 정보입니다.");
+                ab.show();
+            }
+        });
         return mView;
-    }
-
-    public ListView getListView() {
-        return mListView;
     }
 
     public void Update() {

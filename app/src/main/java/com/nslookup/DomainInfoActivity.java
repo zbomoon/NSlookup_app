@@ -68,7 +68,7 @@ public class DomainInfoActivity extends AppCompatActivity {
                 url = url.substring(4);
             Log.d("urlurl", url);
             try {
-                q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url).GetString();
+                q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url, 6).GetString();
             } catch (Exception e){
                 e.printStackTrace();
                 err = true;

@@ -28,7 +28,7 @@
         android:layout_height="133dp"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        android:src="@android:drawable/ic_menu_add"
+        android:src="@android:drawable/ic_menu_help"
         fab:fab_colorNormal="#009688"
         fab:fab_colorPressed="#26a69a" />
 </FrameLayout>

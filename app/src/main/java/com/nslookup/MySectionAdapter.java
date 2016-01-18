@@ -15,6 +15,7 @@ public class MySectionAdapter extends FragmentPagerAdapter {
     public static TabFragment_ISP tab_isp = null;
     public static TabFragment_Domain tab_domain = null;
     public static TabFragment_Portscan tab_portscan = null;
+    public static TabFragment_Server tab_server = null;
     private FragmentManager fm;
     private Fragment changeFragment;
     public MySectionAdapter(FragmentManager fm) {
@@ -36,6 +37,8 @@ public class MySectionAdapter extends FragmentPagerAdapter {
             case 1:
                 return tab_domain;
             case 2:
+                return tab_server;
+            case 3:
                 return tab_portscan;
         }
         return null;
@@ -43,7 +46,7 @@ public class MySectionAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
     @Override
@@ -55,6 +58,8 @@ public class MySectionAdapter extends FragmentPagerAdapter {
             case 1:
                 return "Domain".toUpperCase(l);
             case 2:
+                return "Server Info".toUpperCase(l);
+            case 3:
                 return "Portscan".toUpperCase(l);
         }
         return null;
