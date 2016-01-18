@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             MySectionAdapter.tab_isp.setTextview("Search IP : " + url);
             for (int i = 0; i < result[1].length; i++)
                 MySectionAdapter.tab_domain.addItem(result[1][i]);
-            MySectionAdapter.tab_portscan.addItem(result[3][0]);
             MySectionAdapter.tab_isp.Update();
             MySectionAdapter.tab_domain.Update();
             MySectionAdapter.tab_server.Update();
@@ -285,7 +284,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private void parsingIsp() throws Exception {
         result[0] = new String[1];
-        String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url, 5).GetString();
+        String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url, 10).GetString();
         if (q == null) {
             jdt.setError();
             return;
@@ -353,10 +352,10 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         return str.split("\"");
     }
 
-    private void parsingDomain2(){
+    private void parsingDomain2() {
         String q = "";
         try {
-            q = new MyDownloadTask("http://www.ipfingerprints.com/scripts/getReverseIP.php", "remoteHost=" + url, 5).GetString();
+            q = new MyDownloadTask("http://www.ipfingerprints.com/scripts/getReverseIP.php", "remoteHost=" + domain, 5).GetString();
         } catch (Exception e0) {
             e0.printStackTrace();
         }
@@ -373,45 +372,30 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             } else break;
         }
         Log.d("abc", q);
-        if(q.charAt(q.length()-1) == '\"')
-            q = q.substring(0, q.length()-1);
+        if (q.charAt(q.length() - 1) == '\"')
+            q = q.substring(0, q.length() - 1);
         String[] tmp = q.split("www");
         Log.d("ab", Integer.toString(tmp.length));
-        result[1] = new String[tmp.length];
-        for (int i = 0; i < tmp.length; i++) {
-            if (tmp[i].length() > 0 && tmp[i].charAt(0) == '.')
-                result[1][i] = tmp[i].substring(1);
-            else result[1][i] = tmp[i];
+        result[1] = new String[tmp.length - 1];
+        for (int i = 0; i < tmp.length - 1; i++) {
+            if (tmp[i + 1].length() > 0 && tmp[i + 1].charAt(0) == '.')
+                result[1][i] = tmp[i + 1].substring(1);
+            else result[1][i] = tmp[i + 1];
         }
     }
 
     private void parsingDomain() {
         int x;
-/*
-        //횟수 제한에 따른 디버깅용
-        String[] tmp = {"naver.com", "www.naver.com", "google.com", "conan.co.jp"};// DomainSplit(q);
-        result[1] = new String[tmp.length];
-        for (int i = 0; i < tmp.length; i++) {
-            result[1][i] = tmp[i];
-        }
-*/
         String q = "";
-        //try {
-        //q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + url + "&key=&_=").GetString();
-        //q = " {\"status\":\"Success\", \"resultsMethod\":\"database\", \"lastScrape\":\"2015-12-02 06:36:11\", \"domainCount\":\"726\", \"remoteAddress\":\"199.59.243.120\", \"remoteIpAddress\":\"199.59.243.120\", \"domainArray\":[[\"0-a.com\", \"\"], [\"000webhost.org\", \"\"], [\"007guard.com\", \"\"], [\"0098.0xhost.net\", \"\"], [\"01.land4persian.com\", \"\"], [\"029.29ol.com\", \"\"], [\"02kmky1xgzbmsdfx.com\", \"\"], [\"0interestcreditcard.net\", \"\"], [\"1000dhamaka.com\", \"\"], [\"1000orgasmos.com\", \"\"], [\"12371.com\", \"\"], [\"123buzz.net\", \"\"], [\"12chan.org\", \"\"], [\"130220lc.10001mb.com\", \"\"], [\"140.206.83.19.cn\", \"\"], [\"18ie.com\", \"\"], [\"19871.com\", \"\"], [\"1weby.com\", \"\"], [\"222988.com\", \"\"], [\"24mb.com\", \"\"], [\"24n.org\", \"\"], [\"26th.com\", \"\"], [\"2y2z.com\", \"\"], [\"3055.org\", \"\"], [\"360.gigfa.com\", \"\"], [\"3cks.com\", \"\"], [\"3skypephone.com\", \"\"], [\"41840.aceboard.fr\", \"\"], [\"4ko.net\", \"\"], [\"4lx.com\", \"\"], [\"4sequence.com\", \"\"], [\"50pm.net\", \"\"], [\"51361.y5y5.info\", \"\"], [\"51avi.com\", \"\"], [\"55bbb.com\", \"\"], [\"58407.bodis.com\", \"\"], [\"69tv.com\", \"\"], [\"6groupon.com\", \"\"], [\"7000tv.com\", \"\"], [\"700megs.com\", \"\"], [\"723.qudoushuang.com\", \"\"], [\"7mintosuccess.com\", \"\"], [\"7mirror.rh9.in\", \"\"], [\"7ro.info\", \"\"], [\"7ye.cc\", \"\"], [\"8850taobao.com\", \"\"], [\"9188.yun12.com\", \"\"], [\"95kvartal.com\", \"\"], [\"987wl.com\", \"\"], [\"a.im404.com\", \"\"], [\"aaadx.com\", \"\"], [\"aarroyalresidency.com\", \"\"], [\"abdullah.info\", \"\"], [\"acaphapram.cuccfree.com\", \"\"], [\"actioncycle.in\", \"\"], [\"addpost.com\", \"\"], [\"ademaydiner.22web.org\", \"\"], [\"ademdurak.com\", \"\"], [\"admyntra.in\", \"\"], [\"adwords-direct.com\", \"\"], [\"ah56.totalh.net\", \"\"], [\"aiyi8.com\", \"\"], [\"alamazagak.eb2a.com\", \"\"], [\"albert5.i34u.com\", \"\"], [\"alcoyana.com\", \"\"], [\"alexa.xueaddddxnet-www.zhjade.com\", \"\"], [\"alexiawebapp.com\", \"\"], [\"alicun.com\", \"\"], [\"alkhalas.net\", \"\"], [\"alldogbreeds.000space.com\", \"\"], [\"allmode.com\", \"\"], [\"alluscamgirls.com\", \"\"], [\"alproplus.ru\", \"\"], [\"alraytworeq.0fees.net\", \"\"], [\"alsayde.com\", \"\"], [\"altoia.com\", \"\"], [\"amazongiftcardgenerators.com\", \"\"], [\"amefcu.org\", \"\"], [\"amoory.co\", \"\"], [\"amoory.net\", \"\"], [\"anchorminot.com\", \"\"], [\"andychary143.com\", \"\"], [\"ani1me.eb2a.com\", \"\"], [\"animedownloadonline.com\", \"\"], [\"antiguoscueros.com\", \"\"], [\"apmed.pl\", \"\"], [\"apriljuggs.com\", \"\"], [\"aranta.in\", \"\"], [\"arfi.zheyangdang.com\", \"\"], [\"article99.com\", \"\"], [\"aspect.capital\", \"\"], [\"auctionhints.com\", \"\"], [\"aunt.xxx\", \"1\"], [\"autocraftindustries.in\", \"\"], [\"avatarcasino.com\", \"\"], [\"avonhost.com\", \"\"], [\"b5b.net\", \"\"], [\"b9i.net\", \"\"], [\"baixali.com.br\", \"\"], [\"balagadoom.0fees.net\", \"\"], [\"bankff.com\", \"\"], [\"batikmurahnya.com\", \"\"], [\"bbm.net\", \"\"], [\"bbnetwork.com\", \"\"], [\"bbs.se8x.cc\", \"\"], [\"bbs.ty91.com\", \"\"], [\"bbs.weshareit.net\", \"\"], [\"bcw.in\", \"\"], [\"bdmp3song.com\", \"\"], [\"be.my.bb.com\", \"\"], [\"beatsbydre.co.in\", \"\"], [\"become.com\", \"\"], [\"belive.uk.tn\", \"\"], [\"benaught.com\", \"\"], [\"beta.facebookc.com\", \"\"], [\"bezaafe.com\", \"\"], [\"bikegrass.biz\", \"\"], [\"bilpris.nu\", \"\"], [\"bing.com\", \"\"], [\"bisep.edu.pk\", \"\"], [\"bjpudupi.com\", \"\"], [\"blagoveschenski.byethost33.com\", \"\"], [\"blizoo.com\", \"\"], [\"blogdasgalinhas.com\", \"\"], [\"blogstars.com.br\", \"\"], [\"board.gooseed.com\", \"\"], [\"booksamillon.com\", \"\"], [\"boothedogs.com\", \"\"], [\"botinkipyablf.zh.md\", \"\"], [\"brabackless.my-php.net\", \"\"], [\"burger-imperia.com\", \"\"], [\"bvick.qhealthbeauty.com\", \"\"], [\"bytewizecomputers.com\", \"\"], [\"c9k.net\", \"\"], [\"ca8.net\", \"\"], [\"cangbaogejy.com\", \"\"], [\"carinsurancecomnewyork.com\", \"\"], [\"cascanolahack.org\", \"\"], [\"cashinonmail.com\", \"\"], [\"ce.cc\", \"\"], [\"cgi.godsview.com\", \"\"], [\"cgiscriptmarket.com\", \"\"], [\"chaussuresnmax.fr\", \"\"], [\"checkproxy.com\", \"\"], [\"chengqikd.com\", \"\"], [\"chicagodowntownhotels.net\", \"\"], [\"chirurgie-bariatrique.aceboard.fr\", \"\"], [\"chronosfire.com.ar\", \"\"], [\"cipha.org\", \"\"], [\"classifieds.indiawebsite.in\", \"\"], [\"clix.com\", \"\"], [\"cnapest46.eb2a.com\", \"\"], [\"cochacks.xyz\", \"\"], [\"comcadt.net\", \"\"], [\"comicp.xgmm.com\", \"\"], [\"comingsoondomain.com\", \"\"], [\"conditionzebra.com\", \"\"], [\"cooktown.com\", \"\"], [\"coolmmathgames.com\", \"\"], [\"cr7.net\", \"\"], [\"crosereviews.podserver.info\", \"\"],";
-        //} catch (Exception e) {
-        //    e.printStackTrace();
-        parsingDomain2();
-        //return;
-        //}
-        if (q.contains("Daily reverse IP check")) {
-            //result[1] = new String[1];
-            //result[1][0] = "IP reverse 기능 1일 이용 횟수가 초과되었습니다!";
+        try {
+            q = new MyDownloadTask("http://domains.yougetsignal.com/domains.php", "remoteAddress=" + domain + "&key=&_=", 8).GetString();
+            //q = " {\"status\":\"Success\", \"resultsMethod\":\"database\", \"lastScrape\":\"2015-12-02 06:36:11\", \"domainCount\":\"726\", \"remoteAddress\":\"199.59.243.120\", \"remoteIpAddress\":\"199.59.243.120\", \"domainArray\":[[\"0-a.com\", \"\"], [\"000webhost.org\", \"\"], [\"007guard.com\", \"\"], [\"0098.0xhost.net\", \"\"], [\"01.land4persian.com\", \"\"], [\"029.29ol.com\", \"\"], [\"02kmky1xgzbmsdfx.com\", \"\"], [\"0interestcreditcard.net\", \"\"], [\"1000dhamaka.com\", \"\"], [\"1000orgasmos.com\", \"\"], [\"12371.com\", \"\"], [\"123buzz.net\", \"\"], [\"12chan.org\", \"\"], [\"130220lc.10001mb.com\", \"\"], [\"140.206.83.19.cn\", \"\"], [\"18ie.com\", \"\"], [\"19871.com\", \"\"], [\"1weby.com\", \"\"], [\"222988.com\", \"\"], [\"24mb.com\", \"\"], [\"24n.org\", \"\"], [\"26th.com\", \"\"], [\"2y2z.com\", \"\"], [\"3055.org\", \"\"], [\"360.gigfa.com\", \"\"], [\"3cks.com\", \"\"], [\"3skypephone.com\", \"\"], [\"41840.aceboard.fr\", \"\"], [\"4ko.net\", \"\"], [\"4lx.com\", \"\"], [\"4sequence.com\", \"\"], [\"50pm.net\", \"\"], [\"51361.y5y5.info\", \"\"], [\"51avi.com\", \"\"], [\"55bbb.com\", \"\"], [\"58407.bodis.com\", \"\"], [\"69tv.com\", \"\"], [\"6groupon.com\", \"\"], [\"7000tv.com\", \"\"], [\"700megs.com\", \"\"], [\"723.qudoushuang.com\", \"\"], [\"7mintosuccess.com\", \"\"], [\"7mirror.rh9.in\", \"\"], [\"7ro.info\", \"\"], [\"7ye.cc\", \"\"], [\"8850taobao.com\", \"\"], [\"9188.yun12.com\", \"\"], [\"95kvartal.com\", \"\"], [\"987wl.com\", \"\"], [\"a.im404.com\", \"\"], [\"aaadx.com\", \"\"], [\"aarroyalresidency.com\", \"\"], [\"abdullah.info\", \"\"], [\"acaphapram.cuccfree.com\", \"\"], [\"actioncycle.in\", \"\"], [\"addpost.com\", \"\"], [\"ademaydiner.22web.org\", \"\"], [\"ademdurak.com\", \"\"], [\"admyntra.in\", \"\"], [\"adwords-direct.com\", \"\"], [\"ah56.totalh.net\", \"\"], [\"aiyi8.com\", \"\"], [\"alamazagak.eb2a.com\", \"\"], [\"albert5.i34u.com\", \"\"], [\"alcoyana.com\", \"\"], [\"alexa.xueaddddxnet-www.zhjade.com\", \"\"], [\"alexiawebapp.com\", \"\"], [\"alicun.com\", \"\"], [\"alkhalas.net\", \"\"], [\"alldogbreeds.000space.com\", \"\"], [\"allmode.com\", \"\"], [\"alluscamgirls.com\", \"\"], [\"alproplus.ru\", \"\"], [\"alraytworeq.0fees.net\", \"\"], [\"alsayde.com\", \"\"], [\"altoia.com\", \"\"], [\"amazongiftcardgenerators.com\", \"\"], [\"amefcu.org\", \"\"], [\"amoory.co\", \"\"], [\"amoory.net\", \"\"], [\"anchorminot.com\", \"\"], [\"andychary143.com\", \"\"], [\"ani1me.eb2a.com\", \"\"], [\"animedownloadonline.com\", \"\"], [\"antiguoscueros.com\", \"\"], [\"apmed.pl\", \"\"], [\"apriljuggs.com\", \"\"], [\"aranta.in\", \"\"], [\"arfi.zheyangdang.com\", \"\"], [\"article99.com\", \"\"], [\"aspect.capital\", \"\"], [\"auctionhints.com\", \"\"], [\"aunt.xxx\", \"1\"], [\"autocraftindustries.in\", \"\"], [\"avatarcasino.com\", \"\"], [\"avonhost.com\", \"\"], [\"b5b.net\", \"\"], [\"b9i.net\", \"\"], [\"baixali.com.br\", \"\"], [\"balagadoom.0fees.net\", \"\"], [\"bankff.com\", \"\"], [\"batikmurahnya.com\", \"\"], [\"bbm.net\", \"\"], [\"bbnetwork.com\", \"\"], [\"bbs.se8x.cc\", \"\"], [\"bbs.ty91.com\", \"\"], [\"bbs.weshareit.net\", \"\"], [\"bcw.in\", \"\"], [\"bdmp3song.com\", \"\"], [\"be.my.bb.com\", \"\"], [\"beatsbydre.co.in\", \"\"], [\"become.com\", \"\"], [\"belive.uk.tn\", \"\"], [\"benaught.com\", \"\"], [\"beta.facebookc.com\", \"\"], [\"bezaafe.com\", \"\"], [\"bikegrass.biz\", \"\"], [\"bilpris.nu\", \"\"], [\"bing.com\", \"\"], [\"bisep.edu.pk\", \"\"], [\"bjpudupi.com\", \"\"], [\"blagoveschenski.byethost33.com\", \"\"], [\"blizoo.com\", \"\"], [\"blogdasgalinhas.com\", \"\"], [\"blogstars.com.br\", \"\"], [\"board.gooseed.com\", \"\"], [\"booksamillon.com\", \"\"], [\"boothedogs.com\", \"\"], [\"botinkipyablf.zh.md\", \"\"], [\"brabackless.my-php.net\", \"\"], [\"burger-imperia.com\", \"\"], [\"bvick.qhealthbeauty.com\", \"\"], [\"bytewizecomputers.com\", \"\"], [\"c9k.net\", \"\"], [\"ca8.net\", \"\"], [\"cangbaogejy.com\", \"\"], [\"carinsurancecomnewyork.com\", \"\"], [\"cascanolahack.org\", \"\"], [\"cashinonmail.com\", \"\"], [\"ce.cc\", \"\"], [\"cgi.godsview.com\", \"\"], [\"cgiscriptmarket.com\", \"\"], [\"chaussuresnmax.fr\", \"\"], [\"checkproxy.com\", \"\"], [\"chengqikd.com\", \"\"], [\"chicagodowntownhotels.net\", \"\"], [\"chirurgie-bariatrique.aceboard.fr\", \"\"], [\"chronosfire.com.ar\", \"\"], [\"cipha.org\", \"\"], [\"classifieds.indiawebsite.in\", \"\"], [\"clix.com\", \"\"], [\"cnapest46.eb2a.com\", \"\"], [\"cochacks.xyz\", \"\"], [\"comcadt.net\", \"\"], [\"comicp.xgmm.com\", \"\"], [\"comingsoondomain.com\", \"\"], [\"conditionzebra.com\", \"\"], [\"cooktown.com\", \"\"], [\"coolmmathgames.com\", \"\"], [\"cr7.net\", \"\"], [\"crosereviews.podserver.info\", \"\"],";
+        } catch (Exception e) {
+            e.printStackTrace();
             parsingDomain2();
             return;
-        } else if (q.contains("No web sites")) {
-            //result[1] = new String[1];
-            //result[1][0] = "해당 IP를 찾을 수 없습니다!";
+        }
+        if (q.contains("Daily reverse IP check") || q.contains("No web sites")) {
             parsingDomain2();
             return;
         } else if ((x = q.indexOf("Array")) != -1) { // Normal!!
@@ -423,8 +407,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     }
 
     private void parsingPortscan() throws Exception {
-        result[3] = new String[1];
-        result[3][0] = "";
         String q = new MyDownloadTask("http://mxtoolbox.com/Public/Lookup.aspx/DoLookup2", "{\"inputText\":\"scan:" + url + "\",\"resultIndex\":8}", 5, true).GetString();
         q = q.replaceAll("\\\\u0027", "").replaceAll("\\\\u003c", "").replaceAll("\\\\u003e", "").substring(1200);
         for (int i = 0; i < portNum.length; i++) {
@@ -435,10 +417,13 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 s = q.substring(st, q.indexOf(portNum[i + 1], st));
             } else s = q.substring(q.indexOf(portNum[i]));
             if (s.lastIndexOf("Open") != -1)
-                result[3][0] += portNum[i] + " - " + portName[i] + " - " + "Open" + "\n";
+                MySectionAdapter.tab_portscan.addItem(portNum[i], portName[i], "Open");
             else if (s.lastIndexOf("Filtered") != -1)
-                result[3][0] += portNum[i] + " - " + portName[i] + " - " + "Filtered" + "\n";
-            else result[3][0] += portNum[i] + " - " + portName[i] + " - " + "Refused" + "\n";
+                MySectionAdapter.tab_portscan.addItem(portNum[i], portName[i], "Filtered");
+            else if (s.lastIndexOf("Close") != -1)
+                MySectionAdapter.tab_portscan.addItem(portNum[i], portName[i], "Closed");
+            else
+                MySectionAdapter.tab_portscan.addItem(portNum[i], portName[i], "Refused");
         }
     }
 

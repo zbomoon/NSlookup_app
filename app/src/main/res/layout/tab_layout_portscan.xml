@@ -7,18 +7,59 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/t1_lv"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:headerDividersEnabled="true"></ListView>
+        android:stretchColumns="*"
+        android:id="@+id/tableLayout2">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="포트"
+                android:layout_marginBottom="1dp"
+                android:gravity="center"
+                android:background="@drawable/xml_border"
+                android:textSize="17dp"
+                android:textColor="#000000"  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="프로토콜"
+                android:layout_marginBottom="1dp"
+                android:gravity="center"
+                android:background="@drawable/xml_border"
+                android:textSize="17dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상태"
+                android:layout_marginBottom="1dp"
+                android:gravity="center"
+                android:background="@drawable/xml_border"
+                android:textSize="17dp"
+                android:textColor="#000000"  />
+
+        </TableRow>
+
+    </TableLayout>
 
     <com.nslookup.FloatingActionButton
         android:id="@+id/mFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="133dp"
         android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         android:src="@android:drawable/ic_menu_help"
         fab:fab_colorNormal="#009688"
         fab:fab_colorPressed="#26a69a" />

@@ -2,26 +2,31 @@ package com.nslookup;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class TabFragment_Portscan extends Fragment {
-    private ArrayAdapter<String> m_Adapter;
     private FloatingActionButton mFloatingButton;
     View mView;
-    ListView mListView;
-    ArrayList<String> items;
+    ArrayList<String>[] items;
+    TableLayout tb;
     String url = "";
 
     public TabFragment_Portscan() {
-        items = new ArrayList<String>();
+        items = (ArrayList<String>[]) new ArrayList[3];
+        items[0] = new ArrayList<String>();
+        items[1] = new ArrayList<String>();
+        items[2] = new ArrayList<String>();
         setRetainInstance(true);
     }
 
@@ -34,10 +39,9 @@ public class TabFragment_Portscan extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.tab_layout_portscan, null);
-        mListView = (ListView) mView.findViewById(R.id.t1_lv);
+        tb = (TableLayout) mView.findViewById(R.id.tableLayout2);
+
         mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
-        m_Adapter = new ArrayAdapter<String>(mView.getContext(), R.layout.simple_textview_portscan, items);
-        mListView.setAdapter(m_Adapter);
         mFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,10 +59,25 @@ public class TabFragment_Portscan extends Fragment {
     }
 
     public void Update() {
-        m_Adapter.notifyDataSetChanged();
+        for (int i = 0; i < items[0].size(); i++) {
+            TableRow tr = new TableRow(this.getActivity());
+            tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+            tr.setGravity(Gravity.CENTER);
+            for (int j = 0; j < 3; j++) {
+                TextView tv = new TextView(this.getActivity());
+                tv.setText(items[j].get(i));
+                tv.setGravity(Gravity.CENTER);
+                tv.setTextColor(Color.parseColor("#000000"));
+                tv.setBackgroundResource(R.drawable.xml_border);
+                tr.addView(tv);
+            }
+            tb.addView(tr, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
+        }
     }
 
-    public void addItem(String str) {
-        items.add(str);
+    public void addItem(String pt, String pr, String st) {
+        items[0].add(pt);
+        items[1].add(pr);
+        items[2].add(st);
     }
 }

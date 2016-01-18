@@ -9,7 +9,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -17,7 +16,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class TabFragment_Server extends Fragment {
-    private ArrayAdapter<String> m_Adapter;
     private FloatingActionButton mFloatingButton;
     View mView;
     TableLayout tb;
@@ -82,6 +80,8 @@ public class TabFragment_Server extends Fragment {
         items[0].add(dt);
         items[1].add(ip);
         items[2].add(os);
-        items[3].add(ws);
+        if(ws.length() > 20)
+            items[3].add(ws.substring(0, 20));
+        else items[3].add(ws);
     }
 }
