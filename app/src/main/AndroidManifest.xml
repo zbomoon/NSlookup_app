@@ -10,10 +10,22 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <permission
+        android:name="com.nslookup.locationapi.maps.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
 
+    <uses-permission android:name="com.nslookup.locationapi.maps.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -32,16 +44,10 @@
         <activity
             android:name=".SearchActivity"
             android:theme="@style/Theme.AppCompat" />
-        <activity
-            android:name=".TabFragment_ISP"
-            android:theme="@style/Theme.AppCompat" />
-        <activity
-            android:name=".Tab2Activity"
-            android:theme="@style/Theme.AppCompat" />
-        <activity
-            android:name=".Tab3Activity"
-            android:theme="@style/Theme.AppCompat" />
         <activity android:name=".DomainInfoActivity" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDwifGjEPAwJCTI0MsQvG_q0ejZGULtV3E" />
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     ViewPager mViewPager;
     String url, isip, domain;
     String[][] result = new String[4][];
+    Long la, lo;
     String[] portNum = {"21", "22", "23", "25", "53", "80", "110", "111", "135", "139", "143", "389", "443", "445",
             "587", "1025", "1352", "1433", "1723", "3306", "3389", "5060", "5900", "6001", "8080"};
     String[] portName = {"ftp", "ssh", "telnet", "smtp", "dns", "http", "pop3", "portmapper", "RPC", "netbios", "imap",
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         domain = url;
         isip = intent.getStringExtra("isip");
         MySectionAdapter.tab_isp = new TabFragment_ISP();
+        MySectionAdapter.tab_map = new TabFragment_MAP();
         MySectionAdapter.tab_domain = new TabFragment_Domain();
         MySectionAdapter.tab_portscan = new TabFragment_Portscan();
         MySectionAdapter.tab_server = new TabFragment_Server();
@@ -81,36 +84,41 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     class JobDoneTest {
         Boolean[] finishjob;
-        Boolean errorOccured = false;
+        Boolean[] errjob;
 
         public JobDoneTest() {
-            finishjob = new Boolean[]{true, false, false, false, false};
+            finishjob = new Boolean[]{true, false, false, false, false, false};
+            errjob = new Boolean[]{false, false, false, false, false, false};
         }
 
-        public void setError() {
-            errorOccured = true;
+        public void setError(int n) {
+            errjob[n] = true;
         }
 
         public synchronized void finished(int n) {
             finishjob[n] = true;
-            if (finishjob[0] && finishjob[1] && finishjob[2] && finishjob[3] && finishjob[4]){
-                if (errorOccured) {
-                    errorProcess();
-                    return;
-                }
+            if (finishjob[0] && finishjob[1] && finishjob[2] && finishjob[3] && finishjob[4] && finishjob[5])
                 doNextjob();
-            }
         }
 
         private void doNextjob() {
-            MySectionAdapter.tab_isp.addItem(result[0][0]);
-            MySectionAdapter.tab_isp.setTextview("Search IP : " + url);
-            for (int i = 0; i < result[1].length; i++)
-                MySectionAdapter.tab_domain.addItem(result[1][i]);
-            MySectionAdapter.tab_isp.Update();
-            MySectionAdapter.tab_domain.Update();
-            MySectionAdapter.tab_server.Update();
-            MySectionAdapter.tab_portscan.Update();
+            if (!errjob[1]) {
+                MySectionAdapter.tab_isp.addItem(result[0][0]);
+                MySectionAdapter.tab_isp.setTextview("Search IP : " + url);
+                MySectionAdapter.tab_isp.Update();
+            }
+            if (!errjob[2]) {
+                for (int i = 0; i < result[1].length; i++)
+                    MySectionAdapter.tab_domain.addItem(result[1][i]);
+                MySectionAdapter.tab_domain.Update();
+            }
+            if (!errjob[3]) MySectionAdapter.tab_server.Update();
+            if (!errjob[4]) MySectionAdapter.tab_portscan.Update();
+            if (!errjob[5]){
+                Log.d("go la",Long.toString(la));
+                Log.d("go lo",Long.toString(lo));
+                MySectionAdapter.tab_map.setGis(la, lo);
+            }
             pd.dismiss();
         }
     }
@@ -133,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 } catch (Exception e) {
                     e.printStackTrace();
                     errorOccured = true;
-                    jdt.setError();
+                    jdt.setError(0);
                 }
             }
             return null;
@@ -150,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             (new Domainparsing_thread()).execute(url);
             (new Serverparsing_thread()).execute(url);
             (new PortScanparsing_thread()).execute(url);
+            (new Gpsparsing_thread()).execute(url);
         }
     }
 
@@ -160,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 parsingIsp();
             } catch (Exception e) {
                 e.printStackTrace();
-                jdt.setError();
+                jdt.setError(1);
             }
             return null;
         }
@@ -179,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 parsingDomain();
             } catch (Exception e) {
                 e.printStackTrace();
-                jdt.setError();
+                jdt.setError(2);
             }
             return null;
         }
@@ -191,6 +200,26 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
     }
 
+    class Gpsparsing_thread extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            try {
+                parsingGps();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Log.d("ex","gps");
+                jdt.setError(5);
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String res) {
+            super.onPostExecute(res);
+            jdt.finished(5);
+        }
+    }
+
     class Serverparsing_thread extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
@@ -198,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 parsingServer();
             } catch (Exception e) {
                 e.printStackTrace();
-                jdt.setError();
+                jdt.setError(3);
             }
             return null;
         }
@@ -217,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 parsingPortscan();
             } catch (Exception e) {
                 e.printStackTrace();
-                jdt.setError();
+                jdt.setError(4);
             }
             return null;
         }
@@ -242,9 +271,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private void parsingServer() throws Exception {
         int col;
-        String q = new MyDownloadTask("http://toolbar.netcraft.com/site_report?url=" + domain, "", 12).GetString();
+        String q = new MyDownloadTask("http://toolbar.netcraft.com/site_report?url=" + domain, "", 15).GetString();
         if (q == null) {
-            jdt.setError();
+            jdt.setError(3);
             return;
         }
         int a = q.indexOf("<h2>Hosting History</h2>");
@@ -266,11 +295,28 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
     }
 
+    private void parsingGps() throws Exception {
+        int col;
+        String q = new MyDownloadTask("http://whatismyipaddress.com/ip/" + url, "", 12).GetString();
+        if (q == null) {
+            jdt.setError(5);
+            return;
+        }
+        q = q.substring(q.indexOf("Latitude:"));
+        Log.d("q", q);
+        la = Long.getLong(q.substring(19, q.indexOf("nbsp") - 2));
+        Log.d("lati", q.substring(19, q.indexOf("nbsp") - 2));
+        q = q.substring(q.indexOf("Longitude:"));
+        Log.d("q", q);
+        Log.d("long", q.substring(20, q.indexOf("nbsp") - 2));
+        lo = Long.getLong(q.substring(20, q.indexOf("nbsp") - 2));
+    }
+
     private void parsingIsp() throws Exception {
         result[0] = new String[1];
         String q = new MyDownloadTask("http://whois.kisa.or.kr/kor/whois.jsc", "query=" + url, 10).GetString();
         if (q == null) {
-            jdt.setError();
+            jdt.setError(1);
             return;
         }
         int x, y;
@@ -336,7 +382,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     private void parsingDomain2() {
         String q = "";
         try {
-            q = new MyDownloadTask("http://www.ipfingerprints.com/scripts/getReverseIP.php", "remoteHost=" + domain, 5).GetString();
+            q = new MyDownloadTask("http://www.ipfingerprints.com/scripts/getReverseIP.php", "remoteHost=" + domain, 15).GetString();
         } catch (Exception e0) {
             e0.printStackTrace();
         }

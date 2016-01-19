@@ -369,6 +369,25 @@
                         "endOffset": 12555
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 163,
+                    "startColumn": 4,
+                    "startOffset": 11794,
+                    "endColumn": 117,
+                    "endOffset": 11907
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-appinvite\\8.4.0\\res\\values-v11\\appinvite_styles.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 101,
+                        "endColumn": 117,
+                        "endOffset": 214
+                    }
+                }
             }
         ]
     }

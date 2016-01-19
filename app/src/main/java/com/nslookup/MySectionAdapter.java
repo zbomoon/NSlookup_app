@@ -8,6 +8,7 @@ import java.util.Locale;
 
 public class MySectionAdapter extends FragmentPagerAdapter {
     public static TabFragment_ISP tab_isp = null;
+    public static TabFragment_MAP tab_map = null;
     public static TabFragment_Domain tab_domain = null;
     public static TabFragment_Portscan tab_portscan = null;
     public static TabFragment_Server tab_server = null;
@@ -21,10 +22,12 @@ public class MySectionAdapter extends FragmentPagerAdapter {
             case 0:
                 return tab_isp;
             case 1:
-                return tab_domain;
+                return tab_map;
             case 2:
-                return tab_server;
+                return tab_domain;
             case 3:
+                return tab_server;
+            case 4:
                 return tab_portscan;
         }
         return null;
@@ -32,7 +35,7 @@ public class MySectionAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 5;
     }
 
     @Override
@@ -42,10 +45,12 @@ public class MySectionAdapter extends FragmentPagerAdapter {
             case 0:
                 return "ISP".toUpperCase(l);
             case 1:
-                return "Domain".toUpperCase(l);
+                return "GPS".toUpperCase(l);
             case 2:
-                return "Server Info".toUpperCase(l);
+                return "Domain".toUpperCase(l);
             case 3:
+                return "Server Info".toUpperCase(l);
+            case 4:
                 return "Portscan".toUpperCase(l);
         }
         return null;

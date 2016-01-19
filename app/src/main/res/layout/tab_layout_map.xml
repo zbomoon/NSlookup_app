@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+    <com.nslookup.FloatingActionButton
+        android:id="@+id/mFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="133dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="8dp"
+        android:src="@android:drawable/ic_menu_help"
+        fab:fab_colorNormal="#009688"
+        fab:fab_colorPressed="#26a69a" />
+</FrameLayout>
