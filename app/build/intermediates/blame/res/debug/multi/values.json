@@ -3479,14 +3479,7 @@
                     "endOffset": 46965
                 },
                 "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 56,
-                        "endColumn": 52,
-                        "endOffset": 104
-                    }
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\values\\strings.xml"
                 }
             },
             {
@@ -6011,9 +6004,30 @@
                     "startLine": 1369,
                     "startColumn": 4,
                     "startOffset": 114487,
-                    "endLine": 1406,
+                    "endLine": 1372,
                     "endColumn": 12,
-                    "endOffset": 117344
+                    "endOffset": 114670
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 922,
+                        "endLine": 29,
+                        "endColumn": 12,
+                        "endOffset": 1108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1373,
+                    "startColumn": 4,
+                    "startOffset": 114675,
+                    "endLine": 1410,
+                    "endColumn": 12,
+                    "endOffset": 117532
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6021,12 +6035,12 @@
             },
             {
                 "to": {
-                    "startLine": 1407,
+                    "startLine": 1411,
                     "startColumn": 4,
-                    "startOffset": 117349,
-                    "endLine": 1445,
+                    "startOffset": 117537,
+                    "endLine": 1449,
                     "endColumn": 12,
-                    "endOffset": 120346
+                    "endOffset": 120534
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6034,11 +6048,11 @@
             },
             {
                 "to": {
-                    "startLine": 1446,
+                    "startLine": 1450,
                     "startColumn": 4,
-                    "startOffset": 120351,
+                    "startOffset": 120539,
                     "endColumn": 61,
-                    "endOffset": 120408
+                    "endOffset": 120596
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6046,12 +6060,12 @@
             },
             {
                 "to": {
-                    "startLine": 1447,
+                    "startLine": 1451,
                     "startColumn": 4,
-                    "startOffset": 120413,
-                    "endLine": 1456,
+                    "startOffset": 120601,
+                    "endLine": 1460,
                     "endColumn": 12,
-                    "endOffset": 121038
+                    "endOffset": 121226
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6059,12 +6073,12 @@
             },
             {
                 "to": {
-                    "startLine": 1457,
+                    "startLine": 1461,
                     "startColumn": 4,
-                    "startOffset": 121043,
-                    "endLine": 1465,
+                    "startOffset": 121231,
+                    "endLine": 1469,
                     "endColumn": 12,
-                    "endOffset": 121652
+                    "endOffset": 121840
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6072,11 +6086,11 @@
             },
             {
                 "to": {
-                    "startLine": 1466,
+                    "startLine": 1470,
                     "startColumn": 4,
-                    "startOffset": 121657,
+                    "startOffset": 121845,
                     "endColumn": 85,
-                    "endOffset": 121738
+                    "endOffset": 121926
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6084,25 +6098,12 @@
             },
             {
                 "to": {
-                    "startLine": 1467,
+                    "startLine": 1471,
                     "startColumn": 4,
-                    "startOffset": 121743,
-                    "endLine": 1468,
-                    "endColumn": 12,
-                    "endOffset": 121851
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1469,
-                    "startColumn": 4,
-                    "startOffset": 121856,
+                    "startOffset": 121931,
                     "endLine": 1472,
                     "endColumn": 12,
-                    "endOffset": 122080
+                    "endOffset": 122039
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6112,10 +6113,10 @@
                 "to": {
                     "startLine": 1473,
                     "startColumn": 4,
-                    "startOffset": 122085,
-                    "endLine": 1475,
+                    "startOffset": 122044,
+                    "endLine": 1476,
                     "endColumn": 12,
-                    "endOffset": 122240
+                    "endOffset": 122268
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6123,12 +6124,12 @@
             },
             {
                 "to": {
-                    "startLine": 1476,
+                    "startLine": 1477,
                     "startColumn": 4,
-                    "startOffset": 122245,
-                    "endLine": 1478,
+                    "startOffset": 122273,
+                    "endLine": 1479,
                     "endColumn": 12,
-                    "endOffset": 122392
+                    "endOffset": 122428
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6136,12 +6137,12 @@
             },
             {
                 "to": {
-                    "startLine": 1479,
+                    "startLine": 1480,
                     "startColumn": 4,
-                    "startOffset": 122397,
-                    "endLine": 1481,
+                    "startOffset": 122433,
+                    "endLine": 1482,
                     "endColumn": 12,
-                    "endOffset": 122563
+                    "endOffset": 122580
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6149,12 +6150,12 @@
             },
             {
                 "to": {
-                    "startLine": 1482,
+                    "startLine": 1483,
                     "startColumn": 4,
-                    "startOffset": 122568,
-                    "endLine": 1484,
+                    "startOffset": 122585,
+                    "endLine": 1485,
                     "endColumn": 12,
-                    "endOffset": 122730
+                    "endOffset": 122751
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6162,12 +6163,12 @@
             },
             {
                 "to": {
-                    "startLine": 1485,
+                    "startLine": 1486,
                     "startColumn": 4,
-                    "startOffset": 122735,
+                    "startOffset": 122756,
                     "endLine": 1488,
                     "endColumn": 12,
-                    "endOffset": 122973
+                    "endOffset": 122918
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6177,10 +6178,10 @@
                 "to": {
                     "startLine": 1489,
                     "startColumn": 4,
-                    "startOffset": 122978,
-                    "endLine": 1491,
+                    "startOffset": 122923,
+                    "endLine": 1492,
                     "endColumn": 12,
-                    "endOffset": 123143
+                    "endOffset": 123161
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6188,12 +6189,12 @@
             },
             {
                 "to": {
-                    "startLine": 1492,
+                    "startLine": 1493,
                     "startColumn": 4,
-                    "startOffset": 123148,
-                    "endLine": 1494,
+                    "startOffset": 123166,
+                    "endLine": 1495,
                     "endColumn": 12,
-                    "endOffset": 123316
+                    "endOffset": 123331
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6201,12 +6202,12 @@
             },
             {
                 "to": {
-                    "startLine": 1495,
+                    "startLine": 1496,
                     "startColumn": 4,
-                    "startOffset": 123321,
-                    "endLine": 1497,
+                    "startOffset": 123336,
+                    "endLine": 1498,
                     "endColumn": 12,
-                    "endOffset": 123487
+                    "endOffset": 123504
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6214,12 +6215,12 @@
             },
             {
                 "to": {
-                    "startLine": 1498,
+                    "startLine": 1499,
                     "startColumn": 4,
-                    "startOffset": 123492,
+                    "startOffset": 123509,
                     "endLine": 1501,
                     "endColumn": 12,
-                    "endOffset": 123761
+                    "endOffset": 123675
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6229,10 +6230,10 @@
                 "to": {
                     "startLine": 1502,
                     "startColumn": 4,
-                    "startOffset": 123766,
-                    "endLine": 1504,
+                    "startOffset": 123680,
+                    "endLine": 1505,
                     "endColumn": 12,
-                    "endOffset": 123960
+                    "endOffset": 123949
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6240,12 +6241,12 @@
             },
             {
                 "to": {
-                    "startLine": 1505,
+                    "startLine": 1506,
                     "startColumn": 4,
-                    "startOffset": 123965,
+                    "startOffset": 123954,
                     "endLine": 1508,
                     "endColumn": 12,
-                    "endOffset": 124165
+                    "endOffset": 124148
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6255,10 +6256,10 @@
                 "to": {
                     "startLine": 1509,
                     "startColumn": 4,
-                    "startOffset": 124170,
+                    "startOffset": 124153,
                     "endLine": 1512,
                     "endColumn": 12,
-                    "endOffset": 124495
+                    "endOffset": 124353
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6268,45 +6269,10 @@
                 "to": {
                     "startLine": 1513,
                     "startColumn": 4,
-                    "startOffset": 124500,
-                    "endColumn": 83,
-                    "endOffset": 124579
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1514,
-                    "startColumn": 4,
-                    "startOffset": 124584,
-                    "endColumn": 95,
-                    "endOffset": 124675
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1515,
-                    "startColumn": 4,
-                    "startOffset": 124680,
-                    "endColumn": 95,
-                    "endOffset": 124771
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1516,
-                    "startColumn": 4,
-                    "startOffset": 124776,
-                    "endColumn": 97,
-                    "endOffset": 124869
+                    "startOffset": 124358,
+                    "endLine": 1516,
+                    "endColumn": 12,
+                    "endOffset": 124683
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6316,9 +6282,9 @@
                 "to": {
                     "startLine": 1517,
                     "startColumn": 4,
-                    "startOffset": 124874,
-                    "endColumn": 99,
-                    "endOffset": 124969
+                    "startOffset": 124688,
+                    "endColumn": 83,
+                    "endOffset": 124767
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6328,9 +6294,9 @@
                 "to": {
                     "startLine": 1518,
                     "startColumn": 4,
-                    "startOffset": 124974,
-                    "endColumn": 101,
-                    "endOffset": 125071
+                    "startOffset": 124772,
+                    "endColumn": 95,
+                    "endOffset": 124863
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6340,9 +6306,9 @@
                 "to": {
                     "startLine": 1519,
                     "startColumn": 4,
-                    "startOffset": 125076,
-                    "endColumn": 101,
-                    "endOffset": 125173
+                    "startOffset": 124868,
+                    "endColumn": 95,
+                    "endOffset": 124959
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6352,9 +6318,9 @@
                 "to": {
                     "startLine": 1520,
                     "startColumn": 4,
-                    "startOffset": 125178,
-                    "endColumn": 101,
-                    "endOffset": 125275
+                    "startOffset": 124964,
+                    "endColumn": 97,
+                    "endOffset": 125057
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6364,9 +6330,9 @@
                 "to": {
                     "startLine": 1521,
                     "startColumn": 4,
-                    "startOffset": 125280,
-                    "endColumn": 101,
-                    "endOffset": 125377
+                    "startOffset": 125062,
+                    "endColumn": 99,
+                    "endOffset": 125157
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6376,9 +6342,9 @@
                 "to": {
                     "startLine": 1522,
                     "startColumn": 4,
-                    "startOffset": 125382,
+                    "startOffset": 125162,
                     "endColumn": 101,
-                    "endOffset": 125479
+                    "endOffset": 125259
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6388,9 +6354,9 @@
                 "to": {
                     "startLine": 1523,
                     "startColumn": 4,
-                    "startOffset": 125484,
-                    "endColumn": 99,
-                    "endOffset": 125579
+                    "startOffset": 125264,
+                    "endColumn": 101,
+                    "endOffset": 125361
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6400,9 +6366,9 @@
                 "to": {
                     "startLine": 1524,
                     "startColumn": 4,
-                    "startOffset": 125584,
-                    "endColumn": 95,
-                    "endOffset": 125675
+                    "startOffset": 125366,
+                    "endColumn": 101,
+                    "endOffset": 125463
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6412,9 +6378,9 @@
                 "to": {
                     "startLine": 1525,
                     "startColumn": 4,
-                    "startOffset": 125680,
-                    "endColumn": 111,
-                    "endOffset": 125787
+                    "startOffset": 125468,
+                    "endColumn": 101,
+                    "endOffset": 125565
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6424,9 +6390,9 @@
                 "to": {
                     "startLine": 1526,
                     "startColumn": 4,
-                    "startOffset": 125792,
-                    "endColumn": 128,
-                    "endOffset": 125916
+                    "startOffset": 125570,
+                    "endColumn": 101,
+                    "endOffset": 125667
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6436,9 +6402,9 @@
                 "to": {
                     "startLine": 1527,
                     "startColumn": 4,
-                    "startOffset": 125921,
-                    "endColumn": 122,
-                    "endOffset": 126039
+                    "startOffset": 125672,
+                    "endColumn": 99,
+                    "endOffset": 125767
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6448,10 +6414,21 @@
                 "to": {
                     "startLine": 1528,
                     "startColumn": 4,
-                    "startOffset": 126044,
-                    "endLine": 1529,
-                    "endColumn": 12,
-                    "endOffset": 126193
+                    "startOffset": 125772,
+                    "endColumn": 95,
+                    "endOffset": 125863
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1529,
+                    "startColumn": 4,
+                    "startOffset": 125868,
+                    "endColumn": 111,
+                    "endOffset": 125975
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6461,10 +6438,21 @@
                 "to": {
                     "startLine": 1530,
                     "startColumn": 4,
-                    "startOffset": 126198,
-                    "endLine": 1531,
-                    "endColumn": 12,
-                    "endOffset": 126347
+                    "startOffset": 125980,
+                    "endColumn": 128,
+                    "endOffset": 126104
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1531,
+                    "startColumn": 4,
+                    "startOffset": 126109,
+                    "endColumn": 122,
+                    "endOffset": 126227
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6474,21 +6462,10 @@
                 "to": {
                     "startLine": 1532,
                     "startColumn": 4,
-                    "startOffset": 126352,
-                    "endColumn": 97,
-                    "endOffset": 126445
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1533,
-                    "startColumn": 4,
-                    "startOffset": 126450,
-                    "endColumn": 113,
-                    "endOffset": 126559
+                    "startOffset": 126232,
+                    "endLine": 1533,
+                    "endColumn": 12,
+                    "endOffset": 126381
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6498,9 +6475,10 @@
                 "to": {
                     "startLine": 1534,
                     "startColumn": 4,
-                    "startOffset": 126564,
-                    "endColumn": 93,
-                    "endOffset": 126653
+                    "startOffset": 126386,
+                    "endLine": 1535,
+                    "endColumn": 12,
+                    "endOffset": 126535
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6508,12 +6486,11 @@
             },
             {
                 "to": {
-                    "startLine": 1535,
+                    "startLine": 1536,
                     "startColumn": 4,
-                    "startOffset": 126658,
-                    "endLine": 1536,
-                    "endColumn": 12,
-                    "endOffset": 126793
+                    "startOffset": 126540,
+                    "endColumn": 97,
+                    "endOffset": 126633
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6523,10 +6500,21 @@
                 "to": {
                     "startLine": 1537,
                     "startColumn": 4,
-                    "startOffset": 126798,
-                    "endLine": 1538,
-                    "endColumn": 12,
-                    "endOffset": 126927
+                    "startOffset": 126638,
+                    "endColumn": 113,
+                    "endOffset": 126747
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1538,
+                    "startColumn": 4,
+                    "startOffset": 126752,
+                    "endColumn": 93,
+                    "endOffset": 126841
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6536,21 +6524,10 @@
                 "to": {
                     "startLine": 1539,
                     "startColumn": 4,
-                    "startOffset": 126932,
-                    "endColumn": 95,
-                    "endOffset": 127023
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1540,
-                    "startColumn": 4,
-                    "startOffset": 127028,
-                    "endColumn": 111,
-                    "endOffset": 127135
+                    "startOffset": 126846,
+                    "endLine": 1540,
+                    "endColumn": 12,
+                    "endOffset": 126981
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6560,21 +6537,10 @@
                 "to": {
                     "startLine": 1541,
                     "startColumn": 4,
-                    "startOffset": 127140,
-                    "endColumn": 99,
-                    "endOffset": 127235
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1542,
-                    "startColumn": 4,
-                    "startOffset": 127240,
-                    "endColumn": 115,
-                    "endOffset": 127351
+                    "startOffset": 126986,
+                    "endLine": 1542,
+                    "endColumn": 12,
+                    "endOffset": 127115
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6584,9 +6550,9 @@
                 "to": {
                     "startLine": 1543,
                     "startColumn": 4,
-                    "startOffset": 127356,
+                    "startOffset": 127120,
                     "endColumn": 95,
-                    "endOffset": 127447
+                    "endOffset": 127211
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6596,9 +6562,9 @@
                 "to": {
                     "startLine": 1544,
                     "startColumn": 4,
-                    "startOffset": 127452,
+                    "startOffset": 127216,
                     "endColumn": 111,
-                    "endOffset": 127559
+                    "endOffset": 127323
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6608,10 +6574,21 @@
                 "to": {
                     "startLine": 1545,
                     "startColumn": 4,
-                    "startOffset": 127564,
-                    "endLine": 1546,
-                    "endColumn": 12,
-                    "endOffset": 127699
+                    "startOffset": 127328,
+                    "endColumn": 99,
+                    "endOffset": 127423
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1546,
+                    "startColumn": 4,
+                    "startOffset": 127428,
+                    "endColumn": 115,
+                    "endOffset": 127539
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6621,9 +6598,9 @@
                 "to": {
                     "startLine": 1547,
                     "startColumn": 4,
-                    "startOffset": 127704,
-                    "endColumn": 135,
-                    "endOffset": 127835
+                    "startOffset": 127544,
+                    "endColumn": 95,
+                    "endOffset": 127635
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6633,10 +6610,9 @@
                 "to": {
                     "startLine": 1548,
                     "startColumn": 4,
-                    "startOffset": 127840,
-                    "endLine": 1549,
-                    "endColumn": 12,
-                    "endOffset": 127999
+                    "startOffset": 127640,
+                    "endColumn": 111,
+                    "endOffset": 127747
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6644,11 +6620,12 @@
             },
             {
                 "to": {
-                    "startLine": 1550,
+                    "startLine": 1549,
                     "startColumn": 4,
-                    "startOffset": 128004,
-                    "endColumn": 129,
-                    "endOffset": 128129
+                    "startOffset": 127752,
+                    "endLine": 1550,
+                    "endColumn": 12,
+                    "endOffset": 127887
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6658,10 +6635,9 @@
                 "to": {
                     "startLine": 1551,
                     "startColumn": 4,
-                    "startOffset": 128134,
-                    "endLine": 1552,
-                    "endColumn": 12,
-                    "endOffset": 128287
+                    "startOffset": 127892,
+                    "endColumn": 135,
+                    "endOffset": 128023
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6669,12 +6645,24 @@
             },
             {
                 "to": {
-                    "startLine": 1553,
+                    "startLine": 1552,
                     "startColumn": 4,
-                    "startOffset": 128292,
-                    "endLine": 1554,
+                    "startOffset": 128028,
+                    "endLine": 1553,
                     "endColumn": 12,
-                    "endOffset": 128437
+                    "endOffset": 128187
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1554,
+                    "startColumn": 4,
+                    "startOffset": 128192,
+                    "endColumn": 129,
+                    "endOffset": 128317
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6684,22 +6672,10 @@
                 "to": {
                     "startLine": 1555,
                     "startColumn": 4,
-                    "startOffset": 128442,
-                    "endColumn": 140,
-                    "endOffset": 128578
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1556,
-                    "startColumn": 4,
-                    "startOffset": 128583,
-                    "endLine": 1557,
+                    "startOffset": 128322,
+                    "endLine": 1556,
                     "endColumn": 12,
-                    "endOffset": 128722
+                    "endOffset": 128475
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6707,11 +6683,12 @@
             },
             {
                 "to": {
-                    "startLine": 1558,
+                    "startLine": 1557,
                     "startColumn": 4,
-                    "startOffset": 128727,
-                    "endColumn": 134,
-                    "endOffset": 128857
+                    "startOffset": 128480,
+                    "endLine": 1558,
+                    "endColumn": 12,
+                    "endOffset": 128625
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6721,9 +6698,9 @@
                 "to": {
                     "startLine": 1559,
                     "startColumn": 4,
-                    "startOffset": 128862,
-                    "endColumn": 111,
-                    "endOffset": 128969
+                    "startOffset": 128630,
+                    "endColumn": 140,
+                    "endOffset": 128766
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6733,9 +6710,10 @@
                 "to": {
                     "startLine": 1560,
                     "startColumn": 4,
-                    "startOffset": 128974,
-                    "endColumn": 127,
-                    "endOffset": 129097
+                    "startOffset": 128771,
+                    "endLine": 1561,
+                    "endColumn": 12,
+                    "endOffset": 128910
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6743,12 +6721,11 @@
             },
             {
                 "to": {
-                    "startLine": 1561,
+                    "startLine": 1562,
                     "startColumn": 4,
-                    "startOffset": 129102,
-                    "endLine": 1562,
-                    "endColumn": 12,
-                    "endOffset": 129233
+                    "startOffset": 128915,
+                    "endColumn": 134,
+                    "endOffset": 129045
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6758,10 +6735,21 @@
                 "to": {
                     "startLine": 1563,
                     "startColumn": 4,
-                    "startOffset": 129238,
-                    "endLine": 1564,
-                    "endColumn": 12,
-                    "endOffset": 129375
+                    "startOffset": 129050,
+                    "endColumn": 111,
+                    "endOffset": 129157
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1564,
+                    "startColumn": 4,
+                    "startOffset": 129162,
+                    "endColumn": 127,
+                    "endOffset": 129285
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6771,10 +6759,10 @@
                 "to": {
                     "startLine": 1565,
                     "startColumn": 4,
-                    "startOffset": 129380,
+                    "startOffset": 129290,
                     "endLine": 1566,
                     "endColumn": 12,
-                    "endOffset": 129517
+                    "endOffset": 129421
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6784,21 +6772,10 @@
                 "to": {
                     "startLine": 1567,
                     "startColumn": 4,
-                    "startOffset": 129522,
-                    "endColumn": 111,
-                    "endOffset": 129629
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1568,
-                    "startColumn": 4,
-                    "startOffset": 129634,
-                    "endColumn": 139,
-                    "endOffset": 129769
+                    "startOffset": 129426,
+                    "endLine": 1568,
+                    "endColumn": 12,
+                    "endOffset": 129563
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6808,35 +6785,47 @@
                 "to": {
                     "startLine": 1569,
                     "startColumn": 4,
-                    "startOffset": 129774,
-                    "endLine": 1571,
+                    "startOffset": 129568,
+                    "endLine": 1570,
                     "endColumn": 12,
-                    "endOffset": 129970
+                    "endOffset": 129705
                 },
                 "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1571,
+                    "startColumn": 4,
+                    "startOffset": 129710,
+                    "endColumn": 111,
+                    "endOffset": 129817
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 1572,
                     "startColumn": 4,
-                    "startOffset": 129975,
-                    "endColumn": 91,
-                    "endOffset": 130062
+                    "startOffset": 129822,
+                    "endColumn": 139,
+                    "endOffset": 129957
                 },
                 "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 1573,
                     "startColumn": 4,
-                    "startOffset": 130067,
+                    "startOffset": 129962,
                     "endLine": 1575,
                     "endColumn": 12,
-                    "endOffset": 130257
+                    "endOffset": 130158
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6846,10 +6835,9 @@
                 "to": {
                     "startLine": 1576,
                     "startColumn": 4,
-                    "startOffset": 130262,
-                    "endLine": 1578,
-                    "endColumn": 12,
-                    "endOffset": 130441
+                    "startOffset": 130163,
+                    "endColumn": 91,
+                    "endOffset": 130250
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6857,12 +6845,12 @@
             },
             {
                 "to": {
-                    "startLine": 1579,
+                    "startLine": 1577,
                     "startColumn": 4,
-                    "startOffset": 130446,
-                    "endLine": 1581,
+                    "startOffset": 130255,
+                    "endLine": 1579,
                     "endColumn": 12,
-                    "endOffset": 130616
+                    "endOffset": 130445
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6870,12 +6858,25 @@
             },
             {
                 "to": {
-                    "startLine": 1582,
+                    "startLine": 1580,
                     "startColumn": 4,
-                    "startOffset": 130621,
+                    "startOffset": 130450,
+                    "endLine": 1582,
+                    "endColumn": 12,
+                    "endOffset": 130629
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1583,
+                    "startColumn": 4,
+                    "startOffset": 130634,
                     "endLine": 1585,
                     "endColumn": 12,
-                    "endOffset": 130869
+                    "endOffset": 130804
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6885,10 +6886,10 @@
                 "to": {
                     "startLine": 1586,
                     "startColumn": 4,
-                    "startOffset": 130874,
-                    "endLine": 1590,
+                    "startOffset": 130809,
+                    "endLine": 1589,
                     "endColumn": 12,
-                    "endOffset": 131160
+                    "endOffset": 131057
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -6896,59 +6897,24 @@
             },
             {
                 "to": {
-                    "startLine": 1591,
+                    "startLine": 1590,
                     "startColumn": 4,
-                    "startOffset": 131165,
-                    "endColumn": 67,
-                    "endOffset": 131228
+                    "startOffset": 131062,
+                    "endLine": 1594,
+                    "endColumn": 12,
+                    "endOffset": 131348
                 },
                 "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1592,
-                    "startColumn": 4,
-                    "startOffset": 131233,
-                    "endColumn": 72,
-                    "endOffset": 131301
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1593,
-                    "startColumn": 4,
-                    "startOffset": 131306,
-                    "endColumn": 73,
-                    "endOffset": 131375
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1594,
-                    "startColumn": 4,
-                    "startOffset": 131380,
-                    "endColumn": 72,
-                    "endOffset": 131448
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 1595,
                     "startColumn": 4,
-                    "startOffset": 131453,
-                    "endColumn": 73,
-                    "endOffset": 131522
+                    "startOffset": 131353,
+                    "endColumn": 67,
+                    "endOffset": 131416
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6958,10 +6924,21 @@
                 "to": {
                     "startLine": 1596,
                     "startColumn": 4,
-                    "startOffset": 131527,
-                    "endLine": 1597,
-                    "endColumn": 12,
-                    "endOffset": 131668
+                    "startOffset": 131421,
+                    "endColumn": 72,
+                    "endOffset": 131489
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1597,
+                    "startColumn": 4,
+                    "startOffset": 131494,
+                    "endColumn": 73,
+                    "endOffset": 131563
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6971,10 +6948,21 @@
                 "to": {
                     "startLine": 1598,
                     "startColumn": 4,
-                    "startOffset": 131673,
-                    "endLine": 1599,
-                    "endColumn": 12,
-                    "endOffset": 131812
+                    "startOffset": 131568,
+                    "endColumn": 72,
+                    "endOffset": 131636
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1599,
+                    "startColumn": 4,
+                    "startOffset": 131641,
+                    "endColumn": 73,
+                    "endOffset": 131710
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6984,10 +6972,10 @@
                 "to": {
                     "startLine": 1600,
                     "startColumn": 4,
-                    "startOffset": 131817,
+                    "startOffset": 131715,
                     "endLine": 1601,
                     "endColumn": 12,
-                    "endOffset": 131950
+                    "endOffset": 131856
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -6997,21 +6985,10 @@
                 "to": {
                     "startLine": 1602,
                     "startColumn": 4,
-                    "startOffset": 131955,
-                    "endColumn": 65,
-                    "endOffset": 132016
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1603,
-                    "startColumn": 4,
-                    "startOffset": 132021,
-                    "endColumn": 89,
-                    "endOffset": 132106
+                    "startOffset": 131861,
+                    "endLine": 1603,
+                    "endColumn": 12,
+                    "endOffset": 132000
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7021,21 +6998,10 @@
                 "to": {
                     "startLine": 1604,
                     "startColumn": 4,
-                    "startOffset": 132111,
-                    "endColumn": 79,
-                    "endOffset": 132186
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1605,
-                    "startColumn": 4,
-                    "startOffset": 132191,
-                    "endColumn": 91,
-                    "endOffset": 132278
+                    "startOffset": 132005,
+                    "endLine": 1605,
+                    "endColumn": 12,
+                    "endOffset": 132138
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7045,9 +7011,9 @@
                 "to": {
                     "startLine": 1606,
                     "startColumn": 4,
-                    "startOffset": 132283,
-                    "endColumn": 97,
-                    "endOffset": 132376
+                    "startOffset": 132143,
+                    "endColumn": 65,
+                    "endOffset": 132204
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7057,10 +7023,21 @@
                 "to": {
                     "startLine": 1607,
                     "startColumn": 4,
-                    "startOffset": 132381,
-                    "endLine": 1608,
-                    "endColumn": 12,
-                    "endOffset": 132486
+                    "startOffset": 132209,
+                    "endColumn": 89,
+                    "endOffset": 132294
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1608,
+                    "startColumn": 4,
+                    "startOffset": 132299,
+                    "endColumn": 79,
+                    "endOffset": 132374
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7070,9 +7047,9 @@
                 "to": {
                     "startLine": 1609,
                     "startColumn": 4,
-                    "startOffset": 132491,
-                    "endColumn": 77,
-                    "endOffset": 132564
+                    "startOffset": 132379,
+                    "endColumn": 91,
+                    "endOffset": 132466
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7082,9 +7059,9 @@
                 "to": {
                     "startLine": 1610,
                     "startColumn": 4,
-                    "startOffset": 132569,
-                    "endColumn": 105,
-                    "endOffset": 132670
+                    "startOffset": 132471,
+                    "endColumn": 97,
+                    "endOffset": 132564
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7094,21 +7071,10 @@
                 "to": {
                     "startLine": 1611,
                     "startColumn": 4,
-                    "startOffset": 132675,
-                    "endColumn": 91,
-                    "endOffset": 132762
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1612,
-                    "startColumn": 4,
-                    "startOffset": 132767,
-                    "endColumn": 103,
-                    "endOffset": 132866
+                    "startOffset": 132569,
+                    "endLine": 1612,
+                    "endColumn": 12,
+                    "endOffset": 132674
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7118,9 +7084,9 @@
                 "to": {
                     "startLine": 1613,
                     "startColumn": 4,
-                    "startOffset": 132871,
-                    "endColumn": 109,
-                    "endOffset": 132976
+                    "startOffset": 132679,
+                    "endColumn": 77,
+                    "endOffset": 132752
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7130,10 +7096,21 @@
                 "to": {
                     "startLine": 1614,
                     "startColumn": 4,
-                    "startOffset": 132981,
-                    "endLine": 1615,
-                    "endColumn": 12,
-                    "endOffset": 133098
+                    "startOffset": 132757,
+                    "endColumn": 105,
+                    "endOffset": 132858
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1615,
+                    "startColumn": 4,
+                    "startOffset": 132863,
+                    "endColumn": 91,
+                    "endOffset": 132950
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7143,10 +7120,34 @@
                 "to": {
                     "startLine": 1616,
                     "startColumn": 4,
-                    "startOffset": 133103,
+                    "startOffset": 132955,
+                    "endColumn": 103,
+                    "endOffset": 133054
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1617,
+                    "startColumn": 4,
+                    "startOffset": 133059,
+                    "endColumn": 109,
+                    "endOffset": 133164
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1618,
+                    "startColumn": 4,
+                    "startOffset": 133169,
                     "endLine": 1619,
                     "endColumn": 12,
-                    "endOffset": 133261
+                    "endOffset": 133286
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7156,10 +7157,10 @@
                 "to": {
                     "startLine": 1620,
                     "startColumn": 4,
-                    "startOffset": 133266,
+                    "startOffset": 133291,
                     "endLine": 1623,
                     "endColumn": 12,
-                    "endOffset": 133418
+                    "endOffset": 133449
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7169,10 +7170,23 @@
                 "to": {
                     "startLine": 1624,
                     "startColumn": 4,
-                    "startOffset": 133423,
-                    "endLine": 1628,
+                    "startOffset": 133454,
+                    "endLine": 1627,
                     "endColumn": 12,
-                    "endOffset": 133720
+                    "endOffset": 133606
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1628,
+                    "startColumn": 4,
+                    "startOffset": 133611,
+                    "endLine": 1632,
+                    "endColumn": 12,
+                    "endOffset": 133908
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-appinvite\\8.4.0\\res\\values\\appinvite_styles.xml"
@@ -7180,11 +7194,11 @@
             },
             {
                 "to": {
-                    "startLine": 1629,
+                    "startLine": 1633,
                     "startColumn": 4,
-                    "startOffset": 133725,
+                    "startOffset": 133913,
                     "endColumn": 95,
-                    "endOffset": 133816
+                    "endOffset": 134004
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-appinvite\\8.4.0\\res\\values\\appinvite_styles.xml"
@@ -7192,12 +7206,12 @@
             },
             {
                 "to": {
-                    "startLine": 1630,
+                    "startLine": 1634,
                     "startColumn": 4,
-                    "startOffset": 133821,
-                    "endLine": 1637,
+                    "startOffset": 134009,
+                    "endLine": 1641,
                     "endColumn": 10,
-                    "endOffset": 134240
+                    "endOffset": 134428
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-ads\\8.4.0\\res\\values\\admob_iap_style.xml"
@@ -7205,12 +7219,12 @@
             },
             {
                 "to": {
-                    "startLine": 1638,
+                    "startLine": 1642,
                     "startColumn": 4,
-                    "startOffset": 134245,
-                    "endLine": 1648,
+                    "startOffset": 134433,
+                    "endLine": 1652,
                     "endColumn": 12,
-                    "endOffset": 134994
+                    "endOffset": 135182
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\23.0.0\\res\\values\\values.xml"
@@ -7218,72 +7232,24 @@
             },
             {
                 "to": {
-                    "startLine": 1649,
+                    "startLine": 1653,
                     "startColumn": 4,
-                    "startOffset": 134999,
-                    "endLine": 1659,
+                    "startOffset": 135187,
+                    "endLine": 1663,
                     "endColumn": 12,
-                    "endOffset": 135743
+                    "endOffset": 135931
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\23.0.0\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1660,
-                    "startColumn": 4,
-                    "startOffset": 135748,
-                    "endColumn": 79,
-                    "endOffset": 135823
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1661,
-                    "startColumn": 4,
-                    "startOffset": 135828,
-                    "endColumn": 99,
-                    "endOffset": 135923
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1662,
-                    "startColumn": 4,
-                    "startOffset": 135928,
-                    "endColumn": 89,
-                    "endOffset": 136013
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1663,
-                    "startColumn": 4,
-                    "startOffset": 136018,
-                    "endColumn": 109,
-                    "endOffset": 136123
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 1664,
                     "startColumn": 4,
-                    "startOffset": 136128,
-                    "endColumn": 91,
-                    "endOffset": 136215
+                    "startOffset": 135936,
+                    "endColumn": 79,
+                    "endOffset": 136011
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7293,62 +7259,9 @@
                 "to": {
                     "startLine": 1665,
                     "startColumn": 4,
-                    "startOffset": 136220,
-                    "endLine": 1672,
-                    "endColumn": 12,
-                    "endOffset": 136744
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\8.4.0\\res\\values\\wallet_styles.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1673,
-                    "startColumn": 4,
-                    "startOffset": 136749,
-                    "endLine": 1675,
-                    "endColumn": 12,
-                    "endOffset": 136928
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\8.4.0\\res\\values\\wallet_styles.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1676,
-                    "startColumn": 4,
-                    "startOffset": 136933,
-                    "endLine": 1683,
-                    "endColumn": 12,
-                    "endOffset": 137457
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\8.4.0\\res\\values\\wallet_styles.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1684,
-                    "startColumn": 4,
-                    "startOffset": 137462,
-                    "endLine": 1696,
-                    "endColumn": 12,
-                    "endOffset": 138461
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\8.4.0\\res\\values\\wallet_styles.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1697,
-                    "startColumn": 4,
-                    "startOffset": 138466,
-                    "endLine": 1698,
-                    "endColumn": 12,
-                    "endOffset": 138561
+                    "startOffset": 136016,
+                    "endColumn": 99,
+                    "endOffset": 136111
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7356,25 +7269,100 @@
             },
             {
                 "to": {
-                    "startLine": 1699,
+                    "startLine": 1666,
                     "startColumn": 4,
-                    "startOffset": 138566,
+                    "startOffset": 136116,
+                    "endColumn": 89,
+                    "endOffset": 136201
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1667,
+                    "startColumn": 4,
+                    "startOffset": 136206,
+                    "endColumn": 109,
+                    "endOffset": 136311
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1668,
+                    "startColumn": 4,
+                    "startOffset": 136316,
+                    "endColumn": 91,
+                    "endOffset": 136403
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1669,
+                    "startColumn": 4,
+                    "startOffset": 136408,
+                    "endLine": 1676,
+                    "endColumn": 12,
+                    "endOffset": 136932
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\8.4.0\\res\\values\\wallet_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1677,
+                    "startColumn": 4,
+                    "startOffset": 136937,
+                    "endLine": 1679,
+                    "endColumn": 12,
+                    "endOffset": 137116
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\8.4.0\\res\\values\\wallet_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1680,
+                    "startColumn": 4,
+                    "startOffset": 137121,
+                    "endLine": 1687,
+                    "endColumn": 12,
+                    "endOffset": 137645
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\8.4.0\\res\\values\\wallet_styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1688,
+                    "startColumn": 4,
+                    "startOffset": 137650,
                     "endLine": 1700,
                     "endColumn": 12,
-                    "endOffset": 138673
+                    "endOffset": 138649
                 },
                 "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\8.4.0\\res\\values\\wallet_styles.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 1701,
                     "startColumn": 4,
-                    "startOffset": 138678,
+                    "startOffset": 138654,
                     "endLine": 1702,
                     "endColumn": 12,
-                    "endOffset": 138787
+                    "endOffset": 138749
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7384,10 +7372,10 @@
                 "to": {
                     "startLine": 1703,
                     "startColumn": 4,
-                    "startOffset": 138792,
+                    "startOffset": 138754,
                     "endLine": 1704,
                     "endColumn": 12,
-                    "endOffset": 138903
+                    "endOffset": 138861
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7397,10 +7385,10 @@
                 "to": {
                     "startLine": 1705,
                     "startColumn": 4,
-                    "startOffset": 138908,
+                    "startOffset": 138866,
                     "endLine": 1706,
                     "endColumn": 12,
-                    "endOffset": 139019
+                    "endOffset": 138975
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7410,21 +7398,10 @@
                 "to": {
                     "startLine": 1707,
                     "startColumn": 4,
-                    "startOffset": 139024,
-                    "endColumn": 93,
-                    "endOffset": 139113
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1708,
-                    "startColumn": 4,
-                    "startOffset": 139118,
-                    "endColumn": 113,
-                    "endOffset": 139227
+                    "startOffset": 138980,
+                    "endLine": 1708,
+                    "endColumn": 12,
+                    "endOffset": 139091
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7434,9 +7411,10 @@
                 "to": {
                     "startLine": 1709,
                     "startColumn": 4,
-                    "startOffset": 139232,
-                    "endColumn": 111,
-                    "endOffset": 139339
+                    "startOffset": 139096,
+                    "endLine": 1710,
+                    "endColumn": 12,
+                    "endOffset": 139207
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7444,12 +7422,11 @@
             },
             {
                 "to": {
-                    "startLine": 1710,
+                    "startLine": 1711,
                     "startColumn": 4,
-                    "startOffset": 139344,
-                    "endLine": 1711,
-                    "endColumn": 12,
-                    "endOffset": 139441
+                    "startOffset": 139212,
+                    "endColumn": 93,
+                    "endOffset": 139301
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7459,10 +7436,21 @@
                 "to": {
                     "startLine": 1712,
                     "startColumn": 4,
-                    "startOffset": 139446,
-                    "endLine": 1713,
-                    "endColumn": 12,
-                    "endOffset": 139561
+                    "startOffset": 139306,
+                    "endColumn": 113,
+                    "endOffset": 139415
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1713,
+                    "startColumn": 4,
+                    "startOffset": 139420,
+                    "endColumn": 111,
+                    "endOffset": 139527
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7472,10 +7460,10 @@
                 "to": {
                     "startLine": 1714,
                     "startColumn": 4,
-                    "startOffset": 139566,
+                    "startOffset": 139532,
                     "endLine": 1715,
                     "endColumn": 12,
-                    "endOffset": 139683
+                    "endOffset": 139629
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7485,21 +7473,10 @@
                 "to": {
                     "startLine": 1716,
                     "startColumn": 4,
-                    "startOffset": 139688,
-                    "endColumn": 81,
-                    "endOffset": 139765
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1717,
-                    "startColumn": 4,
-                    "startOffset": 139770,
-                    "endColumn": 103,
-                    "endOffset": 139869
+                    "startOffset": 139634,
+                    "endLine": 1717,
+                    "endColumn": 12,
+                    "endOffset": 139749
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7509,21 +7486,10 @@
                 "to": {
                     "startLine": 1718,
                     "startColumn": 4,
-                    "startOffset": 139874,
-                    "endColumn": 119,
-                    "endOffset": 139989
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1719,
-                    "startColumn": 4,
-                    "startOffset": 139994,
-                    "endColumn": 125,
-                    "endOffset": 140115
+                    "startOffset": 139754,
+                    "endLine": 1719,
+                    "endColumn": 12,
+                    "endOffset": 139871
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7533,9 +7499,9 @@
                 "to": {
                     "startLine": 1720,
                     "startColumn": 4,
-                    "startOffset": 140120,
-                    "endColumn": 97,
-                    "endOffset": 140213
+                    "startOffset": 139876,
+                    "endColumn": 81,
+                    "endOffset": 139953
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7545,9 +7511,9 @@
                 "to": {
                     "startLine": 1721,
                     "startColumn": 4,
-                    "startOffset": 140218,
-                    "endColumn": 93,
-                    "endOffset": 140307
+                    "startOffset": 139958,
+                    "endColumn": 103,
+                    "endOffset": 140057
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7557,9 +7523,9 @@
                 "to": {
                     "startLine": 1722,
                     "startColumn": 4,
-                    "startOffset": 140312,
-                    "endColumn": 87,
-                    "endOffset": 140395
+                    "startOffset": 140062,
+                    "endColumn": 119,
+                    "endOffset": 140177
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7569,9 +7535,9 @@
                 "to": {
                     "startLine": 1723,
                     "startColumn": 4,
-                    "startOffset": 140400,
-                    "endColumn": 111,
-                    "endOffset": 140507
+                    "startOffset": 140182,
+                    "endColumn": 125,
+                    "endOffset": 140303
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7581,9 +7547,9 @@
                 "to": {
                     "startLine": 1724,
                     "startColumn": 4,
-                    "startOffset": 140512,
-                    "endColumn": 115,
-                    "endOffset": 140623
+                    "startOffset": 140308,
+                    "endColumn": 97,
+                    "endOffset": 140401
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7593,9 +7559,9 @@
                 "to": {
                     "startLine": 1725,
                     "startColumn": 4,
-                    "startOffset": 140628,
-                    "endColumn": 121,
-                    "endOffset": 140745
+                    "startOffset": 140406,
+                    "endColumn": 93,
+                    "endOffset": 140495
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7605,9 +7571,9 @@
                 "to": {
                     "startLine": 1726,
                     "startColumn": 4,
-                    "startOffset": 140750,
-                    "endColumn": 111,
-                    "endOffset": 140857
+                    "startOffset": 140500,
+                    "endColumn": 87,
+                    "endOffset": 140583
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7617,10 +7583,33 @@
                 "to": {
                     "startLine": 1727,
                     "startColumn": 4,
-                    "startOffset": 140862,
-                    "endLine": 1729,
-                    "endColumn": 12,
-                    "endOffset": 141032
+                    "startOffset": 140588,
+                    "endColumn": 111,
+                    "endOffset": 140695
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1728,
+                    "startColumn": 4,
+                    "startOffset": 140700,
+                    "endColumn": 115,
+                    "endOffset": 140811
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1729,
+                    "startColumn": 4,
+                    "startOffset": 140816,
+                    "endColumn": 121,
+                    "endOffset": 140933
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7630,9 +7619,9 @@
                 "to": {
                     "startLine": 1730,
                     "startColumn": 4,
-                    "startOffset": 141037,
-                    "endColumn": 115,
-                    "endOffset": 141148
+                    "startOffset": 140938,
+                    "endColumn": 111,
+                    "endOffset": 141045
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7642,34 +7631,22 @@
                 "to": {
                     "startLine": 1731,
                     "startColumn": 4,
-                    "startOffset": 141153,
-                    "endColumn": 85,
-                    "endOffset": 141234
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1732,
-                    "startColumn": 4,
-                    "startOffset": 141239,
-                    "endColumn": 91,
-                    "endOffset": 141326
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1733,
-                    "startColumn": 4,
-                    "startOffset": 141331,
-                    "endLine": 1734,
+                    "startOffset": 141050,
+                    "endLine": 1733,
                     "endColumn": 12,
-                    "endOffset": 141438
+                    "endOffset": 141220
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1734,
+                    "startColumn": 4,
+                    "startOffset": 141225,
+                    "endColumn": 115,
+                    "endOffset": 141336
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7679,10 +7656,21 @@
                 "to": {
                     "startLine": 1735,
                     "startColumn": 4,
-                    "startOffset": 141443,
-                    "endLine": 1736,
-                    "endColumn": 12,
-                    "endOffset": 141562
+                    "startOffset": 141341,
+                    "endColumn": 85,
+                    "endOffset": 141422
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1736,
+                    "startColumn": 4,
+                    "startOffset": 141427,
+                    "endColumn": 91,
+                    "endOffset": 141514
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7692,22 +7680,10 @@
                 "to": {
                     "startLine": 1737,
                     "startColumn": 4,
-                    "startOffset": 141567,
-                    "endColumn": 66,
-                    "endOffset": 141629
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1738,
-                    "startColumn": 4,
-                    "startOffset": 141634,
-                    "endLine": 1739,
+                    "startOffset": 141519,
+                    "endLine": 1738,
                     "endColumn": 12,
-                    "endOffset": 141755
+                    "endOffset": 141626
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7715,11 +7691,12 @@
             },
             {
                 "to": {
-                    "startLine": 1740,
+                    "startLine": 1739,
                     "startColumn": 4,
-                    "startOffset": 141760,
-                    "endColumn": 67,
-                    "endOffset": 141823
+                    "startOffset": 141631,
+                    "endLine": 1740,
+                    "endColumn": 12,
+                    "endOffset": 141750
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7729,10 +7706,9 @@
                 "to": {
                     "startLine": 1741,
                     "startColumn": 4,
-                    "startOffset": 141828,
-                    "endLine": 1742,
-                    "endColumn": 12,
-                    "endOffset": 141951
+                    "startOffset": 141755,
+                    "endColumn": 66,
+                    "endOffset": 141817
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7740,12 +7716,24 @@
             },
             {
                 "to": {
-                    "startLine": 1743,
+                    "startLine": 1742,
                     "startColumn": 4,
-                    "startOffset": 141956,
-                    "endLine": 1744,
+                    "startOffset": 141822,
+                    "endLine": 1743,
                     "endColumn": 12,
-                    "endOffset": 142095
+                    "endOffset": 141943
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1744,
+                    "startColumn": 4,
+                    "startOffset": 141948,
+                    "endColumn": 67,
+                    "endOffset": 142011
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7755,10 +7743,10 @@
                 "to": {
                     "startLine": 1745,
                     "startColumn": 4,
-                    "startOffset": 142100,
+                    "startOffset": 142016,
                     "endLine": 1746,
                     "endColumn": 12,
-                    "endOffset": 142223
+                    "endOffset": 142139
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7768,21 +7756,10 @@
                 "to": {
                     "startLine": 1747,
                     "startColumn": 4,
-                    "startOffset": 142228,
-                    "endColumn": 68,
-                    "endOffset": 142292
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1748,
-                    "startColumn": 4,
-                    "startOffset": 142297,
-                    "endColumn": 94,
-                    "endOffset": 142387
+                    "startOffset": 142144,
+                    "endLine": 1748,
+                    "endColumn": 12,
+                    "endOffset": 142283
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7792,21 +7769,10 @@
                 "to": {
                     "startLine": 1749,
                     "startColumn": 4,
-                    "startOffset": 142392,
-                    "endColumn": 114,
-                    "endOffset": 142502
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1750,
-                    "startColumn": 4,
-                    "startOffset": 142507,
-                    "endColumn": 112,
-                    "endOffset": 142615
+                    "startOffset": 142288,
+                    "endLine": 1750,
+                    "endColumn": 12,
+                    "endOffset": 142411
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7816,9 +7782,9 @@
                 "to": {
                     "startLine": 1751,
                     "startColumn": 4,
-                    "startOffset": 142620,
-                    "endColumn": 98,
-                    "endOffset": 142714
+                    "startOffset": 142416,
+                    "endColumn": 68,
+                    "endOffset": 142480
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7828,9 +7794,9 @@
                 "to": {
                     "startLine": 1752,
                     "startColumn": 4,
-                    "startOffset": 142719,
-                    "endColumn": 108,
-                    "endOffset": 142823
+                    "startOffset": 142485,
+                    "endColumn": 94,
+                    "endOffset": 142575
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7840,9 +7806,9 @@
                 "to": {
                     "startLine": 1753,
                     "startColumn": 4,
-                    "startOffset": 142828,
-                    "endColumn": 110,
-                    "endOffset": 142934
+                    "startOffset": 142580,
+                    "endColumn": 114,
+                    "endOffset": 142690
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7852,9 +7818,9 @@
                 "to": {
                     "startLine": 1754,
                     "startColumn": 4,
-                    "startOffset": 142939,
-                    "endColumn": 110,
-                    "endOffset": 143045
+                    "startOffset": 142695,
+                    "endColumn": 112,
+                    "endOffset": 142803
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7864,9 +7830,9 @@
                 "to": {
                     "startLine": 1755,
                     "startColumn": 4,
-                    "startOffset": 143050,
-                    "endColumn": 100,
-                    "endOffset": 143146
+                    "startOffset": 142808,
+                    "endColumn": 98,
+                    "endOffset": 142902
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7876,9 +7842,9 @@
                 "to": {
                     "startLine": 1756,
                     "startColumn": 4,
-                    "startOffset": 143151,
-                    "endColumn": 104,
-                    "endOffset": 143251
+                    "startOffset": 142907,
+                    "endColumn": 108,
+                    "endOffset": 143011
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7888,10 +7854,21 @@
                 "to": {
                     "startLine": 1757,
                     "startColumn": 4,
-                    "startOffset": 143256,
-                    "endLine": 1758,
-                    "endColumn": 12,
-                    "endOffset": 143363
+                    "startOffset": 143016,
+                    "endColumn": 110,
+                    "endOffset": 143122
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1758,
+                    "startColumn": 4,
+                    "startOffset": 143127,
+                    "endColumn": 110,
+                    "endOffset": 143233
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7901,10 +7878,21 @@
                 "to": {
                     "startLine": 1759,
                     "startColumn": 4,
-                    "startOffset": 143368,
-                    "endLine": 1760,
-                    "endColumn": 12,
-                    "endOffset": 143493
+                    "startOffset": 143238,
+                    "endColumn": 100,
+                    "endOffset": 143334
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1760,
+                    "startColumn": 4,
+                    "startOffset": 143339,
+                    "endColumn": 104,
+                    "endOffset": 143439
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7914,21 +7902,10 @@
                 "to": {
                     "startLine": 1761,
                     "startColumn": 4,
-                    "startOffset": 143498,
-                    "endColumn": 90,
-                    "endOffset": 143584
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1762,
-                    "startColumn": 4,
-                    "startOffset": 143589,
-                    "endColumn": 122,
-                    "endOffset": 143707
+                    "startOffset": 143444,
+                    "endLine": 1762,
+                    "endColumn": 12,
+                    "endOffset": 143551
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7938,10 +7915,10 @@
                 "to": {
                     "startLine": 1763,
                     "startColumn": 4,
-                    "startOffset": 143712,
+                    "startOffset": 143556,
                     "endLine": 1764,
                     "endColumn": 12,
-                    "endOffset": 143819
+                    "endOffset": 143681
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7951,9 +7928,9 @@
                 "to": {
                     "startLine": 1765,
                     "startColumn": 4,
-                    "startOffset": 143824,
-                    "endColumn": 85,
-                    "endOffset": 143905
+                    "startOffset": 143686,
+                    "endColumn": 90,
+                    "endOffset": 143772
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7963,9 +7940,9 @@
                 "to": {
                     "startLine": 1766,
                     "startColumn": 4,
-                    "startOffset": 143910,
-                    "endColumn": 103,
-                    "endOffset": 144009
+                    "startOffset": 143777,
+                    "endColumn": 122,
+                    "endOffset": 143895
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7975,10 +7952,10 @@
                 "to": {
                     "startLine": 1767,
                     "startColumn": 4,
-                    "startOffset": 144014,
+                    "startOffset": 143900,
                     "endLine": 1768,
                     "endColumn": 12,
-                    "endOffset": 144117
+                    "endOffset": 144007
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -7988,10 +7965,21 @@
                 "to": {
                     "startLine": 1769,
                     "startColumn": 4,
-                    "startOffset": 144122,
-                    "endLine": 1770,
-                    "endColumn": 12,
-                    "endOffset": 144217
+                    "startOffset": 144012,
+                    "endColumn": 85,
+                    "endOffset": 144093
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1770,
+                    "startColumn": 4,
+                    "startOffset": 144098,
+                    "endColumn": 103,
+                    "endOffset": 144197
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8001,10 +7989,10 @@
                 "to": {
                     "startLine": 1771,
                     "startColumn": 4,
-                    "startOffset": 144222,
+                    "startOffset": 144202,
                     "endLine": 1772,
                     "endColumn": 12,
-                    "endOffset": 144335
+                    "endOffset": 144305
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8014,10 +8002,10 @@
                 "to": {
                     "startLine": 1773,
                     "startColumn": 4,
-                    "startOffset": 144340,
+                    "startOffset": 144310,
                     "endLine": 1774,
                     "endColumn": 12,
-                    "endOffset": 144439
+                    "endOffset": 144405
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8027,10 +8015,10 @@
                 "to": {
                     "startLine": 1775,
                     "startColumn": 4,
-                    "startOffset": 144444,
+                    "startOffset": 144410,
                     "endLine": 1776,
                     "endColumn": 12,
-                    "endOffset": 144543
+                    "endOffset": 144523
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8040,10 +8028,10 @@
                 "to": {
                     "startLine": 1777,
                     "startColumn": 4,
-                    "startOffset": 144548,
+                    "startOffset": 144528,
                     "endLine": 1778,
                     "endColumn": 12,
-                    "endOffset": 144669
+                    "endOffset": 144627
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8053,21 +8041,10 @@
                 "to": {
                     "startLine": 1779,
                     "startColumn": 4,
-                    "startOffset": 144674,
-                    "endColumn": 87,
-                    "endOffset": 144757
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1780,
-                    "startColumn": 4,
-                    "startOffset": 144762,
-                    "endColumn": 89,
-                    "endOffset": 144847
+                    "startOffset": 144632,
+                    "endLine": 1780,
+                    "endColumn": 12,
+                    "endOffset": 144731
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8077,21 +8054,10 @@
                 "to": {
                     "startLine": 1781,
                     "startColumn": 4,
-                    "startOffset": 144852,
-                    "endColumn": 109,
-                    "endOffset": 144957
-                },
-                "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1782,
-                    "startColumn": 4,
-                    "startOffset": 144962,
-                    "endColumn": 83,
-                    "endOffset": 145041
+                    "startOffset": 144736,
+                    "endLine": 1782,
+                    "endColumn": 12,
+                    "endOffset": 144857
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8101,9 +8067,9 @@
                 "to": {
                     "startLine": 1783,
                     "startColumn": 4,
-                    "startOffset": 145046,
-                    "endColumn": 83,
-                    "endOffset": 145125
+                    "startOffset": 144862,
+                    "endColumn": 87,
+                    "endOffset": 144945
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8113,9 +8079,9 @@
                 "to": {
                     "startLine": 1784,
                     "startColumn": 4,
-                    "startOffset": 145130,
-                    "endColumn": 53,
-                    "endOffset": 145179
+                    "startOffset": 144950,
+                    "endColumn": 89,
+                    "endOffset": 145035
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8125,9 +8091,9 @@
                 "to": {
                     "startLine": 1785,
                     "startColumn": 4,
-                    "startOffset": 145184,
-                    "endColumn": 63,
-                    "endOffset": 145243
+                    "startOffset": 145040,
+                    "endColumn": 109,
+                    "endOffset": 145145
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8137,9 +8103,9 @@
                 "to": {
                     "startLine": 1786,
                     "startColumn": 4,
-                    "startOffset": 145248,
-                    "endColumn": 105,
-                    "endOffset": 145349
+                    "startOffset": 145150,
+                    "endColumn": 83,
+                    "endOffset": 145229
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8149,9 +8115,9 @@
                 "to": {
                     "startLine": 1787,
                     "startColumn": 4,
-                    "startOffset": 145354,
-                    "endColumn": 109,
-                    "endOffset": 145459
+                    "startOffset": 145234,
+                    "endColumn": 83,
+                    "endOffset": 145313
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8161,9 +8127,9 @@
                 "to": {
                     "startLine": 1788,
                     "startColumn": 4,
-                    "startOffset": 145464,
-                    "endColumn": 83,
-                    "endOffset": 145543
+                    "startOffset": 145318,
+                    "endColumn": 53,
+                    "endOffset": 145367
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8173,9 +8139,9 @@
                 "to": {
                     "startLine": 1789,
                     "startColumn": 4,
-                    "startOffset": 145548,
-                    "endColumn": 119,
-                    "endOffset": 145663
+                    "startOffset": 145372,
+                    "endColumn": 63,
+                    "endOffset": 145431
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
@@ -8185,23 +8151,58 @@
                 "to": {
                     "startLine": 1790,
                     "startColumn": 4,
-                    "startOffset": 145668,
-                    "endLine": 1793,
-                    "endColumn": 12,
-                    "endOffset": 145881
+                    "startOffset": 145436,
+                    "endColumn": 105,
+                    "endOffset": 145537
                 },
                 "from": {
-                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1791,
+                    "startColumn": 4,
+                    "startOffset": 145542,
+                    "endColumn": 109,
+                    "endOffset": 145647
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1792,
+                    "startColumn": 4,
+                    "startOffset": 145652,
+                    "endColumn": 83,
+                    "endOffset": 145731
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1793,
+                    "startColumn": 4,
+                    "startOffset": 145736,
+                    "endColumn": 119,
+                    "endOffset": 145851
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 1794,
                     "startColumn": 4,
-                    "startOffset": 145886,
+                    "startOffset": 145856,
                     "endLine": 1797,
                     "endColumn": 12,
-                    "endOffset": 146088
+                    "endOffset": 146069
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -8211,10 +8212,10 @@
                 "to": {
                     "startLine": 1798,
                     "startColumn": 4,
-                    "startOffset": 146093,
-                    "endLine": 1800,
+                    "startOffset": 146074,
+                    "endLine": 1801,
                     "endColumn": 12,
-                    "endOffset": 146247
+                    "endOffset": 146276
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -8222,12 +8223,12 @@
             },
             {
                 "to": {
-                    "startLine": 1801,
+                    "startLine": 1802,
                     "startColumn": 4,
-                    "startOffset": 146252,
-                    "endLine": 1809,
+                    "startOffset": 146281,
+                    "endLine": 1804,
                     "endColumn": 12,
-                    "endOffset": 146814
+                    "endOffset": 146435
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -8235,12 +8236,12 @@
             },
             {
                 "to": {
-                    "startLine": 1810,
+                    "startLine": 1805,
                     "startColumn": 4,
-                    "startOffset": 146819,
-                    "endLine": 1815,
+                    "startOffset": 146440,
+                    "endLine": 1813,
                     "endColumn": 12,
-                    "endOffset": 147175
+                    "endOffset": 147002
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -8248,12 +8249,12 @@
             },
             {
                 "to": {
-                    "startLine": 1816,
+                    "startLine": 1814,
                     "startColumn": 4,
-                    "startOffset": 147180,
-                    "endLine": 1818,
+                    "startOffset": 147007,
+                    "endLine": 1819,
                     "endColumn": 12,
-                    "endOffset": 147304
+                    "endOffset": 147363
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -8261,12 +8262,12 @@
             },
             {
                 "to": {
-                    "startLine": 1819,
+                    "startLine": 1820,
                     "startColumn": 4,
-                    "startOffset": 147309,
-                    "endLine": 1828,
+                    "startOffset": 147368,
+                    "endLine": 1822,
                     "endColumn": 12,
-                    "endOffset": 148048
+                    "endOffset": 147492
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -8274,12 +8275,12 @@
             },
             {
                 "to": {
-                    "startLine": 1829,
+                    "startLine": 1823,
                     "startColumn": 4,
-                    "startOffset": 148053,
+                    "startOffset": 147497,
                     "endLine": 1832,
                     "endColumn": 12,
-                    "endOffset": 148228
+                    "endOffset": 148236
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -8289,10 +8290,10 @@
                 "to": {
                     "startLine": 1833,
                     "startColumn": 4,
-                    "startOffset": 148233,
-                    "endLine": 1838,
+                    "startOffset": 148241,
+                    "endLine": 1836,
                     "endColumn": 12,
-                    "endOffset": 148669
+                    "endOffset": 148416
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
@@ -8300,12 +8301,25 @@
             },
             {
                 "to": {
-                    "startLine": 1839,
+                    "startLine": 1837,
                     "startColumn": 4,
-                    "startOffset": 148674,
-                    "endLine": 1846,
+                    "startOffset": 148421,
+                    "endLine": 1842,
                     "endColumn": 12,
-                    "endOffset": 149189
+                    "endOffset": 148857
+                },
+                "from": {
+                    "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1843,
+                    "startColumn": 4,
+                    "startOffset": 148862,
+                    "endLine": 1850,
+                    "endColumn": 12,
+                    "endOffset": 149377
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\23.0.0\\res\\values\\values.xml"
@@ -8313,12 +8327,12 @@
             },
             {
                 "to": {
-                    "startLine": 1847,
+                    "startLine": 1851,
                     "startColumn": 4,
-                    "startOffset": 149194,
-                    "endLine": 1854,
+                    "startOffset": 149382,
+                    "endLine": 1858,
                     "endColumn": 12,
-                    "endOffset": 149696
+                    "endOffset": 149884
                 },
                 "from": {
                     "file": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\23.0.0\\res\\values\\values.xml"

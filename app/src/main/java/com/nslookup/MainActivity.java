@@ -1,6 +1,9 @@
 package com.nslookup;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,10 +13,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
@@ -21,27 +26,34 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     ViewPager mViewPager;
     String url, isip, domain;
     String[][] result = new String[4][];
-    Long la, lo;
+    Double la, lo;
     String[] portNum = {"21", "22", "23", "25", "53", "80", "110", "111", "135", "139", "143", "389", "443", "445",
             "587", "1025", "1352", "1433", "1723", "3306", "3389", "5060", "5900", "6001", "8080"};
     String[] portName = {"ftp", "ssh", "telnet", "smtp", "dns", "http", "pop3", "portmapper", "RPC", "netbios", "imap",
             "ldap", "https", "SMB", "outlook", "IIS", "lotus", "SQL", "P2P", "MYSQL", "remote", "SIP", "VR_D",
             "XWindows", "webcache"};
     Intent intent;
-    ProgressDialog pd;
+    static ProgressDialog pd, pd1;
     ActionBar actionBar;
     long nStart = 0;
     JobDoneTest jdt;
+    boolean checked = false;
+    boolean mail_res = false;
+    String mail_domain = " - KNOWN -", mail_portscan = " - KNOWN -", mail_server = " - KNOWN -", mail_isp = " - KNOWN -";
+    String mail_server_tmp = "", mail_portscan_tmp = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pd = new ProgressDialog(this);
+        pd1 = new ProgressDialog(this);
         intent = getIntent();
         url = intent.getStringExtra("url");
         domain = url;
         isip = intent.getStringExtra("isip");
+        if (intent.getIntExtra("email", 0) == 1)
+            checked = true;
         MySectionAdapter.tab_isp = new TabFragment_ISP();
         MySectionAdapter.tab_map = new TabFragment_MAP();
         MySectionAdapter.tab_domain = new TabFragment_Domain();
@@ -69,8 +81,8 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         getSupportActionBar().setDisplayShowHomeEnabled(false);
         nStart = System.currentTimeMillis();
         pd.setProgress(5);
-        pd.setTitle("NSlooking...");
-        pd.setMessage("검색중입니다.\n잠시만 기다려주세요(최대 1분)");
+        pd.setTitle("검색중...");
+        pd.setMessage("잠시만 기다려주세요(최대 1분)");
         pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pd.setCanceledOnTouchOutside(false);
         pd.show();
@@ -79,6 +91,20 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             (new IPConvert_thread()).execute(url);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void MailingEnded(boolean sw, Context ct) {
+        if (sw) {
+            Toast toast = Toast.makeText(ct, "리포트 메일이 전송되었습니다.", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+            toast.show();
+            pd1.dismiss();
+        } else {
+            Toast toast = Toast.makeText(ct, "리포트 메일 전송 실패!\n잠시후 다시 시도해주세요", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+            toast.show();
+            pd1.dismiss();
         }
     }
 
@@ -102,24 +128,123 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
 
         private void doNextjob() {
+            final Dialog dialog, dialog1;
+            AlertDialog.Builder builder = null;
+            AlertDialog.Builder builder1 = null;
+            final EditText input = new EditText(MainActivity.this);
+            if (errjob[1] || errjob[2] || errjob[3] || errjob[4] || errjob[5]) {
+                String errMsg = "";
+                builder1 = new AlertDialog.Builder(MainActivity.this);
+                if (errjob[1])
+                    errMsg += "ISP 정보 확인 불가!\n";
+                if (errjob[2])
+                    errMsg += "RDNS(도메인) 정보 확인 불가!\n";
+                if (errjob[3])
+                    errMsg += "서버 정보 확인 불가!\n";
+                if (errjob[4])
+                    errMsg += "포트스캔 확인불가!\n";
+                if (errjob[5])
+                    errMsg += "ISP 지리 정보 추출 실패!\n";
+                errMsg += "실패한 항목에 대해서는 나중에 다시 시도하세요.";
+                builder1.setTitle("오류 발생!");
+                builder1.setMessage(errMsg);
+                // Setting Positive "Yes" Button
+                dialog1 = builder1.create();
+                builder1.setPositiveButton("확인",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog1.cancel();
+                            }
+                        });
+                dialog1.show();
+            }
+            if (checked) { //Emailing
+                builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("이메일을 입력하세요");
+                builder.setView(input);
+                // Setting Positive "Yes" Button
+                builder.setPositiveButton("확인",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Write your code here to execute after dialog
+                                pd1.setProgress(5);
+                                pd1.setTitle("메일 발신 중...");
+                                pd1.setMessage("잠시만 기다려주세요(최대 1분)");
+                                pd1.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                                pd1.setCanceledOnTouchOutside(false);
+                                pd1.show();
+                                Log.d("mail", "mail start");
+                                try {
+                                    GMailSender sender = new GMailSender("cyberuspolice@gmail.com", "cxsfxaosbhscfnkq", getApplicationContext());
+
+                                    Log.d("mail", "mail start");
+                                    sender.sendMail("[보고서]Cyber inspector - " + domain,
+                                            "1. URL : " + domain + "\n2. ISP Information\n" + result[0][0] + "\n\n3. Linked Domain\n"
+                                                    + mail_domain + "\n" +
+                                                    "4. Server Information\n" + mail_server +
+                                                    "\n5. Portscan\n" + mail_portscan,
+                                            "cyberuspolice@gmail.com",
+                                            input.getText().toString(), MySectionAdapter.tab_map.getCapture());
+                                } catch (Exception e) {
+                                    Log.e("SendMail", e.getMessage(), e);
+                                }
+                                Log.d("mail", "mail ended");
+                            }
+                        });
+                // Setting Negative "NO" Button
+                builder.setNegativeButton("취소",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Write your code here to execute after dialog
+                                dialog.cancel();
+                            }
+                        });
+            }
+
             if (!errjob[1]) {
+                mail_isp = result[0][0];
                 MySectionAdapter.tab_isp.addItem(result[0][0]);
                 MySectionAdapter.tab_isp.setTextview("Search IP : " + url);
                 MySectionAdapter.tab_isp.Update();
             }
-            if (!errjob[2]) {
-                for (int i = 0; i < result[1].length; i++)
+
+            if (!errjob[2])
+
+            {
+                mail_domain = "";
+                for (int i = 0; i < result[1].length; i++) {
                     MySectionAdapter.tab_domain.addItem(result[1][i]);
+                    mail_domain += result[1][i] + "\n";
+                }
                 MySectionAdapter.tab_domain.Update();
             }
-            if (!errjob[3]) MySectionAdapter.tab_server.Update();
-            if (!errjob[4]) MySectionAdapter.tab_portscan.Update();
-            if (!errjob[5]){
-                Log.d("go la",Long.toString(la));
-                Log.d("go lo",Long.toString(lo));
+
+            if (!errjob[3])
+
+            {
+                MySectionAdapter.tab_server.Update();
+                mail_server = mail_server_tmp;
+            }
+
+            if (!errjob[4])
+
+            {
+                MySectionAdapter.tab_portscan.Update();
+                mail_portscan = mail_portscan_tmp;
+            }
+
+            if (!errjob[5])
+
+            {
+                Log.d("go la", Double.toString(la));
+                Log.d("go lo", Double.toString(lo));
                 MySectionAdapter.tab_map.setGis(la, lo);
             }
             pd.dismiss();
+            if (checked) {
+                dialog = builder.create();
+                dialog.show();
+            }
         }
     }
 
@@ -207,7 +332,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 parsingGps();
             } catch (Exception e) {
                 e.printStackTrace();
-                Log.d("ex","gps");
+                Log.d("ex", "gps");
                 jdt.setError(5);
             }
             return null;
@@ -256,6 +381,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             super.onPostExecute(res);
             jdt.finished(4);
         }
+
     }
 
     @Override
@@ -271,7 +397,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private void parsingServer() throws Exception {
         int col;
-        String q = new MyDownloadTask("http://toolbar.netcraft.com/site_report?url=" + domain, "", 15).GetString();
+        String q = new MyDownloadTask("http://toolbar.netcraft.com/site_report?url=" + domain, "", 20).GetString();
         if (q == null) {
             jdt.setError(3);
             return;
@@ -281,6 +407,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         q = q.substring(a, b);
         q = q.substring(q.indexOf("tbody"));
         col = q.split("<tr").length - 1;
+        mail_server_tmp = "Date / IP / OS / Server\n";
         for (int i = 0; i < col; i++) {
             String tmp[] = new String[4];
             String t1 = q.substring(q.indexOf("<td>") + 10);
@@ -291,25 +418,27 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 tmpstr = tmpstr.substring(p + 4);
             }
             MySectionAdapter.tab_server.addItem(tmp[0], tmp[1], tmp[2], tmp[3]);
+            mail_server_tmp = tmp[3] + " - " + tmp[0] + " - " + tmp[1] + " - " + tmp[2] + "\n";
             q = q.substring(q.indexOf("</tr>") + 5);
         }
     }
 
     private void parsingGps() throws Exception {
-        int col;
-        String q = new MyDownloadTask("http://whatismyipaddress.com/ip/" + url, "", 12).GetString();
+        String q = new MyDownloadTask("http://whatismyipaddress.com/ip/" + url, "", 20).GetString();
         if (q == null) {
             jdt.setError(5);
             return;
         }
         q = q.substring(q.indexOf("Latitude:"));
         Log.d("q", q);
-        la = Long.getLong(q.substring(19, q.indexOf("nbsp") - 2));
-        Log.d("lati", q.substring(19, q.indexOf("nbsp") - 2));
+        Log.d("fi", Integer.toString(q.indexOf("nbsp")));
+        Log.d("str", q.substring(19, q.indexOf("nbsp") - 1));
+        la = Double.parseDouble(q.substring(19, q.indexOf("nbsp") - 1));
+        Log.d("lati", q.substring(19, q.indexOf("nbsp") - 1));
         q = q.substring(q.indexOf("Longitude:"));
         Log.d("q", q);
-        Log.d("long", q.substring(20, q.indexOf("nbsp") - 2));
-        lo = Long.getLong(q.substring(20, q.indexOf("nbsp") - 2));
+        Log.d("long", q.substring(20, q.indexOf("nbsp") - 1));
+        lo = Double.parseDouble(q.substring(20, q.indexOf("nbsp") - 1));
     }
 
     private void parsingIsp() throws Exception {
@@ -430,6 +559,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     private void parsingPortscan() throws Exception {
         String q = new MyDownloadTask("http://mxtoolbox.com/Public/Lookup.aspx/DoLookup2", "{\"inputText\":\"scan:" + url + "\",\"resultIndex\":8}", 5, true).GetString();
         q = q.replaceAll("\\\\u0027", "").replaceAll("\\\\u003c", "").replaceAll("\\\\u003e", "").substring(1200);
+        mail_portscan_tmp = "Port / Protocol / Status\n";
         for (int i = 0; i < portNum.length; i++) {
             int st;
             String s;
@@ -437,14 +567,19 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 st = q.indexOf(portNum[i]);
                 s = q.substring(st, q.indexOf(portNum[i + 1], st));
             } else s = q.substring(q.indexOf(portNum[i]));
-            if (s.lastIndexOf("Open") != -1)
+            if (s.lastIndexOf("Open") != -1) {
                 MySectionAdapter.tab_portscan.addItem(portNum[i], portName[i], "Open");
-            else if (s.lastIndexOf("Filtered") != -1)
+                mail_portscan_tmp += portNum[i] + " - " + portName[i] + " - " + "Open\n";
+            } else if (s.lastIndexOf("Filtered") != -1) {
                 MySectionAdapter.tab_portscan.addItem(portNum[i], portName[i], "Filtered");
-            else if (s.lastIndexOf("Close") != -1)
+                mail_portscan_tmp += portNum[i] + " - " + portName[i] + " - " + "Filtered\n";
+            } else if (s.lastIndexOf("Close") != -1) {
                 MySectionAdapter.tab_portscan.addItem(portNum[i], portName[i], "Closed");
-            else
+                mail_portscan_tmp += portNum[i] + " - " + portName[i] + " - " + "Closed\n";
+            } else {
                 MySectionAdapter.tab_portscan.addItem(portNum[i], portName[i], "Refused");
+                mail_portscan_tmp += portNum[i] + " - " + portName[i] + " - " + "Refused\n";
+            }
         }
     }
 

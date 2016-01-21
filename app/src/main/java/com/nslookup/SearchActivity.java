@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,9 +29,13 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
     }
 
     private void nextActivity() {
+
+        String checked = "-1";
+        if (((CheckBox) findViewById(R.id.checkBox)).isChecked())
+            checked = "1";
         try {
-            str = (new BackgroundTask()).execute(txt_query.getText().toString()).get();
-            if(str == null)
+            str = (new BackgroundTask()).execute(txt_query.getText().toString(), checked).get();
+            if (str == null)
                 wrong();
         } catch (Exception e) {
             e.printStackTrace();
@@ -38,14 +43,15 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
     }
 
     class BackgroundTask extends AsyncTask<String, Void, String> {
-        String ss;
+        String ss, chk;
 
         @Override
         protected String doInBackground(String... params) {
             int diff;
             ss = params[0];
+            chk = params[1];
             diff = isIp(ss);
-            if(diff == -1){
+            if (diff == -1) {
                 return null;
             }
             if (ss.length() < 4) {
@@ -80,6 +86,8 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
             }
             Intent intent = new Intent(SearchActivity.this, MainActivity.class);
             intent.putExtra("url", ss);
+            if (chk.equals("1")) intent.putExtra("email", 1);
+            else intent.putExtra("email", 0);
             if (ipordm)
                 intent.putExtra("isip", "1");
             else
@@ -99,7 +107,7 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
                     cnt++;
                 }
             }
-            if(cnt == 0){
+            if (cnt == 0) {
                 return -1;
             }
             if (!isNotIp) {

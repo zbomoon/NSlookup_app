@@ -37,8 +37,8 @@ class MyDownloadTask {
         String result = "";
         url = new URL(urlToRead);
         conn = (HttpURLConnection) url.openConnection();
-        conn.setConnectTimeout(time * 1000);
-        conn.setReadTimeout(time * 1000);
+        conn.setConnectTimeout(20 * 1000);
+        conn.setReadTimeout(20 * 1000);
         conn.setDoInput(true);
         conn.setDoOutput(true);
         conn.setRequestMethod("POST");

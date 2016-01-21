@@ -14,6 +14,7 @@ public class MySectionAdapter extends FragmentPagerAdapter {
     public static TabFragment_Server tab_server = null;
     public MySectionAdapter(FragmentManager fm) {
         super(fm);
+        fm.executePendingTransactions();
     }
 
     @Override
