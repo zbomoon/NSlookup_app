@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -14,31 +13,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class DomainInfoActivity extends AppCompatActivity {
-    Intent intent;
-    String url;
-    ActionBar actionBar;
-    TextView mTextView;
-    ProgressDialog pd;
+    private String url;
+    private TextView mTextView;
+    private ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domain_info);
-        actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032137")));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032137")));
 
         pd = new ProgressDialog(this);
-        intent = getIntent();
+        Intent intent = getIntent();
         url = intent.getStringExtra("url");
-        mTextView = (TextView) findViewById(R.id.textView);
+        mTextView = (TextView) findViewById(R.id.txtDomainInfo);
         mTextView.setTextColor(Color.parseColor("#ff000000"));
         setTitle(url);
-        new DomainInfo_thread().execute();
+        new DomainInfoThread().execute();
     }
 
-    class DomainInfo_thread extends AsyncTask<Integer, Void, Void> {
-        String q;
-        boolean err = false;
+    private class DomainInfoThread extends AsyncTask<Integer, Void, Void> {
+        private String str;
+        private boolean err = false;
 
         @Override
         protected void onPreExecute() {
@@ -53,22 +49,21 @@ public class DomainInfoActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Integer... params) {
-            if (url.substring(0, 3).equals("www"))
-                url = url.substring(4);
+            if (url.substring(0, 3).equals("www")) url = url.substring(4);
             try {
-                q = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url, 6).GetString();
+                str = new MyDownloadTask("http://domain.whois.co.kr/whois/pop_whois.php", "domain=" + url, 6).GetString();
             } catch (Exception e){
                 e.printStackTrace();
                 err = true;
                 return null;
             }
-            if (q == null) {
+            if (str == null) {
                 err = true;
                 return null;
             }
-            int st = q.indexOf("dot_line.gif", 4000) + 836;
-            int fi = q.indexOf("dot_line.gif", st + 100) - 75;
-            q = q.substring(st, fi).replaceAll("<br>", "").replaceAll("<", "").replaceAll(">", "");
+            int st = str.indexOf("dot_line.gif", 4000) + 836;
+            int fi = str.indexOf("dot_line.gif", st + 100) - 75;
+            str = str.substring(st, fi).replaceAll("<br>", "").replaceAll("<", "").replaceAll(">", "");
             return null;
         }
 
@@ -81,9 +76,9 @@ public class DomainInfoActivity extends AppCompatActivity {
                 toast.show();
                 finish();
             }
-            if (q.contains("접속에 실패"))
-                q = "찾을 수 없는 도메인입니다!";
-            mTextView.setText(q);
+            if (str.contains("접속에 실패"))
+                str = "찾을 수 없는 도메인입니다!";
+            mTextView.setText(str);
             pd.dismiss();
         }
     }

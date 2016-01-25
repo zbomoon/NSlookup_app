@@ -331,7 +331,7 @@ MERGED from [com.android.support:support-v4:23.1.1] C:\Users\HP-01\StudioProject
 	android:allowBackup
 		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:30:9-35
 	android:icon
-		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:31:9-45
+		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:31:9-43
 	android:theme
 		ADDED from C:\Users\HP-01\StudioProjects\NSlookup\app\src\main\AndroidManifest.xml:33:9-40
 activity#com.nslookup.IntroActivity

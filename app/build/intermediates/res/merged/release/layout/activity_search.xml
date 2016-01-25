@@ -59,5 +59,4 @@
         android:layout_alignEnd="@+id/button2"
         android:checked="true"
         android:theme="@android:style/Theme.Holo.Light"/>
-
 </RelativeLayout>

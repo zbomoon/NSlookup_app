@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -36,11 +37,10 @@ public class TabFragment_Portscan extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        FloatingActionButton mFloatingButton;
         mView = inflater.inflate(R.layout.tab_layout_portscan, null);
-        tb = (TableLayout) mView.findViewById(R.id.tableLayout2);
-        mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
-        mFloatingButton.setOnClickListener(new View.OnClickListener() {
+        tb = (TableLayout) mView.findViewById(R.id.tblPortscan);
+        ImageButton mBtnHelp = (ImageButton) mView.findViewById(R.id.btnHelp);
+        mBtnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder ab = new AlertDialog.Builder(TabFragment_Portscan.this.getActivity()).setPositiveButton("확인", new DialogInterface.OnClickListener() {

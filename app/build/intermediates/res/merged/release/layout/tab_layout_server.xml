@@ -10,7 +10,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="*"
+        android:stretchColumns="0"
         android:id="@+id/tableLayout">
         <View
             android:layout_width="match_parent"

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/LinearLayout_tab1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -11,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stretchColumns="*"
-        android:id="@+id/tableLayout">
+        android:id="@+id/tblServer">
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
@@ -24,7 +23,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="날짜"
-                android:id="@+id/textView6"
                 android:layout_marginBottom="1dp"
                 android:gravity="center"
                 android:background="@drawable/xml_border"
@@ -35,7 +33,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="IP"
-                android:id="@+id/textView3"
                 android:layout_marginBottom="1dp"
                 android:gravity="center"
                 android:background="@drawable/xml_border"
@@ -46,7 +43,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OS"
-                android:id="@+id/textView4"
                 android:layout_marginBottom="1dp"
                 android:gravity="center"
                 android:background="@drawable/xml_border"
@@ -57,7 +53,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="서버"
-                android:id="@+id/textView5"
                 android:layout_marginBottom="1dp"
                 android:gravity="center"
                 android:background="@drawable/xml_border"
@@ -67,15 +62,15 @@
 
     </TableLayout>
 
-    <com.nslookup.FloatingActionButton
-        android:id="@+id/mFloatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="133dp"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="8dp"
+    <ImageButton
+        android:id="@+id/btnHelp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_help"
-        fab:fab_colorNormal="#009688"
-        fab:fab_colorPressed="#26a69a" />
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_help" />
     <!--
         <com.nslookup.FloatingActionButton
             android:id="@+id/mFloatingActionButton1"

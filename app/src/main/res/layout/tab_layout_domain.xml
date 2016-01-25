@@ -4,18 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:id="@+id/LinearLayout_tab1">
+    android:gravity="center">
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/t1_lv"
+        android:id="@+id/lstDomain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:headerDividersEnabled="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/btnDomainsch"
         android:layout_marginBottom="50dp">
     </ListView>
 
@@ -24,7 +23,7 @@
         android:layout_height="45dp"
         android:text="도메인 정보 검색"
         android:background="#57B7FB"
-        android:id="@+id/button"
+        android:id="@+id/btnDomainsch"
         android:textColor="#cffeca"
         android:textSize="20dp"
         android:layout_alignParentBottom="true"
@@ -33,26 +32,13 @@
         android:layout_margin="4dp"
         android:layout_gravity="bottom" />
 
-    <com.nslookup.FloatingActionButton
-        android:id="@+id/mFloatingActionButton"
-        android:layout_width="200dp"
-        android:layout_height="142dp"
+    <ImageButton
+        android:id="@+id/btnHelp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_help"
-        fab:fab_colorNormal="#009688"
-        fab:fab_colorPressed="#26a69a"
         android:layout_gravity="bottom|right"
         android:layout_marginBottom="52dp"
-        android:layout_marginRight="8dp" />
-<!--
-    <com.nslookup.FloatingActionButton
-        android:id="@+id/mFloatingActionButton1"
-        android:layout_width="200dp"
-        android:layout_height="142dp"
-        android:src="@android:drawable/ic_dialog_email"
-        fab:fab_colorNormal="#009688"
-        fab:fab_colorPressed="#26a69a"
-        android:layout_gravity="bottom|left"
-        android:layout_marginBottom="52dp"
-        android:layout_marginRight="8dp" /> -->
-
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_help" />
 </FrameLayout>

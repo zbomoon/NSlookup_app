@@ -11,8 +11,7 @@ public class IntroActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             public void run() {
                 Intent intent = new Intent(IntroActivity.this, SearchActivity.class);
                 startActivity(intent);

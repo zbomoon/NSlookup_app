@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -37,11 +38,11 @@ public class TabFragment_Server extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        FloatingActionButton mFloatingButton;
         mView = inflater.inflate(R.layout.tab_layout_server, null);
-        tb = (TableLayout) mView.findViewById(R.id.tableLayout);
-        mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
-        mFloatingButton.setOnClickListener(new View.OnClickListener() {
+        tb = (TableLayout) mView.findViewById(R.id.tblServer);
+
+        ImageButton mBtnHelp = (ImageButton) mView.findViewById(R.id.btnHelp);
+        mBtnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder ab = new AlertDialog.Builder(TabFragment_Server.this.getActivity()).setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -77,7 +78,9 @@ public class TabFragment_Server extends Fragment {
     public void addItem(String ip, String os, String ws, String dt) {
         items[0].add(dt);
         items[1].add(ip);
-        items[2].add(os);
+        if(os.length() > 7)
+            items[2].add(os.substring(0, 7));
+        else items[2].add(os);
         if(ws.length() > 20)
             items[3].add(ws.substring(0, 20));
         else items[3].add(ws);

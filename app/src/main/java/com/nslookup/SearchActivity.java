@@ -31,7 +31,7 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
     private void nextActivity() {
 
         String checked = "-1";
-        if (((CheckBox) findViewById(R.id.checkBox)).isChecked())
+        if (((CheckBox) findViewById(R.id.chkMail)).isChecked())
             checked = "1";
         try {
             str = (new BackgroundTask()).execute(txt_query.getText().toString(), checked).get();
@@ -86,12 +86,9 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
             }
             Intent intent = new Intent(SearchActivity.this, MainActivity.class);
             intent.putExtra("url", ss);
-            if (chk.equals("1")) intent.putExtra("email", 1);
-            else intent.putExtra("email", 0);
+            if (chk.equals("1")) intent.putExtra("email", true);
             if (ipordm)
-                intent.putExtra("isip", "1");
-            else
-                intent.putExtra("isip", "2");
+                intent.putExtra("isIp", true);
             startActivity(intent);
             return ss;
         }
@@ -137,7 +134,8 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        txt_query = (EditText) findViewById(R.id.editText1);
+
+        txt_query = (EditText) findViewById(R.id.etxtQuery);
         txt_query.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -156,7 +154,7 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
                 return false;
             }
         });
-        findViewById(R.id.button2).setOnTouchListener(this);
+        findViewById(R.id.btnSearch).setOnTouchListener(this);
     }
 
     @Override

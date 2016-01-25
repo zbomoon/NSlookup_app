@@ -5,7 +5,6 @@
     android:background="@drawable/bg" >
 
     <ImageView
-        android:id="@+id/ulsan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ulsan"
@@ -16,7 +15,6 @@
         android:layout_marginRight="40dp" />
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/mark"

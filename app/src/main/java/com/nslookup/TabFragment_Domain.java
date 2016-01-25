@@ -14,8 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -40,16 +40,16 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        FloatingActionButton mFloatingButton;
         mView = inflater.inflate(R.layout.tab_layout_domain, null);
-        mListView = (ListView) mView.findViewById(R.id.t1_lv);
-        mFloatingButton = (FloatingActionButton) mView.findViewById(R.id.mFloatingActionButton);
+        mListView = (ListView) mView.findViewById(R.id.lstDomain);
         mListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         m_Adapter = new ArrayAdapter<String>(mView.getContext(), R.layout.simple_single_choice_list, items);
         mListView.setAdapter(m_Adapter);
-        mButton = (Button) mView.findViewById(R.id.button);
+
+        ImageButton mBtnHelp = (ImageButton) mView.findViewById(R.id.btnHelp);
+        mButton = (Button) mView.findViewById(R.id.btnDomainsch);
         mButton.setOnTouchListener(this);
-        mFloatingButton.setOnClickListener(new View.OnClickListener() {
+        mBtnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder ab = new AlertDialog.Builder(TabFragment_Domain.this.getActivity()).setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -71,11 +71,6 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
 
     public void addItem(String str) {
         items.add(str);
-    }
-
-    public void setTextview(String str) {
-        ((TextView) mView.findViewById(R.id.textView2)).setTextColor(getResources().getColor(R.color.black));
-        ((TextView) mView.findViewById(R.id.textView2)).setText(str);
     }
 
     @Override
