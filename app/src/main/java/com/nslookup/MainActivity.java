@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -18,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -37,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     private static ProgressDialog pd;
     private Double la, lo;
     private ActionBar actionBar;
+    private Handler sendMailhandler = new Handler();
+    private EditText sendMailinput;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
 
         private void doNextjob() {
-            final EditText input = new EditText(MainActivity.this);
+            sendMailinput = new EditText(MainActivity.this);
             if (errJob[1] || errJob[2] || errJob[3] || errJob[4] || errJob[5]) {
                 String errMsg = "";
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
@@ -178,25 +183,15 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 Dialog dlgMail;
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("이메일을 입력하세요");
-                builder.setView(input);
+                builder.setView(sendMailinput);
                 builder.setPositiveButton("확인",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
+                                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                                imm.hideSoftInputFromWindow(sendMailinput.getWindowToken(), 0);
                                 pd.setTitle("메일 발신 중...");
                                 pd.show();
-                                try {
-                                    GMailSender sender = new GMailSender("cyberuspolice@gmail.com", "cxsfxaosbhscfnkq", getApplicationContext());
-                                    sender.sendMail("[보고서]Cyber inspector - " + domain,
-                                            "1. URL : " + domain + "\n2. ISP Information\n" + mailIsp
-                                                    + "\n\n3. Linked Domain\n"
-                                                    + mailDomain + "\n" +
-                                                    "4. Server Information\n" + mailServer +
-                                                    "\n5. Portscan\n" + mailPortscan,
-                                            "cyberuspolice@gmail.com",
-                                            input.getText().toString(), TabSectionAdapter.tab_isp.getCapture());
-                                } catch (Exception e) {
-                                    Log.e("SendMail", e.getMessage(), e);
-                                }
+                                sendMailhandler.postDelayed(sendMailTask, 1300); // 3초후에 실행
                             }
                         });
                 builder.setNegativeButton("취소",
@@ -209,8 +204,28 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 dlgMail.show();
             }
         }
-    }
 
+
+        private Runnable sendMailTask = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    GMailSender sender = new GMailSender("cyberuspolice@gmail.com", "cxsfxaosbhscfnkq", getApplicationContext());
+                    sender.sendMail("[보고서]Cyber inspector - " + domain,
+                            "1. URL : " + domain + "\n2. ISP Information\n" + mailIsp
+                                    + "\n\n3. Linked Domain\n"
+                                    + mailDomain + "\n" +
+                                    "4. Server Information\n" + mailServer +
+                                    "\n5. Portscan\n" + mailPortscan,
+                            "cyberuspolice@gmail.com",
+                            sendMailinput.getText().toString(), TabSectionAdapter.tab_isp.getCapture());
+                } catch (Exception e) {
+                    Log.e("SendMail", e.getMessage(), e);
+                }
+            }
+        };
+
+    }
     class IPconvertThread extends AsyncTask<String, Void, String> {
         Boolean errorOccured = false;
 

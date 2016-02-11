@@ -22,10 +22,10 @@ import java.util.ArrayList;
 
 public class TabFragment_Domain extends Fragment implements View.OnTouchListener {
     private ArrayAdapter<String> m_Adapter;
-    View mView;
-    ListView mListView;
-    Button mButton;
-    ArrayList<String> items;
+    private View mView;
+    private ListView mListView;
+    private Button mButton;
+    private ArrayList<String> items;
 
     public TabFragment_Domain() {
         items = new ArrayList<String>();
@@ -108,7 +108,7 @@ public class TabFragment_Domain extends Fragment implements View.OnTouchListener
 
 
     class intentDomainInfo implements Runnable {
-        String str;
+        private String str;
 
         public intentDomainInfo(String s) {
             str = s;

@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\tab_layout_isp.xml",
-        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\tab_layout_isp.xml"
-    },
-    {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_cancel_action.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\tab_layout_isp.xml",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\tab_layout_isp.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
@@ -100,10 +100,6 @@
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\activity_domain_info.xml"
     },
     {
-        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\content_loading.xml",
-        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\content_loading.xml"
-    },
-    {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\mr_media_route_chooser_dialog.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\23.0.0\\res\\layout\\mr_media_route_chooser_dialog.xml"
     },
@@ -118,10 +114,6 @@
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_big_media.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\tab_layout_map.xml",
-        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\tab_layout_map.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item.xml",
@@ -202,10 +194,6 @@
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\content_domain_info.xml",
-        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\content_domain_info.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_menu_item.xml",
