@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
     }
 
-    private static void displayToast(Context ct, String str){
+    private static void displayToast(Context ct, String str) {
         Toast toast = Toast.makeText(ct, "리포트 메일이 전송되었습니다.", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         displayToast(getApplicationContext(), "검색 도중 오류가 발생했습니다.\n다시 시도해주세요");
         this.finish();
     }
-    
+
     class JobDoneTest {
         private Boolean[] finishedJob;
         private Boolean[] errJob;
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 if (errJob[4]) errMsg += "포트스캔 확인불가!\n";
                 if (errJob[5]) errMsg += "ISP 지리 정보 추출 실패!\n";
                 errMsg += "실패한 항목에 대해서는 나중에 다시 시도하세요.";
-                builder1.setTitle("오류 발생!");
+                builder1.setTitle("오류!");
                 builder1.setMessage(errMsg);
                 final Dialog dlgErr = builder1.create();
                 builder1.setPositiveButton("확인",
@@ -352,6 +352,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     private void parsingServer() throws Exception {
         int col;
+        Log.d("domain_server", domain);
         String q = new MyDownloadTask("http://toolbar.netcraft.com/site_report?url=" + domain, "", 20).GetString();
         if (q == null) {
             jdt.setError(3);
@@ -399,9 +400,16 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         }
         int x, y;
         if (q.contains("No match!!")) {
+            Log.d("isp", "service1");
             q = "해당 IP를 찾을 수 없습니다.";
             result[0][0] = q;
             return;
+        }
+        if ((x = q.indexOf("afrinic")) != -1) {
+            q = q.substring(q.indexOf("</a>", x) + 5);
+            if ((x = q.lastIndexOf("</pre>")) != -1) {
+                q = q.substring(0, x - 2);
+            }
         }
         if ((x = q.indexOf("[ 네트워크 할당 정보 ]")) != -1) {
             int t = x;
@@ -419,6 +427,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             }
         }
         if (q.contains("서비스가 원할하지")) {
+            Log.d("isp", "service2");
             result[0][0] = "";
             q = new MyDownloadTask("http://whatismyipaddress.com/ip/" + url, "", 5).GetString();
             q = q.substring(q.indexOf("General IP Information</h2>"), q.indexOf("Geolocation Map</h2>"));

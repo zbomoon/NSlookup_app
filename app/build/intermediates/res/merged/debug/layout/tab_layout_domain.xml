@@ -32,26 +32,13 @@
         android:layout_margin="4dp"
         android:layout_gravity="bottom" />
 
-    <com.nslookup.FloatingActionButton
+    <ImageButton
         android:id="@+id/btnHelp"
-        android:layout_width="200dp"
-        android:layout_height="142dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:src="@android:drawable/ic_menu_help"
-        fab:fab_colorNormal="#009688"
-        fab:fab_colorPressed="#26a69a"
         android:layout_gravity="bottom|right"
         android:layout_marginBottom="52dp"
-        android:layout_marginRight="8dp" />
-<!--
-    <com.nslookup.FloatingActionButton
-        android:id="@+id/mFloatingActionButton1"
-        android:layout_width="200dp"
-        android:layout_height="142dp"
-        android:src="@android:drawable/ic_dialog_email"
-        fab:fab_colorNormal="#009688"
-        fab:fab_colorPressed="#26a69a"
-        android:layout_gravity="bottom|left"
-        android:layout_marginBottom="52dp"
-        android:layout_marginRight="8dp" /> -->
-
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_help" />
 </FrameLayout>

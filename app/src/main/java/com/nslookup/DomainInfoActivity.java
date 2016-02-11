@@ -22,7 +22,7 @@ public class DomainInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domain_info);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#032137")));
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         pd = new ProgressDialog(this);
         Intent intent = getIntent();
         url = intent.getStringExtra("url");
@@ -40,8 +40,8 @@ public class DomainInfoActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             pd.setProgress(5);
-            pd.setTitle("NSlooking...");
-            pd.setMessage("검색중입니다.\n잠시만 기다려주세요");
+            pd.setTitle("검색중...");
+            pd.setMessage("잠시만 기다려주세요(최대 1분)");
             pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             pd.setCanceledOnTouchOutside(false);
             pd.show();
@@ -81,6 +81,14 @@ public class DomainInfoActivity extends AppCompatActivity {
             mTextView.setText(str);
             pd.dismiss();
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        setResult(RESULT_OK);
+        finish();
+        return super.onSupportNavigateUp();
     }
 
     @Override

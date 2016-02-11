@@ -49,10 +49,11 @@ public class TabFragment_ISP extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.tab_layout_isp, null);
         map = ((SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapIsp)).getMap();
-        mListView = (ListView) mView.findViewById(R.id.lstIsp);
-        ImageButton mBtnHelp = (ImageButton) mView.findViewById(R.id.btnHelp);
         m_Adapter = new ArrayAdapter<String>(mView.getContext(), R.layout.simple_textview, items);
+        mListView = (ListView) mView.findViewById(R.id.lstIsp);
         mListView.setAdapter(m_Adapter);
+
+        ImageButton mBtnHelp = (ImageButton) mView.findViewById(R.id.btnHelp);
         mBtnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

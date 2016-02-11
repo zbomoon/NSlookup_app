@@ -17,10 +17,35 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class SearchActivity extends Activity implements View.OnTouchListener {
-    boolean first = false;
-    EditText txt_query;
-    String str;
-    boolean ipordm = false;
+    private boolean first = false, ipordm = false;
+    private EditText txt_query;
+    private String str;
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search);
+
+        txt_query = (EditText) findViewById(R.id.etxtQuery);
+        txt_query.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!first) {
+                    txt_query.setText("");
+                    first = true;
+                }
+            }
+        });
+        txt_query.setOnKeyListener(new OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    nextActivity();
+                }
+                return false;
+            }
+        });
+        findViewById(R.id.btnSearch).setOnTouchListener(this);
+    }
 
     private void wrong() {
         Toast toast = Toast.makeText(getApplicationContext(), "잘못된 형식의 도메인/IP 주소 입니다.", Toast.LENGTH_SHORT);
@@ -29,7 +54,6 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
     }
 
     private void nextActivity() {
-
         String checked = "-1";
         if (((CheckBox) findViewById(R.id.chkMail)).isChecked())
             checked = "1";
@@ -129,32 +153,6 @@ public class SearchActivity extends Activity implements View.OnTouchListener {
             }
             return true;
         }
-    }
-
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-
-        txt_query = (EditText) findViewById(R.id.etxtQuery);
-        txt_query.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!first) {
-                    txt_query.setText("");
-                    first = true;
-                }
-            }
-        });
-        txt_query.setOnKeyListener(new OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_ENTER) {
-                    nextActivity();
-                }
-                return false;
-            }
-        });
-        findViewById(R.id.btnSearch).setOnTouchListener(this);
     }
 
     @Override

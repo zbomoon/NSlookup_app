@@ -39,6 +39,7 @@ public class TabFragment_Portscan extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.tab_layout_portscan, null);
         tb = (TableLayout) mView.findViewById(R.id.tblPortscan);
+
         ImageButton mBtnHelp = (ImageButton) mView.findViewById(R.id.btnHelp);
         mBtnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
