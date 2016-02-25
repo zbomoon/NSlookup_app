@@ -41,7 +41,13 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     private ActionBar actionBar;
     private Handler sendMailhandler = new Handler();
     private EditText sendMailinput;
+    private boolean working = true;
 
+    public static void MailingEnded(Context ct, boolean successed) {
+        if (successed) displayToast(ct, "리포트 메일이 전송되었습니다.");
+        else displayToast(ct, "리포트 메일 전송 실패!\n잠시후 다시 시도해주세요");
+        pd.dismiss();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +91,11 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         pd.setMessage("잠시만 기다려주세요(최대 1분)");
         pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pd.setCanceledOnTouchOutside(false);
+        pd.setCancelable(false);
         pd.show();
 
         jdt = new JobDoneTest();
+        working = true;
         try {
             (new IPconvertThread()).execute(url);
         } catch (Exception e) {
@@ -99,12 +107,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         Toast toast = Toast.makeText(ct, "리포트 메일이 전송되었습니다.", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
-    }
-
-    public static void MailingEnded(Context ct, boolean successed) {
-        if (successed) displayToast(ct, "리포트 메일이 전송되었습니다.");
-        else displayToast(ct, "리포트 메일 전송 실패!\n잠시후 다시 시도해주세요");
-        pd.dismiss();
     }
 
     private void errorProcess() {
@@ -203,6 +205,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 dlgMail = builder.create();
                 dlgMail.show();
             }
+            working = false;
         }
 
 
@@ -227,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
 
     }
     class IPconvertThread extends AsyncTask<String, Void, String> {
-        Boolean errorOccured = false;
+        private Boolean errorOccured = false;
 
         @Override
         protected String doInBackground(String... params) {
@@ -358,6 +361,10 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     public boolean onKeyDown(int key, KeyEvent ev) {
         switch (key) {
             case KeyEvent.KEYCODE_BACK:
+                if(working){
+                    displayToast(getApplicationContext(), "검색중에는 취소할 수 없습니다.");
+                    break;
+                }
                 setResult(RESULT_OK);
                 finish();
                 break;

@@ -168,12 +168,12 @@
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xxhdpi\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
-        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xxhdpi\\abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_setting_light.png",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\23.0.0\\res\\drawable-xxhdpi\\ic_setting_light.png"
+    },
+    {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xxhdpi\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_plus_signin_btn_icon_light_normal.9.png",
@@ -314,10 +314,6 @@
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\powered_by_google_dark.png",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-location\\8.4.0\\res\\drawable-xxhdpi\\powered_by_google_dark.png"
-    },
-    {
-        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal.9.png",

@@ -4,7 +4,7 @@ import java.net.InetAddress;
 
 
 class IPConvertTask {
-    String domain;
+    private String domain;
 
     public IPConvertTask(String d) {
         domain = d;

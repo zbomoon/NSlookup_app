@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_cancel_action.xml"
-    },
-    {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\tab_layout_isp.xml",
         "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\src\\main\\res\\layout\\tab_layout_isp.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "C:\\Users\\HP-01\\StudioProjects\\NSlookup\\app\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_singlechoice_material.xml",
